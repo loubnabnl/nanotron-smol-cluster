@@ -15,20 +15,19 @@ pip install packaging
 ```
 
 ```
-# sometimes apex confuses cuda versions
-export CUDA_HOME=/usr/local/cuda-11.6
-
 # clone repos in code folder under fsx user space
 cd /fsx/loubna
 mkdir code && cd code
 
-git clone https://github.com/NVIDIA/apex
-cd apex
-pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+git clone https://github.com/bigcode-project/Megatron-LM.git
+git clone https://github.com/NVIDIA/apex.git
 ```
 
 ```
-git clone https://github.com/bigcode-project/Megatron-LM.git
+# sometimes apex confuses cuda versions
+export CUDA_HOME=/usr/local/cuda-11.6
+cd code/apex
+pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
 ```
 
 Extra dependencies:
