@@ -55,7 +55,7 @@ A slurm file for submitting a job is `train.slurm`, it must be placed inside `Me
 
 If the job is terminated, check the logs to find termination reason. You might get some of the following errors:
 
-- If you get `CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'`.: Go to your `~/.bashrc`and comment these lines:
+- If you get `CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'`: Go to your `~/.bashrc`and comment these lines:
 
 ```
 # If not running interactively, don't do anything
