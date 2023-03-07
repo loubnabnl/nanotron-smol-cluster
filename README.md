@@ -1,6 +1,6 @@
 # Megatron-smol-cluster
 
-Training LMs in Megatron-LM on the smol-cluster
+Setting up Megatron-LM on the smol-cluster
 
 ## Installation
 
