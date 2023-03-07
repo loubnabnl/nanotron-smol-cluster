@@ -51,7 +51,7 @@ Download preprocessed data from GCP in a folder `data`, install `gcloud` or use 
 ## Prepare slurm file
 
 A slurm file for submitting a job is `train.slurm`, it must be placed inside `Megatron-LM`, change it accordingly and run:
-`sbatch train.slurm``
+`sbatch train.slurm`
 
 If the job is terminated, check the logs to find termination reason. You might get some of the following errors:
 
@@ -83,4 +83,15 @@ add
 ```
 export PATH="/usr/local/cuda-11.6/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-11.6/lib64:$LD_LIBRARY_PATH"
+```
+## Monitoring
+Check your wandb board :rocket: or run this to check GPU utilization of your nodes:
+```bash
+# get jobid with squeue
+NODES=$(scontrol show hostname `squeue -j JOBID --noheader -o %N`)
+for ssh_host in $NODES
+do
+  echo $ssh_host
+  ssh -q $ssh_host "nvidia-smi --format=csv --query-gpu=utilization.gpu,utilization.memory"
+done
 ```
