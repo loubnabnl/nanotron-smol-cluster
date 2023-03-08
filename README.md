@@ -49,7 +49,7 @@ Download preprocessed data from GCP in a folder `data`, install `gcloud` or use 
 
 ## Prepare slurm file
 
-A slurm file for submitting a job is `train.slurm`, it must be placed inside `Megatron-LM`, change it accordingly and run:
+A slurm file for submitting a job is `train.slurm` adapted from [brrr/examples/t5](https://github.com/huggingface/brrr/blob/main/examples/t5/train.slurm) by Thomas Wang, it must be placed inside `Megatron-LM`, change it accordingly and run:
 `sbatch train.slurm`
 
 If the job is terminated, check the logs to find termination reason. You might get some of the following errors:
