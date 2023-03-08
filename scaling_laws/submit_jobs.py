@@ -175,7 +175,6 @@ def submit_job(job, job_name="job"):
 
 
 def get_args():
-    # add argument ad limit the number of jobs to run
     parser = argparse.ArgumentParser()
     parser.add_argument("--start", type=int, default=1)
     parser.add_argument("--end", type=int, default=3)
@@ -196,9 +195,10 @@ if __name__ == "__main__":
         num_heads = row["num_heads"]
         sequence_length = row["sequence_length"]
         global_batch_size = row["global_batch_size"]
+        # TODO: batch size of first rusn in the csv gives OOM, we divide by 2 now
         micro_batch_size = int(row["micro_batch_size"] / 2)
-        learning_rate = row["learning_rate"]
         num_gpu = 2 * row["num_gpu"]
+        learning_rate = row["learning_rate"]
         training_iters = row["training_iters"]
         lr_warmup_iters = row["lr_warmup_iters"]
 
