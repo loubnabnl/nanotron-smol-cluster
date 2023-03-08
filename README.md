@@ -45,7 +45,7 @@ cd data
 git clone https://huggingface.co/bigcode/digit-bytelevel-bpe-jss-v1.1-49152
 ```
 
-Download preprocessed data from GCP in a folder `data`, install `gcloud` or use `rclone` (already installed).
+Download tokenized and preprocessed Santacoder data by Megatron-LM from GCP in a folder `data`, install `gcloud` or use `rclone` (already installed).
 
 ## Prepare slurm file
 
