@@ -78,7 +78,7 @@ conda install -c conda-forge ninja
 [ip-26-x]:      |          ^~~~~~~~~~~~~~~~~~~~~
 [ip-26-x]:compilation terminated.
 ```
-add
+add to your `~/.bashrc`:
 ```
 export PATH="/usr/local/cuda-11.6/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-11.6/lib64:$LD_LIBRARY_PATH"
@@ -94,3 +94,7 @@ do
   ssh -q $ssh_host "nvidia-smi --format=csv --query-gpu=utilization.gpu,utilization.memory"
 done
 ```
+## Submitting multiple jobs
+In `scaling_laws` folder you can find a python script to submit multiple slurm jobs based on different parameters from a `csv` file we used in our scaling laws experiments.
+```bash
+python3 submit_jobs.py
