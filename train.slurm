@@ -12,7 +12,6 @@ set -x -e
 
 source /admin/home/loubna/.bashrc
 
-which conda
 
 conda activate megatron
 
