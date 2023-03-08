@@ -100,7 +100,7 @@ GPT_ARGS="\
     --weight-decay .1 \
     --adam-beta2 .95 \
     --clip-grad 1.0 \
-    --fp16 \
+    --bf16 \
     --initial-loss-scale 65536 \
     --fim-rate 0.5 \
     --log-interval 10 \
@@ -121,7 +121,7 @@ CMD=" \
     --data-path $DATA_PATH \
     $TENSORBOARD_ARGS \
     --wandb-entity-name loubnabnl \
-    --wandb-project-name santacoder_cluster \
+    --wandb-project-name scaling_laws \
     "
 export LAUNCHER="python -u -m torch.distributed.run \
     --nproc_per_node $GPUS_PER_NODE \
@@ -196,9 +196,10 @@ for i in range(1, 3):
     job_name = (
         f"model_id{i}_{num_layers}_{hidden_size}_{num_heads}_bs{micro_batch_size}"
     )
-    ckpt_path = f"{CHECKPOINT_PATH}/model_id{i}/"
+    ckpt_path = f"{CHECKPOINT_PATH}/model_id{i}"
     print(f"Checkpoints path: {ckpt_path}")
     os.makedirs(ckpt_path, exist_ok=True)
+    
     job = makejob(
         JOB_NAME=job_name,
         CHECKPOINT_PATH=ckpt_path,
