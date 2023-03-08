@@ -2,6 +2,7 @@
 # https://github.com/huggingface/datablations/blob/98bc331ee97ca465263b72fc49371bcacefb712b/training_scripts/job_pretrain_gpt.py
 
 import os
+import argparse
 import pandas as pd
 
 DATA_PATH = "/fsx/loubna/data/santacoder/gpt2-preprocessed_content_document"
@@ -173,52 +174,57 @@ def submit_job(job, job_name="job"):
     os.system(f"sbatch jobs/{job_name}.sbatch")
 
 
-# Ensure the log directory exists
-os.system("mkdir -p /fsx/loubna/code/Magtron-LM/scaling_laws/logs")
+def get_args():
+    # add argument ad limit the number of jobs to run
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--start", type=int, default=1)
+    parser.add_argument("--end", type=int, default=3)
+    args = parser.parse_args()
+    return args
 
-df = pd.read_csv("params_sheet.csv")
-for i in range(1, 3):
-    print(f"Preparing job {i}")
-    row = df.loc[i]
 
-    # write a job for each row
-    num_layers = row["num_layer"]
-    hidden_size = row["hidden_size"]
-    num_heads = row["num_heads"]
-    sequence_length = row["sequence_length"]
-    global_batch_size = row["global_batch_size"]
-    micro_batch_size = int(row["micro_batch_size"] / 2)
-    learning_rate = row["learning_rate"]
-    num_gpu = 2 * row["num_gpu"]
-    training_iters = row["training_iters"]
-    lr_warmup_iters = row["lr_warmup_iters"]
+if __name__ == "__main__":
+    df = pd.read_csv("params_sheet.csv")
+    args = get_args()
+    print(f"Submitting jobs for experiments from {args.start} to {args.end}")
+    for i in range(args.start, args.end):
+        print(f"Preparing job {i}")
+        row = df.loc[i]
+        # write a job for each row
+        num_layers = row["num_layer"]
+        hidden_size = row["hidden_size"]
+        num_heads = row["num_heads"]
+        sequence_length = row["sequence_length"]
+        global_batch_size = row["global_batch_size"]
+        micro_batch_size = int(row["micro_batch_size"] / 2)
+        learning_rate = row["learning_rate"]
+        num_gpu = 2 * row["num_gpu"]
+        training_iters = row["training_iters"]
+        lr_warmup_iters = row["lr_warmup_iters"]
 
-    job_name = (
-        f"model_id{i}_{num_layers}_{hidden_size}_{num_heads}_bs{micro_batch_size}"
-    )
-    ckpt_path = f"{CHECKPOINT_PATH}/model_id{i}"
-    print(f"Checkpoints path: {ckpt_path}")
-    os.makedirs(ckpt_path, exist_ok=True)
-    
-    job = makejob(
-        JOB_NAME=job_name,
-        CHECKPOINT_PATH=ckpt_path,
-        N_GPUS=num_gpu,
-        NLAYERS=num_layers,
-        NHIDDEN=hidden_size,
-        NHEADS=num_heads,
-        SEQ_LEN=sequence_length,
-        GLOBAL_BATCH_SIZE=global_batch_size,
-        MICRO_BATCH_SIZE=micro_batch_size,
-        LEARNING_RATE=learning_rate,
-        LR_WARMUP_ITERS=lr_warmup_iters,
-        TRAIN_ITERS=training_iters,
-        # max(round(training_iters // 10 / 1000), 1) * 1000
-        SAVE_INTERVAL=1000,
-    )
-    # submit the job
-    print(f"Submitting job {i}, saved at jobs/{job_name}.sbatch")
-    submit_job(job, job_name)
-
-# View logs
-# tail -f logs/<JOB_NAME>-<JOB_ID>.out logs/<JOB_NAME>-<JOB_ID>.err
+        job_name = (
+            f"model_id{i}_{num_layers}_{hidden_size}_{num_heads}_bs{micro_batch_size}"
+        )
+        ckpt_path = f"{CHECKPOINT_PATH}/model_id{i}"
+        print(f"Checkpoints path: {ckpt_path}")
+        os.makedirs(ckpt_path, exist_ok=True)
+        
+        job = makejob(
+            JOB_NAME=job_name,
+            CHECKPOINT_PATH=ckpt_path,
+            N_GPUS=num_gpu,
+            NLAYERS=num_layers,
+            NHIDDEN=hidden_size,
+            NHEADS=num_heads,
+            SEQ_LEN=sequence_length,
+            GLOBAL_BATCH_SIZE=global_batch_size,
+            MICRO_BATCH_SIZE=micro_batch_size,
+            LEARNING_RATE=learning_rate,
+            LR_WARMUP_ITERS=lr_warmup_iters,
+            TRAIN_ITERS=training_iters,
+            # max(round(training_iters // 10 / 1000), 1) * 1000
+            SAVE_INTERVAL=1000,
+        )
+        # submit the job
+        print(f"Submitting job {i}, saved at jobs/{job_name}.sbatch")
+        submit_job(job, job_name)
