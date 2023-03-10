@@ -1,16 +1,16 @@
 # code  adapted from
 # https://github.com/huggingface/datablations/blob/98bc331ee97ca465263b72fc49371bcacefb712b/training_scripts/job_pretrain_gpt.py
-# Q:# cpus-per-task=32 or 24=96/4 for 2GPU jobs?
-# jobs don't seem to share nodes but are pending when out of nodes even when gpus are available
 
 import os
 import argparse
 import pandas as pd
 
 DATA_PATH = "/fsx/loubna/data/santacoder/gpt2-preprocessed_content_document"
+WEIGHTS_TRAIN = "/fsx/loubna/code/Megatron-LM/scaling_laws/bigcode-data-mix/data/train_data_paths.txt.tmp"
+WEIGHTS_VALID = "/fsx/loubna/code/Megatron-LM/scaling_laws/bigcode-data-mix/data/test_data_paths.txt.tmp"
 CHECKPOINT_PATH = "/fsx/loubna/experiments/scaling-laws"
 TOKENIZER_FILE = (
-    "/fsx/loubna/data/tokenizer/digit-bytelevel-bpe-jss-v1.1-49152/tokenizer.json"
+    "/fsx/loubna/data/tokenizer/tokenizer-the-stack-march-sample-v3-no-prefix-spaces/tokenizer.json"
 )
 
 
@@ -50,7 +50,7 @@ def makejob(
 #SBATCH --job-name={JOB_NAME}
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1          # crucial - only 1 task per dist per node!
-#SBATCH --cpus-per-task=32
+#SBATCH --cpus-per-task={int(96*N_GPUS/8)}
 #SBATCH --gres=gpu:{N_GPUS}
 #SBATCH --partition=production-cluster
 #SBATCH --hint=nomultithread
@@ -121,20 +121,22 @@ GPT_ARGS="\
     --fim-rate 0.5 \
     --log-interval 10 \
     --save-interval $SAVE_INTERVAL \
-    --eval-interval 200 \
-    --eval-iters 10 \
+    --eval-interval 10000 \
+    --eval-iters 5 \
+    --valid-num-workers 0 \
     "
-TENSORBOARD_ARGS="--tensorboard-dir ${CHECKPOINT_PATH}/tensorboard"
+TENSORBOARD_ARGS="--tensorboard-dir {CHECKPOINT_PATH}/tensorboard"
 
 
 CMD=" \
     /fsx/loubna/code/Megatron-LM/pretrain_gpt.py \
     $GPT_ARGS \
-    --tokenizer-type TokenizerFromFileWithFIM \
+    --tokenizer-type TokenizerFromFile \
     --tokenizer-file $TOKENIZER_FILE \
     --save $CHECKPOINT_PATH \
     --load $CHECKPOINT_PATH \
-    --data-path $DATA_PATH \
+    --train-weighted-split-paths-path {WEIGHTS_TRAIN} \
+    --valid-weighted-split-paths-path {WEIGHTS_VALID} \
     $TENSORBOARD_ARGS \
     --wandb-entity-name loubnabnl \
     --wandb-project-name scaling_laws \
