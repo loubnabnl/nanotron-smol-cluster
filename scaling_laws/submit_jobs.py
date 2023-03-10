@@ -1,5 +1,7 @@
 # code  adapted from
 # https://github.com/huggingface/datablations/blob/98bc331ee97ca465263b72fc49371bcacefb712b/training_scripts/job_pretrain_gpt.py
+# Q:# cpus-per-task=32 or 24=96/4 for 2GPU jobs?
+# jobs don't seem to share nodes but are pending when out of nodes even when gpus are available
 
 import os
 import argparse
@@ -10,6 +12,20 @@ CHECKPOINT_PATH = "/fsx/loubna/experiments/scaling-laws"
 TOKENIZER_FILE = (
     "/fsx/loubna/data/tokenizer/digit-bytelevel-bpe-jss-v1.1-49152/tokenizer.json"
 )
+
+
+def get_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--start", type=int, default=0)
+    parser.add_argument("--end", type=int, default=5)
+    args = parser.parse_args()
+    return args
+
+
+def submit_job(job, job_name="job"):
+    with open(f"jobs/{job_name}.sbatch", "w") as fp:
+        fp.write(job)
+    os.system(f"sbatch jobs/{job_name}.sbatch")
 
 
 def makejob(
@@ -38,7 +54,6 @@ def makejob(
 #SBATCH --gres=gpu:{N_GPUS}
 #SBATCH --partition=production-cluster
 #SBATCH --hint=nomultithread
-#SBATCH --exclusive
 #SBATCH -o /fsx/loubna/code/Megatron-LM/scaling_laws/logs/%x-%j.out
 #SBATCH -e /fsx/loubna/code/Megatron-LM/scaling_laws/logs/%x-%j.err
 
@@ -168,26 +183,12 @@ echo "END TIME: $(date)"
 """
 
 
-def submit_job(job, job_name="job"):
-    with open(f"jobs/{job_name}.sbatch", "w") as fp:
-        fp.write(job)
-    os.system(f"sbatch jobs/{job_name}.sbatch")
-
-
-def get_args():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--start", type=int, default=1)
-    parser.add_argument("--end", type=int, default=3)
-    args = parser.parse_args()
-    return args
-
 
 if __name__ == "__main__":
     df = pd.read_csv("params_sheet.csv")
     args = get_args()
     print(f"Submitting jobs for experiments from {args.start} to {args.end}")
-    for i in range(args.start, args.end):
-        print(f"Preparing job {i}")
+    for i in range(args.start, args.end + 1):
         row = df.loc[i]
         # write a job for each row
         num_layers = row["num_layer"]
@@ -195,17 +196,25 @@ if __name__ == "__main__":
         num_heads = row["num_heads"]
         sequence_length = row["sequence_length"]
         global_batch_size = row["global_batch_size"]
-        # TODO: batch size of first rusn in the csv gives OOM, we divide by 2 now
-        micro_batch_size = int(row["micro_batch_size"] / 2)
-        num_gpu = 2 * row["num_gpu"]
+        # TODO: add multi-node setup
+        # TODO: batch sizes in csv are large => OOM => divide by 2 or 4 gor 2GPU runs
+        param_count = row["param_count"]
+        if param_count > 210:
+            micro_batch_size = int(row["micro_batch_size"] / 8)
+        elif param_count > 50:
+            micro_batch_size = int(row["micro_batch_size"] / 4)
+        else:
+            micro_batch_size = int(row["micro_batch_size"] / 2)
+        num_gpu = row["num_gpu"]
         learning_rate = row["learning_rate"]
         training_iters = row["training_iters"]
         lr_warmup_iters = row["lr_warmup_iters"]
 
+        identifier = f"{row['param_count']}M_{row['compute']}"
         job_name = (
-            f"model_id{i}_{num_layers}_{hidden_size}_{num_heads}_bs{micro_batch_size}"
+            f"run_{identifier}_bs{micro_batch_size}_idx_{i}"
         )
-        ckpt_path = f"{CHECKPOINT_PATH}/model_id{i}"
+        ckpt_path = f"{CHECKPOINT_PATH}/{job_name}"
         print(f"Checkpoints path: {ckpt_path}")
         os.makedirs(ckpt_path, exist_ok=True)
         
@@ -222,9 +231,9 @@ if __name__ == "__main__":
             LEARNING_RATE=learning_rate,
             LR_WARMUP_ITERS=lr_warmup_iters,
             TRAIN_ITERS=training_iters,
-            # max(round(training_iters // 10 / 1000), 1) * 1000
-            SAVE_INTERVAL=1000,
+            # save ~5 checkpoints and round to nearest 1000 multiple
+            SAVE_INTERVAL=max(round(training_iters //5 / 1000), 1) * 1000,
         )
         # submit the job
-        print(f"Submitting job {i}, saved at jobs/{job_name}.sbatch")
+        print(f"Job for index {i} ready and saved at jobs/{job_name}.sbatch")
         submit_job(job, job_name)
