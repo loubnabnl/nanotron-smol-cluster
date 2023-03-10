@@ -5,13 +5,12 @@ import os
 import argparse
 import pandas as pd
 
-DATA_PATH = "/fsx/loubna/data/santacoder/gpt2-preprocessed_content_document"
+# DATA_PATH is not used here, but added for non weighted data runs
+DATA_PATH = "/fsx/loubna/data/stack_new/gpt2-preprocessed_content_document"
 WEIGHTS_TRAIN = "/fsx/loubna/code/Megatron-LM/scaling_laws/bigcode-data-mix/data/train_data_paths.txt.tmp"
-WEIGHTS_VALID = "/fsx/loubna/code/Megatron-LM/scaling_laws/bigcode-data-mix/data/test_data_paths.txt.tmp"
+WEIGHTS_VALID = "/fsx/loubna/code/Megatron-LM/scaling_laws/bigcode-data-mix/data/valid_data_paths.txt.tmp"
 CHECKPOINT_PATH = "/fsx/loubna/experiments/scaling-laws"
-TOKENIZER_FILE = (
-    "/fsx/loubna/data/tokenizer/tokenizer-the-stack-march-sample-v3-no-prefix-spaces/tokenizer.json"
-)
+TOKENIZER_FILE = "/fsx/loubna/data/tokenizer/tokenizer-the-stack-march-sample-v3-no-prefix-spaces/tokenizer.json"
 
 
 def get_args():
@@ -124,6 +123,8 @@ GPT_ARGS="\
     --eval-interval 10000 \
     --eval-iters 5 \
     --valid-num-workers 0 \
+    --structured-logs \
+    --structured-logs-dir {CHECKPOINT_PATH}/logs \
     "
 TENSORBOARD_ARGS="--tensorboard-dir {CHECKPOINT_PATH}/tensorboard"
 
@@ -185,7 +186,6 @@ echo "END TIME: $(date)"
 """
 
 
-
 if __name__ == "__main__":
     df = pd.read_csv("params_sheet.csv")
     args = get_args()
@@ -201,25 +201,27 @@ if __name__ == "__main__":
         # TODO: add multi-node setup
         # TODO: batch sizes in csv are large => OOM => divide by 2 or 4 gor 2GPU runs
         param_count = row["param_count"]
-        if param_count > 210:
-            micro_batch_size = int(row["micro_batch_size"] / 8)
+        if param_count > 2000:
+            micro_batch_size = 4
+        elif param_count > 1000:
+            micro_batch_size = 8
+        elif param_count > 210:
+            micro_batch_size = 16
         elif param_count > 50:
-            micro_batch_size = int(row["micro_batch_size"] / 4)
+            micro_batch_size = 32
         else:
-            micro_batch_size = int(row["micro_batch_size"] / 2)
+            micro_batch_size = 64
         num_gpu = row["num_gpu"]
         learning_rate = row["learning_rate"]
         training_iters = row["training_iters"]
         lr_warmup_iters = row["lr_warmup_iters"]
 
         identifier = f"{row['param_count']}M_{row['compute']}"
-        job_name = (
-            f"run_{identifier}_bs{micro_batch_size}_idx_{i}"
-        )
+        job_name = f"run_{identifier}_bs{micro_batch_size}_idx_{i}"
         ckpt_path = f"{CHECKPOINT_PATH}/{job_name}"
         print(f"Checkpoints path: {ckpt_path}")
         os.makedirs(ckpt_path, exist_ok=True)
-        
+
         job = makejob(
             JOB_NAME=job_name,
             CHECKPOINT_PATH=ckpt_path,
@@ -234,7 +236,7 @@ if __name__ == "__main__":
             LR_WARMUP_ITERS=lr_warmup_iters,
             TRAIN_ITERS=training_iters,
             # save ~5 checkpoints and round to nearest 1000 multiple
-            SAVE_INTERVAL=max(round(training_iters //5 / 1000), 1) * 1000,
+            SAVE_INTERVAL=max(round(training_iters // 5 / 1000), 1) * 1000,
         )
         # submit the job
         print(f"Job for index {i} ready and saved at jobs/{job_name}.sbatch")
