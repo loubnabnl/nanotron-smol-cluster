@@ -10,7 +10,7 @@ python submit_jobs.py --start 0 --end 40
 ### Some useful commands:
 This saves many logs, to find latest modified log file of the job at index 39 in the spreadsheet, for example, do:
 ```
-log_path=$(find logs -name "*idx_39*" -printf '%T@ %f\n' | sort -rn | head -n 1 | cut -d ' ' -f 2-)
+log_path=$(find logs -name "*idx_39-*" -printf '%T@ %f\n' | sort -rn | head -n 1 | cut -d ' ' -f 2-)
 tail -f logs/$log_path
 ```
 
