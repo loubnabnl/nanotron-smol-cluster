@@ -83,6 +83,15 @@ add to your `~/.bashrc`:
 export PATH="/usr/local/cuda-11.6/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-11.6/lib64:$LD_LIBRARY_PATH"
 ```
+## Temporary directory
+If you keep saving temporary files at `/tmp` or `admin`, you might run out of disk space, you can change `TMPDIR` to `/scratch` in the compute nodes with has 6T or to `/fsx` and clean it manually from time to time. (TODO: issue when adding `mkdir` to slurm job to create a folder in `scratch` , it seems to only create it in the first node):
+```bash
+# add to ~/.bashrc
+export TMPDIR=/fsx/loubna/deleteme/tmp
+# for wandb cache
+export WANDB_CACHE_DIR=/fsx/loubna/deleteme/wandb
+```
+
 ## Monitoring
 Check your wandb board :rocket: or run this to check GPU utilization of your nodes:
 ```bash
