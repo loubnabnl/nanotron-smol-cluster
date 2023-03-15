@@ -23,3 +23,12 @@ To cancel all jobs from 2600 to 2640:
 ```
 scancel $(seq 2675 2742)
 ```
+
+#### Other Slurm basics:
+`sinfo` view information about Slurm nodes and partitions
+
+`squeue` view informatioon about running jobs
+
+`scancel jobid` cancel a running job
+
+`scontrol show jobid` display job state
