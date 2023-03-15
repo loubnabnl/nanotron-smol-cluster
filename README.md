@@ -107,3 +107,34 @@ done
 In `scaling_laws` folder you can find a python script to submit multiple slurm jobs based on different parameters from a `csv` file we used in our scaling laws experiments.
 ```bash
 python3 submit_jobs.py
+
+### Some useful slurm commands:
+
+#### Slurm basics:
+`sinfo` view information about Slurm nodes and partitions
+
+`squeue` view informatioon about running jobs
+
+`scancel jobid` cancel a running job
+
+`scontrol show jobid` display job state
+
+#### Other commands
+To show full names of jobs (they are long and get truncated with `squeue`):
+```
+squeue --format="%.18i %.9P %.30j %.8u %.8T %.10M %.9l %.6D %R" --me
+```
+
+To cancel all jobs from 2600 to 2640:
+```
+scancel $(seq 2675 2742)
+```
+The script for submitting multiple jobs saves many logs, to find latest modified log file of the job at index 39 in the spreadsheet, for example, do:
+```
+log_path=$(find logs -name "*idx_39-*" -printf '%T@ %f\n' | sort -rn | head -n 1 | cut -d ' ' -f 2-)
+tail -f logs/$log_path
+```
+To access a compute node in bash
+```
+srun --nodes=1 --cpus-per-task=48 --gres=gpu:4 --exclusive --partition=production-cluster --pty bash
+```
