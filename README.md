@@ -108,9 +108,9 @@ In `scaling_laws` folder you can find a python script to submit multiple slurm j
 ```bash
 python3 submit_jobs.py
 ```
-### Some useful slurm commands:
+## Some useful slurm commands:
 
-#### Slurm basics:
+### Slurm basics:
 `sinfo` view information about Slurm nodes and partitions
 
 `squeue` view informatioon about running jobs
@@ -119,7 +119,7 @@ python3 submit_jobs.py
 
 `scontrol show jobid` display job state
 
-#### Other commands
+### Other commands
 To show full names of jobs (they are long and get truncated with `squeue`):
 ```
 squeue --format="%.18i %.9P %.30j %.8u %.8T %.10M %.9l %.6D %R" --me
