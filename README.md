@@ -107,7 +107,7 @@ done
 In `scaling_laws` folder you can find a python script to submit multiple slurm jobs based on different parameters from a `csv` file we used in our scaling laws experiments.
 ```bash
 python3 submit_jobs.py
-
+```
 ### Some useful slurm commands:
 
 #### Slurm basics:
