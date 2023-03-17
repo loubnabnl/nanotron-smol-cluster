@@ -34,15 +34,17 @@ N_GPUS=8
 TP=2
 MICRO_BATCH_SIZE=4
 GLOBAL_BATCH_SIZE=1024
+# 4.3B model
 NLAYERS=24
 NHIDDEN=4096
 NHEADS=32
 SEQ_LEN=2048
 LEARNING_RATE=0.00016
-LR_WARMUP_ITERS=250
+LR_WARMUP_ITERS=1000
 INIT=0.01
 SAVE_INTERVAL=5000
-TRAIN_ITERS=14826
+# Number of iterations for a compute budget of 1e21
+TRAIN_ITERS=18642
 
 # Training Setup
 GPUS_PER_NODE=$N_GPUS
@@ -78,7 +80,6 @@ GPT_ARGS="\
     --adam-beta2 .95 \
     --clip-grad 1.0 \
     --bf16 \
-    --initial-loss-scale 65536 \
     --fim-rate 0.5 \
     --log-interval 10 \
     --save-interval $SAVE_INTERVAL \
@@ -86,6 +87,8 @@ GPT_ARGS="\
     --eval-iters 5 \
     --valid-num-workers 0 \
     "
+# Faster beginning of training with fp16. not needed with bf16
+# --initial-loss-scale 65536 \
 # we only evaluate every SAVE_INTERVAL because eval is slow, we have many validation sets
 
 TENSORBOARD_ARGS="--tensorboard-dir $CHECKPOINT_PATH/tensorboard"
