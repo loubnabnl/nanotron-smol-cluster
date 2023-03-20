@@ -138,5 +138,5 @@ tail -f logs/$log_path
 ```
 To access a compute node in bash
 ```
-srun --nodes=1 --cpus-per-task=48 --gres=gpu:4 --exclusive --partition=production-cluster --pty bash
+srun --nodes=1 --cpus-per-task=48 --gres=gpu:4 --mem-per-cpu=11G --partition=production-cluster --pty bash
 ```
