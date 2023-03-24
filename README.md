@@ -58,7 +58,7 @@ If the job is terminated, check the logs to find termination reason. You might g
 
 - If you get `CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'`: Go to your `~/.bashrc`and comment these lines:
 
-```
+```bash
 # If not running interactively, don't do anything
 # case $- in
 #     *i*) ;;
