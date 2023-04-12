@@ -48,7 +48,7 @@ git clone https://huggingface.co/bigcode/digit-bytelevel-bpe-jss-v1.1-49152
 Download tokenized and preprocessed Santacoder data by Megatron-LM from GCP in a folder `data`, install `gcloud` or use `rclone` (already installed).
 Other `slurm` examples can be found in `examples` folder.
 
-```
+
 ## Prepare slurm file
 
 A slurm file for submitting a job is `train.slurm` adapted from [brrr/examples/t5](https://github.com/huggingface/brrr/blob/main/examples/t5/train.slurm) by Thomas Wang, it must be placed inside `Megatron-LM`, change it accordingly and run:
