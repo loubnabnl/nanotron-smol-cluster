@@ -6,7 +6,7 @@ The dataset avialable at [stack-march-no-pii](https://huggingface.co/datasets/bi
 
 We tokenize each data source separately. The dataset is avialable at [stack-march-no-pii](https://huggingface.co/datasets/bigcode/stack-march-no-pii), it contains 88 programming languages + Jupyter notebooks + Jupyter scripts + GitHub Issues + GitHub commits.
 
-Beware that you might need up to 1.5TB of RAM to tokenize some data source with a large number of files like Markdown and Java, otherwose you will need to shard them.
+Beware that you might need up to 1.5TB of RAM to tokenize some data sources with a large number of files like Markdown and Java, otherwise you will need to shard them.
 
 Note: you might need to convert data to jsonl before tokenization, we provide a script at `tokenization/convert_json_slurm.py`. 
 
