@@ -8,6 +8,8 @@ We tokenize each data source separately. The dataset is avialable at [stack-marc
 
 Beware that you might need up to 1.5TB of RAM to tokenize some data source with a large number of files like Markdown and Java, otherwose you will need to shard them.
 
+Note: you might need to convert data to jsonl before tokenization, we provide a script at `tokenization/convert_json_slurm.py`. 
+
 Tokenization with megatron-LM can be run with the following command:
 
 ```bash
@@ -26,6 +28,7 @@ python /fsx/loubna/code/Megatron-LM/tools/preprocess_data.py \
     --chunk-size 100 \
     --log-interval 1000
 ```
+
 We have a python script for submitting tokenization jobs on all resources at `tokenization/tokenize_slurm.py` (be careful of jobs failing silently because of OOM, check logs + final size of `idx` and `bin` files).
 
 ```bash
