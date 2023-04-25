@@ -1,0 +1,249 @@
+START TIME: Wed Mar 29 01:06:14 UTC 2023
+FULL_OUT_PATH is: /fsx/loubna/data/tokenized_stack_no_pii/code/pascal
+/fsx/loubna/code/Megatron-LM/tools/preprocess_data.py --input /fsx/loubna/data/stack_march_no_pii_json/pascal --output-prefix /fsx/loubna/data/tokenized_stack_no_pii/code/pascal/gpt2-preprocessed --tokenizer-type TokenizerFromFile --tokenizer-file /fsx/loubna/data/tokenizer/tokenizer-the-stack-march-sample-v3-no-prefix-spaces/tokenizer.json --dataset-impl mmap --append-eod --json-keys content --workers 64 --chunk-size 100 --log-interval 1000
+[H[2J[3J> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+Processed 1000 documents (192.79527462417988 docs/s, 0.00018386390173356999 MB/s).
+Processed 2000 documents (317.04562110019253 docs/s, 0.00030235826597232107 MB/s).
+Processed 3000 documents (419.67479061973756 docs/s, 0.0004002330690572143 MB/s).
+Processed 4000 documents (484.2853910728101 docs/s, 0.00046185053927689563 MB/s).
+Processed 5000 documents (552.6338472683987 docs/s, 0.0005270327065166461 MB/s).
+Processed 6000 documents (602.3161354670782 docs/s, 0.0005744134287520201 MB/s).
+Processed 7000 documents (640.2496928025149 docs/s, 0.00061058968811275 MB/s).
+Processed 8000 documents (676.4000579268696 docs/s, 0.0006450653628605553 MB/s).
+Processed 9000 documents (708.6433751912487 docs/s, 0.0006758149864113318 MB/s).
+Processed 10000 documents (737.2990502522183 docs/s, 0.0007031431677362617 MB/s).
+Processed 11000 documents (734.7832893589961 docs/s, 0.0007007439511861764 MB/s).
+Processed 12000 documents (740.1009627585096 docs/s, 0.0007058152797303291 MB/s).
+Processed 13000 documents (757.6979762848357 docs/s, 0.0007225970995758397 MB/s).
+Processed 14000 documents (769.2841682191806 docs/s, 0.0007336465532485777 MB/s).
+Processed 15000 documents (756.5493594700368 docs/s, 0.0007215016932201737 MB/s).
+Processed 16000 documents (773.0555302640179 docs/s, 0.0007372432043686084 MB/s).
+Processed 17000 documents (779.6557766022642 docs/s, 0.0007435376897833482 MB/s).
+Processed 18000 documents (790.4032411177556 docs/s, 0.0007537872706582599 MB/s).
+Processed 19000 documents (796.4300899273356 docs/s, 0.00075953492157682 MB/s).
+Processed 20000 documents (723.8573547274917 docs/s, 0.0006903241679453771 MB/s).
+Processed 21000 documents (741.0986825892471 docs/s, 0.0007067667795078727 MB/s).
+Processed 22000 documents (755.7753574956481 docs/s, 0.0007207635474163514 MB/s).
+Processed 23000 documents (771.37491879469 docs/s, 0.0007356404483744526 MB/s).
+Processed 24000 documents (788.0798380000156 docs/s, 0.0007515715007782131 MB/s).
+Processed 25000 documents (799.4537911536759 docs/s, 0.0007624185477768668 MB/s).
+Processed 26000 documents (808.1987047628309 docs/s, 0.0007707583472851094 MB/s).
+Processed 27000 documents (799.4671452476069 docs/s, 0.0007624312832332677 MB/s).
+Processed 28000 documents (809.5501297015113 docs/s, 0.0007720471665396798 MB/s).
+Processed 29000 documents (803.9748401729508 docs/s, 0.000766730156109763 MB/s).
+Processed 30000 documents (809.9337775540812 docs/s, 0.0007724130416432201 MB/s).
+Processed 31000 documents (817.983718199259 docs/s, 0.000780090063285121 MB/s).
+Processed 32000 documents (822.9473790923325 docs/s, 0.0007848237791941953 MB/s).
+Processed 33000 documents (817.586379854731 docs/s, 0.0007797111319110213 MB/s).
+Processed 34000 documents (823.587781235512 docs/s, 0.0007854345142703171 MB/s).
+Processed 35000 documents (832.8450838137769 docs/s, 0.0007942629659784097 MB/s).
+Processed 36000 documents (834.9008513470468 docs/s, 0.000796223498675391 MB/s).
+Processed 37000 documents (834.8630694737583 docs/s, 0.00079618746707321 MB/s).
+Processed 38000 documents (834.4383907155138 docs/s, 0.000795782461848749 MB/s).
+Processed 39000 documents (838.7051836294928 docs/s, 0.0007998515926642349 MB/s).
+Processed 40000 documents (844.3481553354133 docs/s, 0.0008052331498483784 MB/s).
+Processed 41000 documents (850.3232108045811 docs/s, 0.0008109314067884265 MB/s).
+Processed 42000 documents (857.3486290942762 docs/s, 0.0008176313677733195 MB/s).
+Processed 43000 documents (859.0337942488021 docs/s, 0.0008192384665000936 MB/s).
+Processed 44000 documents (863.9885602378068 docs/s, 0.0008239636995676106 MB/s).
+Processed 45000 documents (858.639027175218 docs/s, 0.0008188619872810535 MB/s).
+Processed 46000 documents (863.3726708540365 docs/s, 0.0008233763416805616 MB/s).
+Processed 47000 documents (869.9299559840321 docs/s, 0.0008296298560943909 MB/s).
+Processed 48000 documents (873.0481354410821 docs/s, 0.0008326035837565251 MB/s).
+Processed 49000 documents (878.2617665218279 docs/s, 0.0008375756898134498 MB/s).
+Processed 50000 documents (880.7040129047004 docs/s, 0.0008399047974631314 MB/s).
+Processed 51000 documents (878.950425158071 docs/s, 0.0008382324458676061 MB/s).
+Processed 52000 documents (883.0794441931048 docs/s, 0.0008421701852732704 MB/s).
+Processed 53000 documents (887.6802314648857 docs/s, 0.0008465578379296166 MB/s).
+Processed 54000 documents (891.7786687620899 docs/s, 0.0008504664123173617 MB/s).
+Processed 55000 documents (892.8263857359666 docs/s, 0.0008514655930862108 MB/s).
+Processed 56000 documents (897.7626105006586 docs/s, 0.0008561731438643061 MB/s).
+Processed 57000 documents (901.6648033983456 docs/s, 0.000859894565008493 MB/s).
+Processed 58000 documents (900.5517465712431 docs/s, 0.0008588330712997848 MB/s).
+Processed 59000 documents (905.6630433340576 docs/s, 0.0008637075837460114 MB/s).
+Processed 60000 documents (908.4822723169783 docs/s, 0.000866396210019091 MB/s).
+Processed 61000 documents (911.5107240637511 docs/s, 0.0008692843666684638 MB/s).
+Processed 62000 documents (913.316419817069 docs/s, 0.0008710064123316469 MB/s).
+Processed 63000 documents (914.2991750392431 docs/s, 0.0008719436407463485 MB/s).
+Processed 64000 documents (915.1793194065348 docs/s, 0.0008727830118241642 MB/s).
+Processed 65000 documents (888.1774370212887 docs/s, 0.0008470320100987327 MB/s).
+Processed 66000 documents (891.1458271230032 docs/s, 0.0008498628874998123 MB/s).
+Processed 67000 documents (893.5594808085922 docs/s, 0.0008521647270284578 MB/s).
+Processed 68000 documents (898.2911620328723 docs/s, 0.0008566772098854755 MB/s).
+Processed 69000 documents (902.3001477042833 docs/s, 0.0008605004765551408 MB/s).
+Processed 70000 documents (907.1586157329069 docs/s, 0.00086513387273112 MB/s).
+Processed 71000 documents (910.4780659799179 docs/s, 0.0008682995471762828 MB/s).
+Processed 72000 documents (910.0633665492774 docs/s, 0.0008679040589802526 MB/s).
+Processed 73000 documents (915.4687061452303 docs/s, 0.0008730589925243666 MB/s).
+Processed 74000 documents (917.7922670011454 docs/s, 0.0008752749128352599 MB/s).
+Processed 75000 documents (924.3441711303994 docs/s, 0.0008815232955268855 MB/s).
+Processed 76000 documents (930.9293990946098 docs/s, 0.0008878034583040331 MB/s).
+Processed 77000 documents (936.5941488646863 docs/s, 0.0008932057846686233 MB/s).
+Processed 78000 documents (944.4468318627328 docs/s, 0.0009006946867587402 MB/s).
+Processed 79000 documents (950.0118796635966 docs/s, 0.0009060019299159971 MB/s).
+Processed 80000 documents (956.8150915166283 docs/s, 0.000912489978329304 MB/s).
+Processed 81000 documents (963.5971331612706 docs/s, 0.000918957837258597 MB/s).
+Processed 82000 documents (968.8878158680004 docs/s, 0.0009240034254722599 MB/s).
+Processed 83000 documents (974.6520885312987 docs/s, 0.0009295006642640101 MB/s).
+Processed 84000 documents (981.6674842363814 docs/s, 0.0009361910669673742 MB/s).
+Processed 85000 documents (988.32003164036 docs/s, 0.0009425354305652237 MB/s).
+Processed 86000 documents (991.8378658677897 docs/s, 0.0009458902987172982 MB/s).
+Processed 87000 documents (994.0262176953318 docs/s, 0.0009479772736504858 MB/s).
+Processed 88000 documents (1000.0102521040059 docs/s, 0.0009536840935745295 MB/s).
+Processed 89000 documents (1005.547311467598 docs/s, 0.000958964644878004 MB/s).
+Processed 90000 documents (1011.1497578792486 docs/s, 0.0009643075541298376 MB/s).
+Processed 91000 documents (1017.1196658374607 docs/s, 0.0009700009020208938 MB/s).
+Processed 92000 documents (1023.8458655953973 docs/s, 0.0009764155059770558 MB/s).
+Processed 93000 documents (1029.3187847583852 docs/s, 0.000981634888418565 MB/s).
+Processed 94000 documents (1035.1114030115075 docs/s, 0.0009871591596713138 MB/s).
+Processed 95000 documents (1041.299261010735 docs/s, 0.000993060360918746 MB/s).
+Processed 96000 documents (1046.5802668226 docs/s, 0.0009980967205263137 MB/s).
+Processed 97000 documents (1051.9309086065434 docs/s, 0.0010031994901719507 MB/s).
+Processed 98000 documents (1055.9004555315655 docs/s, 0.0010069851451221137 MB/s).
+Processed 99000 documents (1060.399984673547 docs/s, 0.0010112762305007428 MB/s).
+Processed 100000 documents (1066.5047771780899 docs/s, 0.0010170982143193148 MB/s).
+Processed 101000 documents (1072.540763204514 docs/s, 0.0010228545791669025 MB/s).
+Processed 102000 documents (1077.6982732818867 docs/s, 0.0010277731640642993 MB/s).
+Processed 103000 documents (1082.240802321351 docs/s, 0.001032105257340766 MB/s).
+Processed 104000 documents (1085.2428119232059 docs/s, 0.0010349681967956599 MB/s).
+Processed 105000 documents (1090.2965964423406 docs/s, 0.0010397878612922102 MB/s).
+Processed 106000 documents (1093.7974860152708 docs/s, 0.0010431265697624882 MB/s).
+Processed 107000 documents (1099.2173005954953 docs/s, 0.0010482953077273324 MB/s).
+Processed 108000 documents (1105.1090048567848 docs/s, 0.0010539140747611855 MB/s).
+Processed 109000 documents (1108.6302407848652 docs/s, 0.0010572721870278027 MB/s).
+Processed 110000 documents (1111.8886371569056 docs/s, 0.0010603796359604889 MB/s).
+Opening /fsx/loubna/data/stack_march_no_pii_json/pascal
+Input is not a jsonl file, will try to load from HF datasets
+Vocab size: 49152
+Output prefix: /fsx/loubna/data/tokenized_stack_no_pii/code/pascal/gpt2-preprocessed
+Time to startup: 0.8607785701751709
+END TIME: Wed Mar 29 01:08:16 UTC 2023

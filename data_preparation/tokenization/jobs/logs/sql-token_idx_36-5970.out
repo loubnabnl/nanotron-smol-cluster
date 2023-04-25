@@ -1,0 +1,1114 @@
+START TIME: Wed Mar 29 01:06:11 UTC 2023
+FULL_OUT_PATH is: /fsx/loubna/data/tokenized_stack_no_pii/code/sql
+/fsx/loubna/code/Megatron-LM/tools/preprocess_data.py --input /fsx/loubna/data/stack_march_no_pii_json/sql --output-prefix /fsx/loubna/data/tokenized_stack_no_pii/code/sql/gpt2-preprocessed --tokenizer-type TokenizerFromFile --tokenizer-file /fsx/loubna/data/tokenizer/tokenizer-the-stack-march-sample-v3-no-prefix-spaces/tokenizer.json --dataset-impl mmap --append-eod --json-keys content --workers 64 --chunk-size 100 --log-interval 1000
+[H[2J[3J> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+> building TokenizerFromFile tokenizer ...
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+ > padded vocab (size: 49152) with 0 dummy tokens (new size: 49152)
+Processed 1000 documents (210.86359476663833 docs/s, 0.00020109519459403832 MB/s).
+Processed 2000 documents (335.7265792453407 docs/s, 0.000320173815961209 MB/s).
+Processed 3000 documents (426.80008510961324 docs/s, 0.0004070282794090397 MB/s).
+Processed 4000 documents (498.0742879651103 docs/s, 0.00047500065609465625 MB/s).
+Processed 5000 documents (561.2167345965335 docs/s, 0.0005352179857220969 MB/s).
+Processed 6000 documents (623.99139983777 docs/s, 0.0005950845716836643 MB/s).
+Processed 7000 documents (672.081907931498 docs/s, 0.0006409472541155796 MB/s).
+Processed 8000 documents (721.1330527726171 docs/s, 0.0006877260711408779 MB/s).
+Processed 9000 documents (757.3534459973263 docs/s, 0.0007222685298894179 MB/s).
+Processed 10000 documents (779.1462810406173 docs/s, 0.0007430517969518826 MB/s).
+Processed 11000 documents (769.7659376415656 docs/s, 0.0007341060043731362 MB/s).
+Processed 12000 documents (795.8930039832563 docs/s, 0.0007590227165062488 MB/s).
+Processed 13000 documents (817.2472505599601 docs/s, 0.0007793877130126573 MB/s).
+Processed 14000 documents (819.6300198961808 docs/s, 0.0007816600989305313 MB/s).
+Processed 15000 documents (829.5781741842328 docs/s, 0.0007911473981706932 MB/s).
+Processed 16000 documents (846.7772570680348 docs/s, 0.0008075497217827175 MB/s).
+Processed 17000 documents (855.2742165592443 docs/s, 0.0008156530538170284 MB/s).
+Processed 18000 documents (866.1217610880175 docs/s, 0.0008259980784301925 MB/s).
+Processed 19000 documents (873.69688831494 docs/s, 0.0008332222827100182 MB/s).
+Processed 20000 documents (881.2645258778575 docs/s, 0.0008404393442896438 MB/s).
+Processed 21000 documents (868.6492908571599 docs/s, 0.0008284085186549758 MB/s).
+Processed 22000 documents (871.2957918003646 docs/s, 0.000830932418632855 MB/s).
+Processed 23000 documents (793.5601301485117 docs/s, 0.0007567979146466367 MB/s).
+Processed 24000 documents (801.423732881175 docs/s, 0.0007642972306071997 MB/s).
+Processed 25000 documents (806.9718173533633 docs/s, 0.000769588296273578 MB/s).
+Processed 26000 documents (800.8308168065141 docs/s, 0.0007637317817750112 MB/s).
+Processed 27000 documents (808.1113606036795 docs/s, 0.0007706750494038386 MB/s).
+Processed 28000 documents (809.4124888797588 docs/s, 0.0007719159020230854 MB/s).
+Processed 29000 documents (812.2315858019848 docs/s, 0.0007746044023532723 MB/s).
+Processed 30000 documents (818.8232453512893 docs/s, 0.000780890698767938 MB/s).
+Processed 31000 documents (824.7624542749229 docs/s, 0.0007865547697781781 MB/s).
+Processed 32000 documents (832.9349467911752 docs/s, 0.0007943486659919502 MB/s).
+Processed 33000 documents (839.465581530956 docs/s, 0.0008005767646131096 MB/s).
+Processed 34000 documents (843.7948157325121 docs/s, 0.0008047054440808412 MB/s).
+Processed 35000 documents (849.1445666428974 docs/s, 0.0008098073641232466 MB/s).
+Processed 36000 documents (845.4680955906814 docs/s, 0.0008063012081057371 MB/s).
+Processed 37000 documents (855.227213848675 docs/s, 0.0008156082285391569 MB/s).
+Processed 38000 documents (863.9059518888282 docs/s, 0.000823884918106869 MB/s).
+Processed 39000 documents (864.3226504742818 docs/s, 0.0008242823128454988 MB/s).
+Processed 40000 documents (869.1324395110881 docs/s, 0.0008288692851172334 MB/s).
+Processed 41000 documents (876.3313030128087 docs/s, 0.0008357346563461387 MB/s).
+Processed 42000 documents (881.0579106696998 docs/s, 0.0008402423006722449 MB/s).
+Processed 43000 documents (883.0758059329822 docs/s, 0.0008421667155580351 MB/s).
+Processed 44000 documents (883.8890321677882 docs/s, 0.0008429422685315973 MB/s).
+Processed 45000 documents (888.0815015378346 docs/s, 0.0008469405188921305 MB/s).
+Processed 46000 documents (895.7433537646415 docs/s, 0.0008542474305769362 MB/s).
+Processed 47000 documents (895.7699817708176 docs/s, 0.0008542728250225235 MB/s).
+Processed 48000 documents (897.8010218515839 docs/s, 0.000856209775783142 MB/s).
+Processed 49000 documents (900.4157767385178 docs/s, 0.0008587034003625086 MB/s).
+Processed 50000 documents (902.2108755044868 docs/s, 0.0008604153399510258 MB/s).
+Processed 51000 documents (905.9199083207435 docs/s, 0.0008639525492865977 MB/s).
+Processed 52000 documents (911.7027118196836 docs/s, 0.0008694674604603611 MB/s).
+Processed 53000 documents (918.7542745116351 docs/s, 0.0008761923546902038 MB/s).
+Processed 54000 documents (921.8381865431538 docs/s, 0.0008791334023887194 MB/s).
+Processed 55000 documents (923.7182436306371 docs/s, 0.0008809263645464297 MB/s).
+Processed 56000 documents (931.9691255623935 docs/s, 0.0008887950187324462 MB/s).
+Processed 57000 documents (891.7116649261327 docs/s, 0.0008504025124799087 MB/s).
+Processed 58000 documents (896.5515289375886 docs/s, 0.0008550181664825331 MB/s).
+Processed 59000 documents (899.5402348721593 docs/s, 0.0008578684185716241 MB/s).
+Processed 60000 documents (900.1511914758985 docs/s, 0.0008584510721930489 MB/s).
+Processed 61000 documents (900.6995850873654 docs/s, 0.0008589740610955863 MB/s).
+Processed 62000 documents (907.1117822265447 docs/s, 0.0008650892088189552 MB/s).
+Processed 63000 documents (912.4040258236423 docs/s, 0.0008701362856136726 MB/s).
+Processed 64000 documents (916.1095162555113 docs/s, 0.0008736701166682351 MB/s).
+Processed 65000 documents (919.367872943147 docs/s, 0.0008767775277549238 MB/s).
+Processed 66000 documents (914.986277489667 docs/s, 0.0008725989127060576 MB/s).
+Processed 67000 documents (920.1759764423103 docs/s, 0.0008775481953070739 MB/s).
+Processed 68000 documents (918.521899975522 docs/s, 0.0008759707450633259 MB/s).
+Processed 69000 documents (922.4785793779612 docs/s, 0.0008797441285876858 MB/s).
+Processed 70000 documents (928.2472376497512 docs/s, 0.0008852455498216164 MB/s).
+Processed 71000 documents (929.6111562734645 docs/s, 0.0008865462839827199 MB/s).
+Processed 72000 documents (931.5910812208845 docs/s, 0.0008884344875534863 MB/s).
+Processed 73000 documents (935.9600009345411 docs/s, 0.0008926010140748416 MB/s).
+Processed 74000 documents (938.7555460697575 docs/s, 0.000895267053670652 MB/s).
+Processed 75000 documents (941.4605788836549 docs/s, 0.000897846773990302 MB/s).
+Processed 76000 documents (939.1394569034778 docs/s, 0.0008956331795725611 MB/s).
+Processed 77000 documents (939.7548888653757 docs/s, 0.0008962201012281186 MB/s).
+Processed 78000 documents (939.6110852906465 docs/s, 0.000896082959452292 MB/s).
+Processed 79000 documents (945.5078364147965 docs/s, 0.0009017065395496335 MB/s).
+Processed 80000 documents (951.2225405213912 docs/s, 0.0009071565060819542 MB/s).
+Processed 81000 documents (952.7819633891473 docs/s, 0.0009086436876193498 MB/s).
+Processed 82000 documents (957.5508431698922 docs/s, 0.0009131916457842753 MB/s).
+Processed 83000 documents (959.1757920631417 docs/s, 0.00091474131780924 MB/s).
+Processed 84000 documents (958.0917922990053 docs/s, 0.0009137075350751927 MB/s).
+Processed 85000 documents (959.7254944162232 docs/s, 0.000915265554825042 MB/s).
+Processed 86000 documents (961.0903073461716 docs/s, 0.0009165671418630329 MB/s).
+Processed 87000 documents (962.5123319894734 docs/s, 0.0009179232902426466 MB/s).
+Processed 88000 documents (963.4095804163514 docs/s, 0.0009187789730227961 MB/s).
+Processed 89000 documents (962.1284109381783 docs/s, 0.0009175571545964987 MB/s).
+Processed 90000 documents (965.6070114819557 docs/s, 0.0009208746065921361 MB/s).
+Processed 91000 documents (967.6714467352178 docs/s, 0.0009228434054710558 MB/s).
+Processed 92000 documents (965.1073361611948 docs/s, 0.0009203980790721844 MB/s).
+Processed 93000 documents (965.3392089165158 docs/s, 0.0009206192101636083 MB/s).
+Processed 94000 documents (968.7197235601922 docs/s, 0.0009238431201555177 MB/s).
+Processed 95000 documents (930.4864034084397 docs/s, 0.0008873809846958539 MB/s).
+Processed 96000 documents (928.3705990157574 docs/s, 0.0008853631963880133 MB/s).
+Processed 97000 documents (929.386238995437 docs/s, 0.0008863317861513491 MB/s).
+Processed 98000 documents (933.1479250225995 docs/s, 0.0008899192095018382 MB/s).
+Processed 99000 documents (932.2450922690756 docs/s, 0.0008890582010927921 MB/s).
+Processed 100000 documents (934.4463569575352 docs/s, 0.000891157490689788 MB/s).
+Processed 101000 documents (933.5905899785587 docs/s, 0.0008903413677011096 MB/s).
+Processed 102000 documents (933.8541100223529 docs/s, 0.0008905926799987344 MB/s).
+Processed 103000 documents (933.5728657662731 docs/s, 0.0008903244645750743 MB/s).
+Processed 104000 documents (936.5460688275184 docs/s, 0.0008931599319720444 MB/s).
+Processed 105000 documents (937.0179971394012 docs/s, 0.000893609997882272 MB/s).
+Processed 106000 documents (939.651260246098 docs/s, 0.0008961212732754688 MB/s).
+Processed 107000 documents (941.6075754180014 docs/s, 0.000897986960809709 MB/s).
+Processed 108000 documents (940.9990382460074 docs/s, 0.0008974066145381998 MB/s).
+Processed 109000 documents (940.5834291743876 docs/s, 0.0008970102588409305 MB/s).
+Processed 110000 documents (941.5565049483948 docs/s, 0.0008979382562145184 MB/s).
+Processed 111000 documents (944.0255221193894 docs/s, 0.0009002928944772619 MB/s).
+Processed 112000 documents (946.1150780193714 docs/s, 0.0009022856502717699 MB/s).
+Processed 113000 documents (946.8579251023103 docs/s, 0.0009029940844557861 MB/s).
+Processed 114000 documents (950.5826032564786 docs/s, 0.0009065462143482958 MB/s).
+Processed 115000 documents (951.5888613528157 docs/s, 0.0009075058568504483 MB/s).
+Processed 116000 documents (953.8531372762167 docs/s, 0.0009096652386438529 MB/s).
+Processed 117000 documents (952.1575000984204 docs/s, 0.000908048153017445 MB/s).
+Processed 118000 documents (951.1175334118055 docs/s, 0.0009070563634985023 MB/s).
+Processed 119000 documents (952.7401886732688 docs/s, 0.0009086038481457413 MB/s).
+Processed 120000 documents (956.3900783887356 docs/s, 0.0009120846542250972 MB/s).
+Processed 121000 documents (957.9324766027794 docs/s, 0.0009135555997875017 MB/s).
+Processed 122000 documents (961.3375649976418 docs/s, 0.000916802945134775 MB/s).
+Processed 123000 documents (964.9065902455258 docs/s, 0.0009202066328482874 MB/s).
+Processed 124000 documents (967.0966596768216 docs/s, 0.0009222952458160606 MB/s).
+Processed 125000 documents (966.9812195960627 docs/s, 0.000922185153575957 MB/s).
+Processed 126000 documents (968.6102868046074 docs/s, 0.0009237387531324457 MB/s).
+Processed 127000 documents (967.0030438950997 docs/s, 0.0009222059668494222 MB/s).
+Processed 128000 documents (968.3767248503578 docs/s, 0.0009235160110953883 MB/s).
+Processed 129000 documents (969.309630462874 docs/s, 0.0009244056992176762 MB/s).
+Processed 130000 documents (971.3064049870449 docs/s, 0.0009263099717970322 MB/s).
+Processed 131000 documents (970.3566778150209 docs/s, 0.0009254042413854799 MB/s).
+Processed 132000 documents (969.8339083966573 docs/s, 0.0009249056896177838 MB/s).
+Processed 133000 documents (971.4231401717585 docs/s, 0.0009264212991445146 MB/s).
+Processed 134000 documents (974.0985612111187 docs/s, 0.0009289727794753253 MB/s).
+Processed 135000 documents (973.8595159517243 docs/s, 0.0009287448081509822 MB/s).
+Processed 136000 documents (975.850916723216 docs/s, 0.0009306439559204254 MB/s).
+Processed 137000 documents (977.0881995095685 docs/s, 0.0009318239207359014 MB/s).
+Processed 138000 documents (979.0150145450757 docs/s, 0.00093366147474773 MB/s).
+Processed 139000 documents (981.1616583199293 docs/s, 0.0009357086737822812 MB/s).
+Processed 140000 documents (982.4400613539175 docs/s, 0.0009369278539218116 MB/s).
+Processed 141000 documents (980.8399349402138 docs/s, 0.0009354018544580591 MB/s).
+Processed 142000 documents (982.8561989692702 docs/s, 0.000937324713677664 MB/s).
+Processed 143000 documents (984.5270052983527 docs/s, 0.000938918118761399 MB/s).
+Processed 144000 documents (984.2792867616761 docs/s, 0.0009386818759552727 MB/s).
+Processed 145000 documents (987.1520948075178 docs/s, 0.0009414215992045572 MB/s).
+Processed 146000 documents (954.3191850391555 docs/s, 0.0009101096964255862 MB/s).
+Processed 147000 documents (956.5026617445178 docs/s, 0.0009121920220799616 MB/s).
+Processed 148000 documents (958.3285478554654 docs/s, 0.0009139333227686552 MB/s).
+Processed 149000 documents (960.3972844671341 docs/s, 0.000915906223742613 MB/s).
+Processed 150000 documents (960.7889960649311 docs/s, 0.0009162797890328704 MB/s).
+Processed 151000 documents (961.4515962999941 docs/s, 0.0009169116938590947 MB/s).
+Processed 152000 documents (963.2018237504013 docs/s, 0.0009185808408264173 MB/s).
+Processed 153000 documents (963.0820049907973 docs/s, 0.0009184665727527592 MB/s).
+Processed 154000 documents (964.2786392560213 docs/s, 0.000919607772117635 MB/s).
+Processed 155000 documents (966.8013875341815 docs/s, 0.0009220136523572745 MB/s).
+Processed 156000 documents (968.0453942543999 docs/s, 0.0009232000296157836 MB/s).
+Processed 157000 documents (969.7033955074352 docs/s, 0.0009247812228273727 MB/s).
+Processed 158000 documents (971.616364720023 docs/s, 0.0009266055724334936 MB/s).
+Processed 159000 documents (972.306137250649 docs/s, 0.0009272633907801142 MB/s).
+Processed 160000 documents (974.2125153133854 docs/s, 0.0009290814545759062 MB/s).
+Processed 161000 documents (973.3358243557147 docs/s, 0.0009282453769261501 MB/s).
+Processed 162000 documents (975.7380939014407 docs/s, 0.0009305363596929939 MB/s).
+Processed 163000 documents (977.5561638679023 docs/s, 0.0009322702063254379 MB/s).
+Processed 164000 documents (979.7887019741272 docs/s, 0.0009343993205777428 MB/s).
+Processed 165000 documents (981.0522042868266 docs/s, 0.0009356042902820841 MB/s).
+Processed 166000 documents (982.5917734303116 docs/s, 0.0009370725378325573 MB/s).
+Processed 167000 documents (983.550859795079 docs/s, 0.0009379871938658514 MB/s).
+Processed 168000 documents (983.9147864475076 docs/s, 0.0009383342613673283 MB/s).
+Processed 169000 documents (982.1271103084795 docs/s, 0.0009366294005474848 MB/s).
+Processed 170000 documents (983.3999234681291 docs/s, 0.0009378432497674266 MB/s).
+Processed 171000 documents (984.8431755029284 docs/s, 0.0009392196421651157 MB/s).
+Processed 172000 documents (985.7370470344376 docs/s, 0.0009400721044868828 MB/s).
+Processed 173000 documents (986.2487114581949 docs/s, 0.0009405600657064389 MB/s).
+Processed 174000 documents (987.702934377679 docs/s, 0.0009419469207550802 MB/s).
+Processed 175000 documents (989.5414845784582 docs/s, 0.0009437002988609869 MB/s).
+Processed 176000 documents (991.0163420449562 docs/s, 0.000945106832547146 MB/s).
+Processed 177000 documents (990.235894239484 docs/s, 0.0009443625395197715 MB/s).
+Processed 178000 documents (992.3289656648748 docs/s, 0.0009463586479805706 MB/s).
+Processed 179000 documents (993.9173109761167 docs/s, 0.0009478734121094863 MB/s).
+Processed 180000 documents (994.9278592528714 docs/s, 0.0009488371460465158 MB/s).
+Processed 181000 documents (996.8791000984824 docs/s, 0.0009506979943260978 MB/s).
+Processed 182000 documents (998.5621270373111 docs/s, 0.0009523030538914787 MB/s).
+Processed 183000 documents (998.648068655177 docs/s, 0.0009523850142051477 MB/s).
+Processed 184000 documents (999.9676046293055 docs/s, 0.0009536434217732482 MB/s).
+Processed 185000 documents (999.5326049791948 docs/s, 0.000953228573779292 MB/s).
+Processed 186000 documents (1000.3784981098061 docs/s, 0.0009540352803323804 MB/s).
+Processed 187000 documents (1001.3929148523063 docs/s, 0.0009550027035258353 MB/s).
+Processed 188000 documents (1002.3639444248499 docs/s, 0.0009559287494896411 MB/s).
+Processed 189000 documents (1001.9478657750979 docs/s, 0.0009555319459677676 MB/s).
+Processed 190000 documents (1002.2743083129503 docs/s, 0.0009558432658319 MB/s).
+Processed 191000 documents (1003.2462008448762 docs/s, 0.0009567701347779047 MB/s).
+Processed 192000 documents (1003.8627655632315 docs/s, 0.0009573581367142024 MB/s).
+Processed 193000 documents (1001.7783363685294 docs/s, 0.0009553702701268476 MB/s).
+Processed 194000 documents (1002.4302128403472 docs/s, 0.0009559919479754898 MB/s).
+Processed 195000 documents (1003.7056712485869 docs/s, 0.0009572083199010724 MB/s).
+Processed 196000 documents (1004.8725287387273 docs/s, 0.0009583211219203255 MB/s).
+Processed 197000 documents (1003.3196464995733 docs/s, 0.000956840178012441 MB/s).
+Processed 198000 documents (1003.8819547455339 docs/s, 0.000957376436944517 MB/s).
+Processed 199000 documents (1005.8492099784531 docs/s, 0.0009592525577339679 MB/s).
+Processed 200000 documents (1006.6851940760021 docs/s, 0.0009600498142967244 MB/s).
+Processed 201000 documents (1006.9081074088609 docs/s, 0.0009602624010170564 MB/s).
+Processed 202000 documents (1005.9962631721737 docs/s, 0.0009593927985879647 MB/s).
+Processed 203000 documents (973.0577479347681 docs/s, 0.0009279801825854951 MB/s).
+Processed 204000 documents (974.1134510753669 docs/s, 0.0009289869795564336 MB/s).
+Processed 205000 documents (974.182339889186 docs/s, 0.0009290526770488605 MB/s).
+Processed 206000 documents (974.5442185858426 docs/s, 0.0009293977914675165 MB/s).
+Processed 207000 documents (974.8307408399078 docs/s, 0.0009296710403822973 MB/s).
+Processed 208000 documents (975.99401604844 docs/s, 0.0009307804260715866 MB/s).
+Processed 209000 documents (977.1228959185643 docs/s, 0.0009318570098100321 MB/s).
+Processed 210000 documents (978.9255029103651 docs/s, 0.000933576109800687 MB/s).
+Processed 211000 documents (980.0596523140838 docs/s, 0.0009346577189579809 MB/s).
+Processed 212000 documents (979.9353523928095 docs/s, 0.0009345391773155303 MB/s).
+Processed 213000 documents (980.6431938703935 docs/s, 0.0009352142275527892 MB/s).
+Processed 214000 documents (981.4627139601207 docs/s, 0.000935995782814141 MB/s).
+Processed 215000 documents (981.3978817002467 docs/s, 0.0009359339539530246 MB/s).
+Processed 216000 documents (982.0255141524734 docs/s, 0.0009365325109028563 MB/s).
+Processed 217000 documents (982.3335831108702 docs/s, 0.0009368263083561613 MB/s).
+Processed 218000 documents (982.4536441041066 docs/s, 0.0009369408074418131 MB/s).
+Processed 219000 documents (982.6926869152501 docs/s, 0.0009371687764313222 MB/s).
+Processed 220000 documents (982.3580889462736 docs/s, 0.0009368496789419876 MB/s).
+Processed 221000 documents (983.9241118837324 docs/s, 0.0009383431547963451 MB/s).
+Processed 222000 documents (984.0227553273697 docs/s, 0.0009384372285150239 MB/s).
+Processed 223000 documents (985.1161588792298 docs/s, 0.0009394799793999003 MB/s).
+Processed 224000 documents (986.4514986275567 docs/s, 0.000940753458621556 MB/s).
+Processed 225000 documents (987.6795888595159 docs/s, 0.0009419246567340049 MB/s).
+Processed 226000 documents (989.109376594701 docs/s, 0.0009432882085749635 MB/s).
+Processed 227000 documents (990.1288210926773 docs/s, 0.0009442604266096852 MB/s).
+Processed 228000 documents (990.7218256504037 docs/s, 0.0009448259598259008 MB/s).
+Processed 229000 documents (991.7278195625091 docs/s, 0.0009457853503823367 MB/s).
+Processed 230000 documents (993.0639190607823 docs/s, 0.0009470595541580031 MB/s).
+Processed 231000 documents (994.5949398215661 docs/s, 0.0009485196493354474 MB/s).
+Processed 232000 documents (995.5988250790634 docs/s, 0.0009494770289221415 MB/s).
+Processed 233000 documents (997.1425658439534 docs/s, 0.0009509492548408064 MB/s).
+Processed 234000 documents (997.4104092542631 docs/s, 0.0009512046902220374 MB/s).
+Processed 235000 documents (997.6244182951315 docs/s, 0.0009514087851477923 MB/s).
+Processed 236000 documents (998.5406954888747 docs/s, 0.000952282615174174 MB/s).
+Processed 237000 documents (998.4116913433922 docs/s, 0.0009521595872339175 MB/s).
+Processed 238000 documents (997.4596355428239 docs/s, 0.0009512516360691298 MB/s).
+Processed 239000 documents (998.5269128395742 docs/s, 0.0009522694710155241 MB/s).
+Processed 240000 documents (999.5796560603312 docs/s, 0.0009532734451869309 MB/s).
+Processed 241000 documents (1000.8017762417761 docs/s, 0.0009544389498155366 MB/s).
+Processed 242000 documents (1001.6998999271746 docs/s, 0.0009552954673072572 MB/s).
+Processed 243000 documents (1002.8406070652635 docs/s, 0.0009563833304073939 MB/s).
+Processed 244000 documents (1001.5575356635909 docs/s, 0.0009551596981655034 MB/s).
+Processed 245000 documents (1002.6335554200233 docs/s, 0.0009561858705711587 MB/s).
+Processed 246000 documents (1004.2061171203043 docs/s, 0.0009576855822756808 MB/s).
+Processed 247000 documents (1003.5437127910801 docs/s, 0.0009570538642798234 MB/s).
+Processed 248000 documents (1002.8903163321966 docs/s, 0.0009564307368585554 MB/s).
+Processed 249000 documents (1003.8453197657 docs/s, 0.0009573414991051674 MB/s).
+Processed 250000 documents (978.137848206061 docs/s, 0.0009328249437389955 MB/s).
+Processed 251000 documents (979.4045999864356 docs/s, 0.0009340330123772007 MB/s).
+Processed 252000 documents (979.6659637249227 docs/s, 0.0009342822682618357 MB/s).
+Processed 253000 documents (980.7211127297775 docs/s, 0.0009352885367677474 MB/s).
+Processed 254000 documents (981.8740007658088 docs/s, 0.0009363880164774025 MB/s).
+Processed 255000 documents (982.9428621171555 docs/s, 0.0009374073620959811 MB/s).
+Processed 256000 documents (982.1412226893076 docs/s, 0.000936642859162624 MB/s).
+Processed 257000 documents (981.9335179939882 docs/s, 0.0009364447765293009 MB/s).
+Processed 258000 documents (982.0256900369827 docs/s, 0.0009365326786393955 MB/s).
+Processed 259000 documents (983.5944705267553 docs/s, 0.0009380287843005708 MB/s).
+Processed 260000 documents (984.1416584633882 docs/s, 0.0009385506233819849 MB/s).
+Processed 261000 documents (984.7731840018582 docs/s, 0.0009391528930681784 MB/s).
+Processed 262000 documents (985.14595452069 docs/s, 0.0009395083947379017 MB/s).
+Processed 263000 documents (985.2170792264891 docs/s, 0.0009395762245430842 MB/s).
+Processed 264000 documents (985.754894474101 docs/s, 0.0009400891251317034 MB/s).
+Processed 265000 documents (986.6570670643198 docs/s, 0.0009409495039599607 MB/s).
+Processed 266000 documents (986.8505942426192 docs/s, 0.0009411340658594315 MB/s).
+Processed 267000 documents (986.5027901921286 docs/s, 0.0009408023740693365 MB/s).
+Processed 268000 documents (987.397900957205 docs/s, 0.0009416560182163286 MB/s).
+Processed 269000 documents (988.3422772031204 docs/s, 0.0009425566455870823 MB/s).
+Processed 270000 documents (988.963529263719 docs/s, 0.0009431491177212896 MB/s).
+Processed 271000 documents (989.033145396106 docs/s, 0.0009432155088387546 MB/s).
+Processed 272000 documents (988.9278393491113 docs/s, 0.0009431150811663735 MB/s).
+Processed 273000 documents (989.4327036319478 docs/s, 0.0009435965572661856 MB/s).
+Processed 274000 documents (989.7057082989278 docs/s, 0.0009438569148053434 MB/s).
+Processed 275000 documents (991.2778836201509 docs/s, 0.0009453562580300816 MB/s).
+Processed 276000 documents (991.86159988701 docs/s, 0.0009459129332418537 MB/s).
+Processed 277000 documents (992.6393287634936 docs/s, 0.0009466546332964836 MB/s).
+Processed 278000 documents (993.8095770656149 docs/s, 0.0009477706690460347 MB/s).
+Processed 279000 documents (994.5595917422795 docs/s, 0.0009484859387800975 MB/s).
+Processed 280000 documents (995.5649445088769 docs/s, 0.0009494447178925294 MB/s).
+Processed 281000 documents (995.3243824678242 docs/s, 0.0009492153000524752 MB/s).
+Processed 282000 documents (996.0623462611132 docs/s, 0.0009499190771685727 MB/s).
+Processed 283000 documents (997.4658900873002 docs/s, 0.0009512576008675577 MB/s).
+Processed 284000 documents (998.3970117755591 docs/s, 0.0009521455877070991 MB/s).
+Processed 285000 documents (998.7262816201393 docs/s, 0.0009524596039010422 MB/s).
+Processed 286000 documents (999.0822271327224 docs/s, 0.0009527990599944329 MB/s).
+Processed 287000 documents (998.6182045023672 docs/s, 0.0009523565335296318 MB/s).
+Processed 288000 documents (999.8431186996021 docs/s, 0.0009535247027393361 MB/s).
+Processed 289000 documents (1000.4083194646912 docs/s, 0.0009540637201926147 MB/s).
+Processed 290000 documents (1001.0545749583783 docs/s, 0.0009546800374587806 MB/s).
+Processed 291000 documents (1001.0583948069657 docs/s, 0.0009546836803502709 MB/s).
+Processed 292000 documents (1002.2240678655944 docs/s, 0.0009557953528076119 MB/s).
+Processed 293000 documents (977.7457121430933 docs/s, 0.0009324509736472066 MB/s).
+Processed 294000 documents (978.5928750183303 docs/s, 0.000933258891123133 MB/s).
+Processed 295000 documents (979.4571987419822 docs/s, 0.0009340831744594404 MB/s).
+Processed 296000 documents (978.1144769579182 docs/s, 0.0009328026551798994 MB/s).
+Processed 297000 documents (978.852370376571 docs/s, 0.0009335063651815138 MB/s).
+Processed 298000 documents (979.8747487009447 docs/s, 0.0009344813811311194 MB/s).
+Processed 299000 documents (981.2952840608131 docs/s, 0.0009358361092193728 MB/s).
+Processed 300000 documents (980.84133609933 docs/s, 0.0009354031907075214 MB/s).
+Processed 301000 documents (980.4378541130769 docs/s, 0.0009350184003000993 MB/s).
+Processed 302000 documents (980.4089846343755 docs/s, 0.0009349908682197338 MB/s).
+Processed 303000 documents (980.5672124603067 docs/s, 0.0009351417660334651 MB/s).
+Processed 304000 documents (982.0718652165425 docs/s, 0.0009365767147221971 MB/s).
+Processed 305000 documents (982.6302207967777 docs/s, 0.0009371092040984895 MB/s).
+Processed 306000 documents (983.6229774271729 docs/s, 0.0009380559705993394 MB/s).
+Processed 307000 documents (984.6801160875062 docs/s, 0.0009390641365885794 MB/s).
+Processed 308000 documents (984.2485123220289 docs/s, 0.0009386525271625794 MB/s).
+Processed 309000 documents (984.8807970414746 docs/s, 0.0009392555208601709 MB/s).
+Processed 310000 documents (985.9006050163003 docs/s, 0.0009402280855334285 MB/s).
+Processed 311000 documents (986.3300228704163 docs/s, 0.0009406376103119052 MB/s).
+Processed 312000 documents (987.906462708506 docs/s, 0.0009421410204968509 MB/s).
+Processed 313000 documents (989.4307006421406 docs/s, 0.0009435946470662504 MB/s).
+Processed 314000 documents (990.8480010752887 docs/s, 0.0009449462900879752 MB/s).
+Processed 315000 documents (991.6333626505121 docs/s, 0.0009456952692513582 MB/s).
+Processed 316000 documents (991.9606502835375 docs/s, 0.0009460073950610518 MB/s).
+Processed 317000 documents (991.4052724985532 docs/s, 0.0009454777455316098 MB/s).
+Processed 318000 documents (992.1423259698532 docs/s, 0.0009461806544970066 MB/s).
+Processed 319000 documents (993.049178136217 docs/s, 0.0009470454961168452 MB/s).
+Processed 320000 documents (993.5535412492842 docs/s, 0.00094752649426392 MB/s).
+Processed 321000 documents (993.7658015114323 docs/s, 0.0009477289214243243 MB/s).
+Processed 322000 documents (993.6147779113097 docs/s, 0.0009475848940957162 MB/s).
+Processed 323000 documents (993.6783746603842 docs/s, 0.0009476455446819155 MB/s).
+Processed 324000 documents (993.4419545724164 docs/s, 0.0009474200769161381 MB/s).
+Processed 325000 documents (994.445314588407 docs/s, 0.0009483769555934973 MB/s).
+Processed 326000 documents (994.3380252202511 docs/s, 0.0009482746364786635 MB/s).
+Processed 327000 documents (993.8007962413342 docs/s, 0.0009477622949994413 MB/s).
+Processed 328000 documents (966.7315668211978 docs/s, 0.0009219470661365488 MB/s).
+Processed 329000 documents (967.6698821968806 docs/s, 0.0009228419134110266 MB/s).
+Processed 330000 documents (968.3290725182624 docs/s, 0.0009234705662901519 MB/s).
+Processed 331000 documents (969.2305176015672 docs/s, 0.0009243302513137504 MB/s).
+Processed 332000 documents (969.954909074046 docs/s, 0.0009250210848560772 MB/s).
+Processed 333000 documents (971.2864205043512 docs/s, 0.0009262909131091606 MB/s).
+Processed 334000 documents (971.8411591656127 docs/s, 0.0009268199531227233 MB/s).
+Processed 335000 documents (972.8952987658439 docs/s, 0.0009278252589853705 MB/s).
+Processed 336000 documents (974.0266188410034 docs/s, 0.0009289041698846849 MB/s).
+Processed 337000 documents (974.9363409321313 docs/s, 0.000929771748478061 MB/s).
+Processed 338000 documents (975.69106956069 docs/s, 0.000930491513786974 MB/s).
+Processed 339000 documents (976.5083460438881 docs/s, 0.0009312709293784028 MB/s).
+Processed 340000 documents (977.3692695863801 docs/s, 0.000932091970049267 MB/s).
+Processed 341000 documents (978.0362076247603 docs/s, 0.0009327280117271045 MB/s).
+Processed 342000 documents (978.6059566638511 docs/s, 0.0009332713667524825 MB/s).
+Processed 343000 documents (977.9063768572393 docs/s, 0.0009326041954586403 MB/s).
+Processed 344000 documents (978.9780931171953 docs/s, 0.0009336262637302354 MB/s).
+Processed 345000 documents (979.247335155968 docs/s, 0.0009338830329475098 MB/s).
+Processed 346000 documents (980.0485092510906 docs/s, 0.0009346470921049983 MB/s).
+Processed 347000 documents (980.7223573931127 docs/s, 0.0009352897237712028 MB/s).
+Processed 348000 documents (980.2891296515431 docs/s, 0.0009348765656009132 MB/s).
+Processed 349000 documents (981.1370605993742 docs/s, 0.0009356852155679457 MB/s).
+Processed 350000 documents (981.5780389833517 docs/s, 0.0009361057653268353 MB/s).
+Processed 351000 documents (982.3014655373718 docs/s, 0.0009367956786512106 MB/s).
+Processed 352000 documents (982.494050281 docs/s, 0.0009369793417749405 MB/s).
+Processed 353000 documents (982.9404703160458 docs/s, 0.0009374050810966928 MB/s).
+Processed 354000 documents (982.8026080122592 docs/s, 0.0009372736053583709 MB/s).
+Processed 355000 documents (983.4829320132309 docs/s, 0.0009379224128849324 MB/s).
+Processed 356000 documents (983.9957105845868 docs/s, 0.0009384114366384381 MB/s).
+Processed 357000 documents (983.3260631861339 docs/s, 0.0009377728111134852 MB/s).
+Processed 358000 documents (983.2683727913249 docs/s, 0.0009377177932656525 MB/s).
+Processed 359000 documents (983.1053791178014 docs/s, 0.0009375623503854765 MB/s).
+Processed 360000 documents (983.3597039402051 docs/s, 0.0009378048934366275 MB/s).
+Processed 361000 documents (983.3552925468852 docs/s, 0.0009378006864041187 MB/s).
+Processed 362000 documents (983.9448716845819 docs/s, 0.000938362952885229 MB/s).
+Processed 363000 documents (985.2974661216693 docs/s, 0.0009396528874603933 MB/s).
+Processed 364000 documents (986.037003304343 docs/s, 0.0009403581650775366 MB/s).
+Processed 365000 documents (985.6793738285962 docs/s, 0.000940017103031727 MB/s).
+Processed 366000 documents (986.7263904595702 docs/s, 0.0009410156159015371 MB/s).
+Processed 367000 documents (987.2252044009728 docs/s, 0.0009414913219461181 MB/s).
+Processed 368000 documents (987.9434335693768 docs/s, 0.0009421762786573189 MB/s).
+Processed 369000 documents (988.4973252158231 docs/s, 0.0009427045108946067 MB/s).
+Processed 370000 documents (989.0620475400805 docs/s, 0.0009432430720711522 MB/s).
+Processed 371000 documents (989.3207993853446 docs/s, 0.0009434898370603033 MB/s).
+Processed 372000 documents (989.0962703639152 docs/s, 0.0009432757094992783 MB/s).
+Processed 373000 documents (990.0026247600365 docs/s, 0.000944140076408421 MB/s).
+Processed 374000 documents (970.865037474892 docs/s, 0.0009258890509365959 MB/s).
+Processed 375000 documents (972.1423306501723 docs/s, 0.0009271071726323817 MB/s).
+Processed 376000 documents (972.6117758923798 docs/s, 0.0009275548705028341 MB/s).
+Processed 377000 documents (973.0825161412662 docs/s, 0.0009280038033878958 MB/s).
+Processed 378000 documents (973.3423030019195 docs/s, 0.0009282515554446406 MB/s).
+Processed 379000 documents (973.5409538909435 docs/s, 0.000928441003695434 MB/s).
+Processed 380000 documents (973.5722970394555 docs/s, 0.0009284708948511653 MB/s).
+Processed 381000 documents (974.2141228555222 docs/s, 0.0009290829876475546 MB/s).
+Processed 382000 documents (974.390088137085 docs/s, 0.0009292508012171602 MB/s).
+Processed 383000 documents (974.7125637697877 docs/s, 0.0009295583379457357 MB/s).
+Processed 384000 documents (975.8505656909678 docs/s, 0.000930643621149986 MB/s).
+Processed 385000 documents (976.9186001001647 docs/s, 0.0009316621781350753 MB/s).
+Processed 386000 documents (976.8607658777178 docs/s, 0.0009316070231225183 MB/s).
+Processed 387000 documents (977.5195347959535 docs/s, 0.0009322352741202865 MB/s).
+Processed 388000 documents (977.9324238032914 docs/s, 0.0009326290357621111 MB/s).
+Processed 389000 documents (977.7495540991137 docs/s, 0.000932454637621988 MB/s).
+Processed 390000 documents (978.0125862506692 docs/s, 0.0009327054846293156 MB/s).
+Processed 391000 documents (978.3711338942917 docs/s, 0.0009330474223082463 MB/s).
+Processed 392000 documents (978.2683206006618 docs/s, 0.0009329493719107264 MB/s).
+Processed 393000 documents (978.7322757730328 docs/s, 0.0009333918340425804 MB/s).
+Processed 394000 documents (978.092218923349 docs/s, 0.0009327814282639971 MB/s).
+Processed 395000 documents (978.4576964374285 docs/s, 0.0009331299747823987 MB/s).
+Processed 396000 documents (978.9647613660132 docs/s, 0.0009336135495815403 MB/s).
+Processed 397000 documents (978.8845142633463 docs/s, 0.0009335370199807609 MB/s).
+Processed 398000 documents (979.4455994163321 docs/s, 0.0009340721124804803 MB/s).
+Processed 399000 documents (980.1094898968746 docs/s, 0.0009347052477806803 MB/s).
+Processed 400000 documents (979.6430729117651 docs/s, 0.0009342604378812457 MB/s).
+Processed 401000 documents (980.6314794449056 docs/s, 0.00093520305580607 MB/s).
+Processed 402000 documents (980.2631839265903 docs/s, 0.0009348518218294051 MB/s).
+Processed 403000 documents (980.4660386786561 docs/s, 0.0009350452791964112 MB/s).
+Processed 404000 documents (981.1039774582874 docs/s, 0.0009356536650259852 MB/s).
+Processed 405000 documents (981.4793331272112 docs/s, 0.0009360116320869553 MB/s).
+Processed 406000 documents (981.6917217547332 docs/s, 0.0009362141816661197 MB/s).
+Processed 407000 documents (982.2129667271546 docs/s, 0.0009367112796088739 MB/s).
+Processed 408000 documents (982.614983458565 docs/s, 0.0009370946726403856 MB/s).
+Processed 409000 documents (982.5742391276459 docs/s, 0.0009370558158184489 MB/s).
+Processed 410000 documents (982.1113721525222 docs/s, 0.0009366143914723608 MB/s).
+Processed 411000 documents (983.1890572023218 docs/s, 0.0009376421520255297 MB/s).
+Processed 412000 documents (983.2783443138962 docs/s, 0.0009377273028506243 MB/s).
+Processed 413000 documents (965.8389907612213 docs/s, 0.0009210958392727102 MB/s).
+Processed 414000 documents (966.591811824728 docs/s, 0.0009218137853858261 MB/s).
+Processed 415000 documents (967.253549504502 docs/s, 0.0009224448676152248 MB/s).
+Processed 416000 documents (968.4392378403708 docs/s, 0.0009235756281284053 MB/s).
+Processed 417000 documents (968.7989779212494 docs/s, 0.0009239187030041212 MB/s).
+Processed 418000 documents (970.0096463455449 docs/s, 0.0009250732863860558 MB/s).
+Processed 419000 documents (970.3736404264057 docs/s, 0.0009254204181922967 MB/s).
+Processed 420000 documents (970.7510650833004 docs/s, 0.0009257803583939556 MB/s).
+Processed 421000 documents (971.9002851858696 docs/s, 0.0009268763400896736 MB/s).
+Processed 422000 documents (972.2624418528233 docs/s, 0.0009272217196014626 MB/s).
+Processed 423000 documents (973.3382584590837 docs/s, 0.0009282476982680165 MB/s).
+Processed 424000 documents (974.1059056255989 docs/s, 0.0009289797836547841 MB/s).
+Processed 425000 documents (974.4035186030881 docs/s, 0.0009292636095076447 MB/s).
+Processed 426000 documents (975.0477605316864 docs/s, 0.000929878006488501 MB/s).
+Processed 427000 documents (976.4506920221445 docs/s, 0.0009312159462186284 MB/s).
+Processed 428000 documents (977.38858094171 docs/s, 0.00093211038679286 MB/s).
+Processed 429000 documents (978.3113041975387 docs/s, 0.0009329903642630946 MB/s).
+Processed 430000 documents (978.733125602061 docs/s, 0.000933392644502698 MB/s).
+Processed 431000 documents (979.242781808787 docs/s, 0.0009338786905372495 MB/s).
+Processed 432000 documents (980.0650479594258 docs/s, 0.000934662864646364 MB/s).
+Processed 433000 documents (980.8774734649904 docs/s, 0.0009354376539850144 MB/s).
+Processed 434000 documents (980.3244096211118 docs/s, 0.0009349102112017744 MB/s).
+Processed 435000 documents (980.5891837606175 docs/s, 0.0009351627194982696 MB/s).
+Processed 436000 documents (981.2917500091052 docs/s, 0.0009358327388850261 MB/s).
+Processed 437000 documents (981.8484676604393 docs/s, 0.0009363636662105935 MB/s).
+Processed 438000 documents (982.3019300359207 docs/s, 0.0009367961216315467 MB/s).
+Processed 439000 documents (982.84578161377 docs/s, 0.0009373147789132786 MB/s).
+Processed 440000 documents (983.6613001783636 docs/s, 0.000938092518022884 MB/s).
+Processed 441000 documents (984.3143386664954 docs/s, 0.00093871530405664 MB/s).
+Processed 442000 documents (985.2799481751105 docs/s, 0.0009396361810446839 MB/s).
+Processed 443000 documents (986.3048040521662 docs/s, 0.00094061355977265 MB/s).
+Processed 444000 documents (986.5219464992997 docs/s, 0.0009408206429474828 MB/s).
+Processed 445000 documents (987.1262564499277 docs/s, 0.0009413969578265455 MB/s).
+Processed 446000 documents (987.9164967263861 docs/s, 0.0009421505896819936 MB/s).
+Processed 447000 documents (988.7795417296556 docs/s, 0.0009429736535355145 MB/s).
+Processed 448000 documents (989.9481608580439 docs/s, 0.0009440881355839195 MB/s).
+Processed 449000 documents (989.7370025933961 docs/s, 0.000943886759370228 MB/s).
+Processed 450000 documents (989.8644503197773 docs/s, 0.0009440083029935621 MB/s).
+Processed 451000 documents (990.8645570996573 docs/s, 0.0009449620791431973 MB/s).
+Processed 452000 documents (991.9994817518393 docs/s, 0.0009460444276350396 MB/s).
+Processed 453000 documents (992.9273452874079 docs/s, 0.0009469293072580413 MB/s).
+Processed 454000 documents (993.3915372637947 docs/s, 0.0009473719952238032 MB/s).
+Processed 455000 documents (993.7529159633058 docs/s, 0.0009477166328080232 MB/s).
+Processed 456000 documents (994.5218581070969 docs/s, 0.0009484499531813592 MB/s).
+Processed 457000 documents (994.2818359519466 docs/s, 0.0009482210502166239 MB/s).
+Processed 458000 documents (994.2517118902 docs/s, 0.0009481923216726303 MB/s).
+Processed 459000 documents (994.6657650982605 docs/s, 0.0009485871935827832 MB/s).
+Processed 460000 documents (994.8162016665452 docs/s, 0.0009487306610742047 MB/s).
+Processed 461000 documents (995.1296757511765 docs/s, 0.0009490296132575764 MB/s).
+Processed 462000 documents (995.6071287646386 docs/s, 0.000949484947933806 MB/s).
+Processed 463000 documents (995.6938026818294 docs/s, 0.0009495676066225332 MB/s).
+Processed 464000 documents (995.9817146598234 docs/s, 0.0009498421808813318 MB/s).
+Processed 465000 documents (996.2806333917893 docs/s, 0.0009501272519987004 MB/s).
+Processed 466000 documents (996.8222035296175 docs/s, 0.0009506437335296797 MB/s).
+Processed 467000 documents (997.6429016737388 docs/s, 0.0009514264122712506 MB/s).
+Processed 468000 documents (998.2548623908135 docs/s, 0.0009520100234897742 MB/s).
+Processed 469000 documents (998.1242310858012 docs/s, 0.0009518854437692653 MB/s).
+Processed 470000 documents (998.5896190902909 docs/s, 0.0009523292723563107 MB/s).
+Processed 471000 documents (999.5028509486835 docs/s, 0.0009532001981245838 MB/s).
+Processed 472000 documents (1000.3429725988555 docs/s, 0.0009540014005650095 MB/s).
+Processed 473000 documents (1000.5770396024301 docs/s, 0.0009542246242546369 MB/s).
+Processed 474000 documents (1000.1963546187678 docs/s, 0.0009538615747630766 MB/s).
+Processed 475000 documents (1000.9990579493659 docs/s, 0.0009546270923131618 MB/s).
+Processed 476000 documents (1001.1229900557131 docs/s, 0.0009547452831799632 MB/s).
+Processed 477000 documents (1001.8701033026335 docs/s, 0.0009554577858949981 MB/s).
+Processed 478000 documents (1002.6883996104445 docs/s, 0.0009562381740669675 MB/s).
+Processed 479000 documents (1002.7046962580727 docs/s, 0.000956253715761254 MB/s).
+Processed 480000 documents (1002.7345586648595 docs/s, 0.0009562821947716327 MB/s).
+Processed 481000 documents (981.5635923972127 docs/s, 0.0009360919879886748 MB/s).
+Processed 482000 documents (982.0942780394473 docs/s, 0.0009365980892557595 MB/s).
+Processed 483000 documents (982.5556350678276 docs/s, 0.0009370380736044193 MB/s).
+Processed 484000 documents (982.5549597584509 docs/s, 0.0009370374295792111 MB/s).
+Processed 485000 documents (982.8877122518231 docs/s, 0.0009373547670858604 MB/s).
+Processed 486000 documents (982.7714994896772 docs/s, 0.0009372439379593632 MB/s).
+Processed 487000 documents (983.0338036825889 docs/s, 0.0009374940907312287 MB/s).
+Processed 488000 documents (982.2788587450984 docs/s, 0.0009367741191340432 MB/s).
+Processed 489000 documents (982.7842052568834 docs/s, 0.000937256055123218 MB/s).
+Processed 490000 documents (982.6965567975154 docs/s, 0.0009371724670386462 MB/s).
+Processed 491000 documents (982.8375015082456 docs/s, 0.0009373068823893028 MB/s).
+Processed 492000 documents (982.9225339209403 docs/s, 0.0009373879756173518 MB/s).
+Processed 493000 documents (983.4139344838729 docs/s, 0.0009378566117132882 MB/s).
+Processed 494000 documents (983.9334042798056 docs/s, 0.000938352016715818 MB/s).
+Processed 495000 documents (984.1277412017422 docs/s, 0.0009385373508469984 MB/s).
+Processed 496000 documents (984.7524043642175 docs/s, 0.0009391330760614562 MB/s).
+Processed 497000 documents (984.5081835778473 docs/s, 0.0009389001689699624 MB/s).
+Processed 498000 documents (984.9756709621862 docs/s, 0.0009393459996816504 MB/s).
+Processed 499000 documents (984.8956391722095 docs/s, 0.0009392696754190535 MB/s).
+Processed 500000 documents (984.7297779892102 docs/s, 0.0009391114978687384 MB/s).
+Processed 501000 documents (985.6090335643494 docs/s, 0.0009399500213283056 MB/s).
+Processed 502000 documents (986.1451748042796 docs/s, 0.0009404613254587932 MB/s).
+Processed 503000 documents (986.7660533848205 docs/s, 0.0009410534414146618 MB/s).
+Processed 504000 documents (986.8465821735654 docs/s, 0.0009411302396522192 MB/s).
+Processed 505000 documents (987.3909809755654 docs/s, 0.0009416494188075689 MB/s).
+Processed 506000 documents (988.2098397336204 docs/s, 0.0009424303433738903 MB/s).
+Processed 507000 documents (988.6567356963831 docs/s, 0.0009428565365756827 MB/s).
+Processed 508000 documents (988.4593651304017 docs/s, 0.0009426683093360917 MB/s).
+Processed 509000 documents (988.7970756478991 docs/s, 0.0009429903751830092 MB/s).
+Processed 510000 documents (989.4727611331767 docs/s, 0.000943634759076287 MB/s).
+Processed 511000 documents (990.333516858376 docs/s, 0.0009444556397041092 MB/s).
+Processed 512000 documents (990.7019389265936 docs/s, 0.0009448069943681656 MB/s).
+Processed 513000 documents (991.1313526556179 docs/s, 0.0009452165152126483 MB/s).
+Processed 514000 documents (991.721604211056 docs/s, 0.0009457794229612885 MB/s).
+Processed 515000 documents (992.3913106973966 docs/s, 0.0009464181048368422 MB/s).
+Processed 516000 documents (991.9545690140435 docs/s, 0.0009460015955105243 MB/s).
+Processed 517000 documents (992.5480314953421 docs/s, 0.0009465675654366895 MB/s).
+Processed 518000 documents (993.0612733082688 docs/s, 0.0009470570309717835 MB/s).
+Processed 519000 documents (993.0647831437409 docs/s, 0.000947060378211728 MB/s).
+Processed 520000 documents (993.1421914912165 docs/s, 0.000947134200564591 MB/s).
+Processed 521000 documents (992.9094863476541 docs/s, 0.0009469122756458799 MB/s).
+Processed 522000 documents (993.2711806088163 docs/s, 0.0009472572141731417 MB/s).
+Processed 523000 documents (993.5859454771986 docs/s, 0.000947557397343825 MB/s).
+Processed 524000 documents (993.6450188289153 docs/s, 0.0009476137340821412 MB/s).
+Processed 525000 documents (993.5819699045036 docs/s, 0.0009475536059422527 MB/s).
+Processed 526000 documents (968.7827426042664 docs/s, 0.0009239032197992959 MB/s).
+Processed 527000 documents (969.1233125138697 docs/s, 0.0009242280125750253 MB/s).
+Processed 528000 documents (969.3294332525413 docs/s, 0.0009244245846295751 MB/s).
+Processed 529000 documents (969.6718536741969 docs/s, 0.000924751142191121 MB/s).
+Processed 530000 documents (969.7810292574851 docs/s, 0.0009248552601408816 MB/s).
+Processed 531000 documents (970.026287710659 docs/s, 0.0009250891568285551 MB/s).
+Processed 532000 documents (970.2419846035866 docs/s, 0.0009252948614154688 MB/s).
+Processed 533000 documents (970.3971426225067 docs/s, 0.0009254428316330974 MB/s).
+Processed 534000 documents (970.7510332752998 docs/s, 0.0009257803280594824 MB/s).
+Processed 535000 documents (971.4017568347308 docs/s, 0.0009264009064051922 MB/s).
+Processed 536000 documents (971.8619668557247 docs/s, 0.0009268397968823669 MB/s).
+Processed 537000 documents (971.9430925679808 docs/s, 0.0009269171643905456 MB/s).
+Processed 538000 documents (972.0766396272606 docs/s, 0.0009270445247910124 MB/s).
+Processed 539000 documents (972.3665823892134 docs/s, 0.0009273210357563146 MB/s).
+Processed 540000 documents (972.4894246660176 docs/s, 0.0009274381872806717 MB/s).
+Processed 541000 documents (973.0451315946445 docs/s, 0.0009279681507059522 MB/s).
+Processed 542000 documents (972.339441309162 docs/s, 0.0009272951520053501 MB/s).
+Processed 543000 documents (972.9027622331087 docs/s, 0.0009278323767024123 MB/s).
+Processed 544000 documents (972.6343159384091 docs/s, 0.0009275763663658229 MB/s).
+Processed 545000 documents (973.3692027481908 docs/s, 0.0009282772090417774 MB/s).
+Processed 546000 documents (973.395806113414 docs/s, 0.0009283025799879207 MB/s).
+Processed 547000 documents (973.8379935797468 docs/s, 0.0009287242828175991 MB/s).
+Processed 548000 documents (973.990486980846 docs/s, 0.0009288697118576488 MB/s).
+Processed 549000 documents (974.373270886004 docs/s, 0.0009292347630367317 MB/s).
+Processed 550000 documents (974.326009871 docs/s, 0.0009291896914205551 MB/s).
+Processed 551000 documents (974.4310263662807 docs/s, 0.0009292898429549033 MB/s).
+Processed 552000 documents (974.6062625833445 docs/s, 0.0009294569612344212 MB/s).
+Processed 553000 documents (975.3311837174408 docs/s, 0.000930148299901429 MB/s).
+Processed 554000 documents (975.7618387887587 docs/s, 0.000930559004582175 MB/s).
+Processed 555000 documents (976.118345226213 docs/s, 0.0009308989956152086 MB/s).
+Processed 556000 documents (976.6636474213249 docs/s, 0.0009314190363133668 MB/s).
+Processed 557000 documents (977.0945726256421 docs/s, 0.0009318299986130162 MB/s).
+Processed 558000 documents (977.759349192481 docs/s, 0.0009324639789509592 MB/s).
+Processed 559000 documents (977.8581973674009 docs/s, 0.0009325582479166039 MB/s).
+Processed 560000 documents (978.6506300027006 docs/s, 0.0009333139705683714 MB/s).
+Processed 561000 documents (978.8133599244587 docs/s, 0.0009334691619152629 MB/s).
+Processed 562000 documents (979.1128786376981 docs/s, 0.0009337548052193624 MB/s).
+Processed 563000 documents (979.5719634603515 docs/s, 0.0009341926226237788 MB/s).
+Processed 564000 documents (979.3781618684286 docs/s, 0.0009340077990230833 MB/s).
+Processed 565000 documents (979.6562669829184 docs/s, 0.0009342730207280334 MB/s).
+Processed 566000 documents (979.3888896438134 docs/s, 0.00093401802982694 MB/s).
+Processed 567000 documents (979.0673101440244 docs/s, 0.0009337113477173084 MB/s).
+Processed 568000 documents (979.6338383141313 docs/s, 0.00093425163108266 MB/s).
+Processed 569000 documents (979.9374812298261 docs/s, 0.0009345412075327168 MB/s).
+Processed 570000 documents (979.7408825111742 docs/s, 0.0009343537163841001 MB/s).
+Processed 571000 documents (980.3500343502726 docs/s, 0.0009349346488478399 MB/s).
+Processed 572000 documents (960.7177569035273 docs/s, 0.0009162118500743173 MB/s).
+Processed 573000 documents (961.1495143408397 docs/s, 0.0009166236060531995 MB/s).
+Processed 574000 documents (961.0342568921748 docs/s, 0.0009165136879846332 MB/s).
+Processed 575000 documents (961.437174598228 docs/s, 0.0009168979402525215 MB/s).
+Processed 576000 documents (961.6958432133109 docs/s, 0.0009171446258671865 MB/s).
+Processed 577000 documents (962.1692183594748 docs/s, 0.000917596071586108 MB/s).
+Processed 578000 documents (962.7724331724676 docs/s, 0.000918171342060535 MB/s).
+Processed 579000 documents (963.4881931432005 docs/s, 0.0009188539439613347 MB/s).
+Processed 580000 documents (963.3387257230997 docs/s, 0.0009187114007216451 MB/s).
+Processed 581000 documents (963.8951835436263 docs/s, 0.0009192420802532447 MB/s).
+Processed 582000 documents (963.9727315589234 docs/s, 0.0009193160358037218 MB/s).
+Processed 583000 documents (964.6030437465945 docs/s, 0.0009199171483484216 MB/s).
+Processed 584000 documents (965.0373550454846 docs/s, 0.0009203313398794981 MB/s).
+Processed 585000 documents (965.7949567854938 docs/s, 0.0009210538452010096 MB/s).
+Processed 586000 documents (965.7603784775889 docs/s, 0.0009210208687568559 MB/s).
+Processed 587000 documents (966.1184548085874 docs/s, 0.0009213623569570422 MB/s).
+Processed 588000 documents (966.4968401835148 docs/s, 0.0009217232133708141 MB/s).
+Processed 589000 documents (966.6541167220664 docs/s, 0.0009218732039662041 MB/s).
+Processed 590000 documents (966.5428238762167 docs/s, 0.0009217670668375175 MB/s).
+Processed 591000 documents (966.3248318206648 docs/s, 0.000921559173412957 MB/s).
+Processed 592000 documents (966.5075038246594 docs/s, 0.0009217333830114931 MB/s).
+Processed 593000 documents (967.2019532068782 docs/s, 0.0009223956615513594 MB/s).
+Processed 594000 documents (967.782463452809 docs/s, 0.0009229492792633142 MB/s).
+Processed 595000 documents (968.1552077187824 docs/s, 0.0009233047558963608 MB/s).
+Processed 596000 documents (968.4940049913431 docs/s, 0.0009236278581536704 MB/s).
+Processed 597000 documents (969.0336754390938 docs/s, 0.0009241425279990137 MB/s).
+Processed 598000 documents (969.7085856186354 docs/s, 0.0009247861725031237 MB/s).
+Processed 599000 documents (970.5695078255367 docs/s, 0.0009256072119002692 MB/s).
+Processed 600000 documents (970.6302570886068 docs/s, 0.0009256651469121997 MB/s).
+Processed 601000 documents (971.3289302235623 docs/s, 0.0009263314535365699 MB/s).
+Processed 602000 documents (971.9252993549089 docs/s, 0.0009269001954602327 MB/s).
+Processed 603000 documents (972.5538845521191 docs/s, 0.0009274996610184852 MB/s).
+Processed 604000 documents (972.8697773732438 docs/s, 0.0009278009198887289 MB/s).
+Processed 605000 documents (973.2723008974775 docs/s, 0.0009281847962355399 MB/s).
+Processed 606000 documents (973.323691225535 docs/s, 0.00092823380587152 MB/s).
+Processed 607000 documents (973.8719143213714 docs/s, 0.0009287566321576799 MB/s).
+Processed 608000 documents (974.4654275984076 docs/s, 0.0009293226505264355 MB/s).
+Processed 609000 documents (974.7888992869556 docs/s, 0.0009296311371678883 MB/s).
+Processed 610000 documents (974.8855815395109 docs/s, 0.0009297233405490025 MB/s).
+Processed 611000 documents (974.7874342261474 docs/s, 0.0009296297399770235 MB/s).
+Processed 612000 documents (974.5218908311093 docs/s, 0.0009293764980612844 MB/s).
+Processed 613000 documents (975.066963039945 docs/s, 0.0009298963194274378 MB/s).
+Processed 614000 documents (975.7215565901016 docs/s, 0.0009305205884839073 MB/s).
+Processed 615000 documents (975.9689025937525 docs/s, 0.000930756476014855 MB/s).
+Processed 616000 documents (976.4860760683797 docs/s, 0.0009312496910747335 MB/s).
+Processed 617000 documents (976.6669227159267 docs/s, 0.0009314221598777072 MB/s).
+Processed 618000 documents (976.8790077077758 docs/s, 0.0009316244198873289 MB/s).
+Processed 619000 documents (977.2135262892921 docs/s, 0.0009319434416668816 MB/s).
+Processed 620000 documents (977.426647140599 docs/s, 0.0009321466895490637 MB/s).
+Processed 621000 documents (977.4252555788727 docs/s, 0.0009321453624523856 MB/s).
+Processed 622000 documents (977.7038273229789 docs/s, 0.0009324110291700162 MB/s).
+Processed 623000 documents (978.4308744021649 docs/s, 0.0009331043952962541 MB/s).
+Processed 624000 documents (979.0217558952041 docs/s, 0.0009336679038002054 MB/s).
+Processed 625000 documents (979.4567224698519 docs/s, 0.0009340827202509421 MB/s).
+Processed 626000 documents (979.5688788268486 docs/s, 0.0009341896808880316 MB/s).
+Processed 627000 documents (979.7276905379543 docs/s, 0.0009343411355380577 MB/s).
+Processed 628000 documents (980.6455673898772 docs/s, 0.0009352164911173603 MB/s).
+Processed 629000 documents (980.2119122213945 docs/s, 0.0009348029253210016 MB/s).
+Processed 630000 documents (980.0765031534962 docs/s, 0.0009346737891707384 MB/s).
+Processed 631000 documents (980.3263237567505 docs/s, 0.0009349120366637712 MB/s).
+Processed 632000 documents (959.2870496770596 docs/s, 0.0009148474213381382 MB/s).
+Processed 633000 documents (959.6569867741756 docs/s, 0.0009152002208463436 MB/s).
+Processed 634000 documents (960.0122260558653 docs/s, 0.0009155390034254697 MB/s).
+Processed 635000 documents (960.5540340721722 docs/s, 0.0009160557118150446 MB/s).
+Processed 636000 documents (960.7335471675364 docs/s, 0.000916226908843552 MB/s).
+Processed 637000 documents (960.6815622957905 docs/s, 0.0009161773322065263 MB/s).
+Processed 638000 documents (960.9698049099568 docs/s, 0.0009164522217845505 MB/s).
+Processed 639000 documents (961.0026071374057 docs/s, 0.0009164835044263894 MB/s).
+Processed 640000 documents (961.4116397793277 docs/s, 0.0009168735883515623 MB/s).
+Processed 641000 documents (961.6532097838721 docs/s, 0.0009171039674605103 MB/s).
+Processed 642000 documents (962.1614770609501 docs/s, 0.0009175886889085294 MB/s).
+Processed 643000 documents (962.2075647437931 docs/s, 0.0009176326415479594 MB/s).
+Processed 644000 documents (962.4679335297526 docs/s, 0.0009178809485719229 MB/s).
+Processed 645000 documents (962.5331641343978 docs/s, 0.0009179431573242166 MB/s).
+Processed 646000 documents (962.4453273404797 docs/s, 0.0009178593896298215 MB/s).
+Processed 647000 documents (962.9547185951777 docs/s, 0.000918345182986429 MB/s).
+Processed 648000 documents (963.095123813927 docs/s, 0.0009184790838374395 MB/s).
+Processed 649000 documents (963.2846392246163 docs/s, 0.0009186598198171771 MB/s).
+Processed 650000 documents (963.3674775407441 docs/s, 0.0009187388205916825 MB/s).
+Processed 651000 documents (963.7475828469218 docs/s, 0.0009191013172597139 MB/s).
+Processed 652000 documents (964.3760871722798 docs/s, 0.0009197007056925581 MB/s).
+Processed 653000 documents (964.6168454878002 docs/s, 0.0009199303107145312 MB/s).
+Processed 654000 documents (964.9518740688103 docs/s, 0.0009202498188675025 MB/s).
+Processed 655000 documents (965.4940856547623 docs/s, 0.0009207669121310828 MB/s).
+Processed 656000 documents (966.1217643838618 docs/s, 0.0009213655132139795 MB/s).
+Processed 657000 documents (966.3701002573422 docs/s, 0.0009216023447583601 MB/s).
+Processed 658000 documents (966.2979418680236 docs/s, 0.0009215335291557537 MB/s).
+Processed 659000 documents (966.5378511977399 docs/s, 0.0009217623245217704 MB/s).
+Processed 660000 documents (966.9221423495551 docs/s, 0.0009221288131232787 MB/s).
+Processed 661000 documents (967.4107155255382 docs/s, 0.0009225947528128988 MB/s).
+Processed 662000 documents (967.3432039409751 docs/s, 0.0009225303687486411 MB/s).
+Processed 663000 documents (967.6999507991311 docs/s, 0.0009228705890647231 MB/s).
+Processed 664000 documents (968.1033477937557 docs/s, 0.000923255298417812 MB/s).
+Processed 665000 documents (968.0828488492925 docs/s, 0.0009232357491009641 MB/s).
+Processed 666000 documents (968.3050163948576 docs/s, 0.0009234476245831085 MB/s).
+Processed 667000 documents (968.7445948227831 docs/s, 0.0009238668392398673 MB/s).
+Processed 668000 documents (968.8805812932967 docs/s, 0.0009239965260441749 MB/s).
+Processed 669000 documents (969.263217792718 docs/s, 0.0009243614366461926 MB/s).
+Processed 670000 documents (969.3513299478657 docs/s, 0.0009244454669455201 MB/s).
+Processed 671000 documents (969.9416304349731 docs/s, 0.0009250084213590366 MB/s).
+Processed 672000 documents (970.3384617621814 docs/s, 0.0009253868692037405 MB/s).
+Processed 673000 documents (970.6851205963577 docs/s, 0.0009257174688304498 MB/s).
+Processed 674000 documents (970.7952487556028 docs/s, 0.0009258224952274349 MB/s).
+Processed 675000 documents (970.5811073074325 docs/s, 0.0009256182740282369 MB/s).
+Processed 676000 documents (970.6333587547447 docs/s, 0.0009256681048915335 MB/s).
+Processed 677000 documents (970.6900064634035 docs/s, 0.0009257221283563647 MB/s).
+Processed 678000 documents (971.0358300337178 docs/s, 0.0009260519314133814 MB/s).
+Processed 679000 documents (970.4882830523508 docs/s, 0.0009255297499202259 MB/s).
+Processed 680000 documents (970.993923569736 docs/s, 0.0009260119662949906 MB/s).
+Processed 681000 documents (971.4229757632486 docs/s, 0.0009264211423523413 MB/s).
+Processed 682000 documents (972.0666930266316 docs/s, 0.0009270350389734569 MB/s).
+Processed 683000 documents (972.4154525446675 docs/s, 0.00092736764196841 MB/s).
+Processed 684000 documents (972.8976420912361 docs/s, 0.0009278274937546121 MB/s).
+Processed 685000 documents (972.9054988505517 docs/s, 0.0009278349865441815 MB/s).
+Processed 686000 documents (972.9812510592205 docs/s, 0.0009279072294800001 MB/s).
+Processed 687000 documents (973.3718575055805 docs/s, 0.0009282797408157162 MB/s).
+Processed 688000 documents (973.3804190507825 docs/s, 0.0009282879057414842 MB/s).
+Processed 689000 documents (973.928069583887 docs/s, 0.0009288101859892721 MB/s).
+Processed 690000 documents (974.3571837555669 docs/s, 0.0009292194211536092 MB/s).
+Processed 691000 documents (954.8912218222024 docs/s, 0.0009106552332136177 MB/s).
+Processed 692000 documents (955.4912722093162 docs/s, 0.0009112274858563578 MB/s).
+Processed 693000 documents (956.1268245664431 docs/s, 0.0009118335958160812 MB/s).
+Processed 694000 documents (956.5416004600172 docs/s, 0.0009122291569328472 MB/s).
+Processed 695000 documents (957.1415131250614 docs/s, 0.0009128012782335866 MB/s).
+Processed 696000 documents (957.5699466617145 docs/s, 0.0009132098642937799 MB/s).
+Processed 697000 documents (958.2240811362285 docs/s, 0.0009138336955415998 MB/s).
+Processed 698000 documents (958.3882856493484 docs/s, 0.0009139902931684002 MB/s).
+Processed 699000 documents (958.2722851529224 docs/s, 0.0009138796664742684 MB/s).
+Processed 700000 documents (958.7358205337337 docs/s, 0.0009143217282616936 MB/s).
+Processed 701000 documents (959.2676923889277 docs/s, 0.0009148289607896115 MB/s).
+Processed 702000 documents (959.8702261290824 docs/s, 0.0009154035817423653 MB/s).
+Processed 703000 documents (960.3347097869677 docs/s, 0.0009158465478772809 MB/s).
+Processed 704000 documents (960.5250981281457 docs/s, 0.0009160281163484056 MB/s).
+Processed 705000 documents (961.1212243662674 docs/s, 0.0009165966266310381 MB/s).
+Processed 706000 documents (961.6192704671063 docs/s, 0.0009170716004057944 MB/s).
+Processed 707000 documents (962.4938350366555 docs/s, 0.0009179056501738124 MB/s).
+Processed 708000 documents (963.1197047271248 docs/s, 0.0009185025260230301 MB/s).
+Processed 709000 documents (963.7427322202275 docs/s, 0.0009190966913416171 MB/s).
+Processed 710000 documents (964.5643126283496 docs/s, 0.0009198802114757057 MB/s).
+Processed 711000 documents (965.4864027878845 docs/s, 0.0009207595851782651 MB/s).
+Processed 712000 documents (966.3621121845741 docs/s, 0.0009215947267385236 MB/s).
+Processed 713000 documents (967.0997944861792 docs/s, 0.0009222982354032318 MB/s).
+Processed 714000 documents (968.0048588620615 docs/s, 0.000923161372053205 MB/s).
+Processed 715000 documents (968.7685823476954 docs/s, 0.0009238897155262903 MB/s).
+Processed 716000 documents (969.6803803891623 docs/s, 0.0009247592739001869 MB/s).
+Processed 717000 documents (970.4128980439419 docs/s, 0.0009254578571738643 MB/s).
+Processed 718000 documents (971.0236005873328 docs/s, 0.0009260402685044601 MB/s).
+Processed 719000 documents (971.8510485290595 docs/s, 0.0009268293843546482 MB/s).
+Processed 720000 documents (972.7689061414623 docs/s, 0.0009277047215857146 MB/s).
+Processed 721000 documents (973.661921699626 docs/s, 0.0009285563675876865 MB/s).
+Processed 722000 documents (974.533425785678 docs/s, 0.0009293874986511974 MB/s).
+Processed 723000 documents (975.1544857051215 docs/s, 0.00092997978754532 MB/s).
+Processed 724000 documents (975.9181245946888 docs/s, 0.0009307080503413094 MB/s).
+Processed 725000 documents (976.8335919846864 docs/s, 0.0009315811080786576 MB/s).
+Processed 726000 documents (977.5793843959381 docs/s, 0.0009322923511466389 MB/s).
+Processed 727000 documents (978.2878164918849 docs/s, 0.0009329679646414613 MB/s).
+Processed 728000 documents (979.1316062808341 docs/s, 0.000933772665291628 MB/s).
+Processed 729000 documents (979.9217553316564 docs/s, 0.00093452621014753 MB/s).
+Processed 730000 documents (980.6942955346017 docs/s, 0.0009352629618974702 MB/s).
+Processed 731000 documents (981.3266966986536 docs/s, 0.0009358660666452919 MB/s).
+Processed 732000 documents (982.1675756253763 docs/s, 0.0009366679912809146 MB/s).
+Processed 733000 documents (982.6950433933916 docs/s, 0.000937171023744003 MB/s).
+Processed 734000 documents (983.5732423824577 docs/s, 0.0009380085395645692 MB/s).
+Processed 735000 documents (984.5652532645215 docs/s, 0.000938954594864389 MB/s).
+Processed 736000 documents (985.114331452242 docs/s, 0.0009394782366297169 MB/s).
+Processed 737000 documents (985.9483170808388 docs/s, 0.0009402735873039616 MB/s).
+Processed 738000 documents (986.8248729691735 docs/s, 0.000941109536141561 MB/s).
+Processed 739000 documents (987.6672562830025 docs/s, 0.000941912895472529 MB/s).
+Processed 740000 documents (988.4191684959468 docs/s, 0.0009426299748382061 MB/s).
+Processed 741000 documents (989.3144150131402 docs/s, 0.0009434837484485056 MB/s).
+Processed 742000 documents (990.0292018181301 docs/s, 0.0009441654222661305 MB/s).
+Processed 743000 documents (990.7700753452802 docs/s, 0.000944871974320679 MB/s).
+Processed 744000 documents (991.6738983321537 docs/s, 0.0009457339270898378 MB/s).
+Processed 745000 documents (992.3951927171254 docs/s, 0.0009464218070193533 MB/s).
+Processed 746000 documents (993.1134809362918 docs/s, 0.0009471068200457495 MB/s).
+Processed 747000 documents (993.6844505953176 docs/s, 0.0009476513391450096 MB/s).
+Processed 748000 documents (994.2653104978672 docs/s, 0.0009482052903155014 MB/s).
+Processed 749000 documents (995.0050481023023 docs/s, 0.0009489107590697311 MB/s).
+Processed 750000 documents (995.6126119310412 docs/s, 0.0009494901770887768 MB/s).
+Processed 751000 documents (996.3833161286535 docs/s, 0.0009502251778875861 MB/s).
+Processed 752000 documents (997.2265808117813 docs/s, 0.0009510293777578176 MB/s).
+Processed 753000 documents (998.0040219198769 docs/s, 0.0009517708033751267 MB/s).
+Processed 754000 documents (998.7539884760245 docs/s, 0.0009524860272178883 MB/s).
+Processed 755000 documents (999.2556129902159 docs/s, 0.0009529644136335525 MB/s).
+Processed 756000 documents (1000.0769558335181 docs/s, 0.0009537477072081739 MB/s).
+Processed 757000 documents (1000.645739901156 docs/s, 0.0009542901419650612 MB/s).
+Processed 758000 documents (1001.3984192163455 docs/s, 0.0009550079528964476 MB/s).
+Processed 759000 documents (1002.1797415988196 docs/s, 0.0009557530799854466 MB/s).
+Processed 760000 documents (1002.9039484980393 docs/s, 0.0009564437375049966 MB/s).
+Processed 761000 documents (1003.5083206607658 docs/s, 0.0009570201117141397 MB/s).
+Processed 762000 documents (1004.2073753655369 docs/s, 0.0009576867822318429 MB/s).
+Processed 763000 documents (1004.8418740045928 docs/s, 0.0009582918872877052 MB/s).
+Processed 764000 documents (1005.5510657073979 docs/s, 0.0009589682252000789 MB/s).
+Processed 765000 documents (1006.3818292937519 docs/s, 0.0009597605030953903 MB/s).
+Processed 766000 documents (1007.240442016427 docs/s, 0.0009605793399967451 MB/s).
+Processed 767000 documents (1007.843000220984 docs/s, 0.000961153984280571 MB/s).
+Processed 768000 documents (1008.6765617244879 docs/s, 0.0009619489304776076 MB/s).
+Processed 769000 documents (1009.4667637686325 docs/s, 0.0009627025258718801 MB/s).
+Processed 770000 documents (1010.0356543721172 docs/s, 0.0009632450622292682 MB/s).
+Processed 771000 documents (1010.6238170312931 docs/s, 0.0009638059778511936 MB/s).
+Processed 772000 documents (1011.3879477182556 docs/s, 0.0009645347096617276 MB/s).
+Processed 773000 documents (1012.1356604925877 docs/s, 0.0009652477841306569 MB/s).
+Processed 774000 documents (1012.9906738490848 docs/s, 0.0009660631884089325 MB/s).
+Processed 775000 documents (1013.8151116365167 docs/s, 0.0009668494335522811 MB/s).
+Processed 776000 documents (1014.3657269791286 docs/s, 0.0009673745412627493 MB/s).
+Processed 777000 documents (1014.9676868558441 docs/s, 0.00096794861493668 MB/s).
+Processed 778000 documents (1015.4924363780257 docs/s, 0.000968449055078531 MB/s).
+Processed 779000 documents (1016.2197215853034 docs/s, 0.000969142648301414 MB/s).
+Processed 780000 documents (1017.0585862904728 docs/s, 0.0009699426520256737 MB/s).
+Processed 781000 documents (1017.9664450213596 docs/s, 0.0009708084535802456 MB/s).
+Processed 782000 documents (1018.6115502671096 docs/s, 0.0009714236738844963 MB/s).
+Processed 783000 documents (1019.4101183131598 docs/s, 0.0009721852477199171 MB/s).
+Processed 784000 documents (1020.1783860155091 docs/s, 0.0009729179248957721 MB/s).
+Processed 785000 documents (1020.922405506134 docs/s, 0.0009736274771748868 MB/s).
+Processed 786000 documents (1021.716889330927 docs/s, 0.000974385155993392 MB/s).
+Processed 787000 documents (1022.4781244637014 docs/s, 0.0009751111263882651 MB/s).
+Processed 788000 documents (1023.1775012811731 docs/s, 0.0009757781040965778 MB/s).
+Processed 789000 documents (1023.9003813652283 docs/s, 0.0009764674962665828 MB/s).
+Processed 790000 documents (1024.6151043905231 docs/s, 0.0009771491092591506 MB/s).
+Processed 791000 documents (1025.2798469885959 docs/s, 0.0009777830572019538 MB/s).
+Processed 792000 documents (1025.8080026050145 docs/s, 0.000978286745648398 MB/s).
+Processed 793000 documents (1026.5989768941724 docs/s, 0.0009790410775129055 MB/s).
+Processed 794000 documents (1027.5403540212415 docs/s, 0.0009799388447010436 MB/s).
+Processed 795000 documents (1028.296057363819 docs/s, 0.0009806595395696822 MB/s).
+Processed 796000 documents (1029.0329196369466 docs/s, 0.0009813622661942927 MB/s).
+Processed 797000 documents (1029.7104944456173 docs/s, 0.0009820084518867658 MB/s).
+Processed 798000 documents (1030.4245705049325 docs/s, 0.0009826894478844952 MB/s).
+Processed 799000 documents (1031.0939977439227 docs/s, 0.000983327863449023 MB/s).
+Processed 800000 documents (1031.4647118192372 docs/s, 0.0009836814039413807 MB/s).
+Processed 801000 documents (1032.208229009859 docs/s, 0.0009843904771898832 MB/s).
+Processed 802000 documents (1032.9468835161626 docs/s, 0.0009850949130212428 MB/s).
+Processed 803000 documents (1033.6316677480647 docs/s, 0.0009857479741554878 MB/s).
+Processed 804000 documents (1034.4969897361339 docs/s, 0.0009865732095109309 MB/s).
+Processed 805000 documents (1035.0748821588372 docs/s, 0.0009871243306721089 MB/s).
+Processed 806000 documents (1035.8411053499012 docs/s, 0.0009878550580500614 MB/s).
+Processed 807000 documents (1036.3284571208537 docs/s, 0.000988319832917074 MB/s).
+Processed 808000 documents (1036.8574797523606 docs/s, 0.0009888243482135397 MB/s).
+Processed 809000 documents (1037.3572810567969 docs/s, 0.000989300995880887 MB/s).
+Processed 810000 documents (1037.996395063088 docs/s, 0.0009899105024939422 MB/s).
+Processed 811000 documents (1038.8274685099263 docs/s, 0.0009907030758952392 MB/s).
+Processed 812000 documents (1039.405160263694 docs/s, 0.000991254005683607 MB/s).
+Processed 813000 documents (1040.0268741959499 docs/s, 0.0009918469182929514 MB/s).
+Processed 814000 documents (1040.8477914595017 docs/s, 0.0009926298060030953 MB/s).
+Processed 815000 documents (1041.5344428208082 docs/s, 0.0009932846477706987 MB/s).
+Processed 816000 documents (1042.1600495745543 docs/s, 0.0009938812728639166 MB/s).
+Processed 817000 documents (1042.7081795019542 docs/s, 0.0009944040102977316 MB/s).
+Processed 818000 documents (1043.4421022178851 docs/s, 0.000995103933542142 MB/s).
+Processed 819000 documents (1044.1511243495017 docs/s, 0.0009957801097388284 MB/s).
+Processed 820000 documents (1044.9221699949394 docs/s, 0.0009965154361676592 MB/s).
+Processed 821000 documents (1045.4999938451485 docs/s, 0.0009970664919330106 MB/s).
+Processed 822000 documents (1046.2953078902906 docs/s, 0.0009978249625113397 MB/s).
+Processed 823000 documents (1046.738025324564 docs/s, 0.0009982471707578316 MB/s).
+Processed 824000 documents (1047.3365909027066 docs/s, 0.000998818007376391 MB/s).
+Processed 825000 documents (1047.8852442083294 docs/s, 0.0009993412439425749 MB/s).
+Processed 826000 documents (1048.3398560534235 docs/s, 0.0009997747955831752 MB/s).
+Processed 827000 documents (1049.0974398014598 docs/s, 0.0010004972837462042 MB/s).
+Processed 828000 documents (1049.83627646525 docs/s, 0.0010012018932964801 MB/s).
+Processed 829000 documents (1050.38880445873 docs/s, 0.0010017288250529575 MB/s).
+Processed 830000 documents (1050.9018394912537 docs/s, 0.001002218093386892 MB/s).
+Processed 831000 documents (1051.7430543113 docs/s, 0.0010030203383553505 MB/s).
+Processed 832000 documents (1052.3991174402631 docs/s, 0.0010036460089113837 MB/s).
+Processed 833000 documents (1052.854761304139 docs/s, 0.0010040805447617902 MB/s).
+Processed 834000 documents (1053.4409761061033 docs/s, 0.0010046396027623208 MB/s).
+Processed 835000 documents (1053.9835763414399 docs/s, 0.0010051570666708373 MB/s).
+Processed 836000 documents (1054.617473014608 docs/s, 0.0010057615976472932 MB/s).
+Processed 837000 documents (1055.5162770956188 docs/s, 0.0010066187640148342 MB/s).
+Processed 838000 documents (1056.0942943229743 docs/s, 0.0010071700041990035 MB/s).
+Processed 839000 documents (1056.7271327519088 docs/s, 0.0010077735259551132 MB/s).
+Processed 840000 documents (1057.4460234144901 docs/s, 0.0010084591135163213 MB/s).
+Processed 841000 documents (1058.0518970640069 docs/s, 0.0010090369196548528 MB/s).
+Processed 842000 documents (1058.5331794108247 docs/s, 0.0010094959062679526 MB/s).
+Processed 843000 documents (1059.177076889673 docs/s, 0.0010101099747559289 MB/s).
+Processed 844000 documents (1059.6519438313833 docs/s, 0.0010105628431619485 MB/s).
+Processed 845000 documents (1060.2891196196554 docs/s, 0.0010111705013462595 MB/s).
+Processed 846000 documents (1060.918527064894 docs/s, 0.0010117707510613385 MB/s).
+Processed 847000 documents (1061.53730025179 docs/s, 0.001012360859157362 MB/s).
+Processed 848000 documents (1062.1730599007847 docs/s, 0.0010129671668060156 MB/s).
+Processed 849000 documents (1062.6958475905246 docs/s, 0.001013465735998654 MB/s).
+Processed 850000 documents (1063.2898550513705 docs/s, 0.0010140322256578164 MB/s).
+Processed 851000 documents (1063.947156819939 docs/s, 0.0010146590774726286 MB/s).
+Processed 852000 documents (1064.4926530396986 docs/s, 0.00101517930320711 MB/s).
+Processed 853000 documents (1065.1961484222738 docs/s, 0.0010158502086851824 MB/s).
+Processed 854000 documents (1065.7954255119682 docs/s, 0.0010164217238540346 MB/s).
+Processed 855000 documents (1066.5126880370144 docs/s, 0.0010171057587022919 MB/s).
+Processed 856000 documents (1067.1317614175698 docs/s, 0.0010176961530852984 MB/s).
+Processed 857000 documents (1067.7333810268617 docs/s, 0.0010182699022549264 MB/s).
+Processed 858000 documents (1068.4223330421582 docs/s, 0.001018926938097151 MB/s).
+Processed 859000 documents (1068.937202315308 docs/s, 0.0010194179556992607 MB/s).
+Processed 860000 documents (1069.6889647976798 docs/s, 0.0010201348922707365 MB/s).
+Processed 861000 documents (1070.294111320956 docs/s, 0.0010207120049676476 MB/s).
+Processed 862000 documents (1070.8779012957507 docs/s, 0.0010212687504727847 MB/s).
+Processed 863000 documents (1071.4781336857832 docs/s, 0.0010218411766870338 MB/s).
+Processed 864000 documents (1072.0156247367665 docs/s, 0.0010223537680976549 MB/s).
+Processed 865000 documents (1072.723348259061 docs/s, 0.0010230287058439836 MB/s).
+Processed 866000 documents (1073.3242171354573 docs/s, 0.0010236017390589307 MB/s).
+Processed 867000 documents (1073.9557266879015 docs/s, 0.0010242039934996619 MB/s).
+Processed 868000 documents (1074.4825266601695 docs/s, 0.0010247063891030974 MB/s).
+Processed 869000 documents (1075.1618686962809 docs/s, 0.001025354260154992 MB/s).
+Processed 870000 documents (1075.8224436732798 docs/s, 0.0010259842335446166 MB/s).
+Processed 871000 documents (1076.6243653689519 docs/s, 0.001026749005669548 MB/s).
+Processed 872000 documents (1077.1594462428695 docs/s, 0.0010272592985562034 MB/s).
+Processed 873000 documents (1077.7747995618483 docs/s, 0.0010278461452120288 MB/s).
+Processed 874000 documents (1078.5162198594219 docs/s, 0.001028553218707487 MB/s).
+Processed 875000 documents (1079.0060626984198 docs/s, 0.0010290203692421148 MB/s).
+Processed 876000 documents (1079.4472112217534 docs/s, 0.0010294410812585386 MB/s).
+Processed 877000 documents (1080.0523939501475 docs/s, 0.0010300182284833407 MB/s).
+Processed 878000 documents (1080.619825533546 docs/s, 0.0010305593734107456 MB/s).
+Processed 879000 documents (1081.2861534972856 docs/s, 0.0010311948332760673 MB/s).
+Processed 880000 documents (1081.8307237774875 docs/s, 0.001031714175965774 MB/s).
+Processed 881000 documents (1082.2799113811072 docs/s, 0.0010321425546465943 MB/s).
+Processed 882000 documents (1082.9706740404433 docs/s, 0.0010328013172535356 MB/s).
+Processed 883000 documents (1083.5762668926927 docs/s, 0.001033378855602925 MB/s).
+Processed 884000 documents (1084.0294622339627 docs/s, 0.0010338110563602092 MB/s).
+Processed 885000 documents (1084.7298196702836 docs/s, 0.0010344789692595326 MB/s).
+Processed 886000 documents (1085.3429973021368 docs/s, 0.0010350637410184258 MB/s).
+Processed 887000 documents (1085.9089599551887 docs/s, 0.0010356034850646865 MB/s).
+Processed 888000 documents (1086.267096314291 docs/s, 0.0010359450305121335 MB/s).
+Processed 889000 documents (1086.6685464710233 docs/s, 0.0010363278832159265 MB/s).
+Processed 890000 documents (1087.196398253163 docs/s, 0.0010368312819034223 MB/s).
+Processed 891000 documents (1087.6848210617661 docs/s, 0.0010372970781915342 MB/s).
+Processed 892000 documents (1088.4784395971435 docs/s, 0.0010380539318057475 MB/s).
+Processed 893000 documents (1089.1576027782114 docs/s, 0.0010387016322881807 MB/s).
+Processed 894000 documents (1090.0137968536526 docs/s, 0.0010395181625877882 MB/s).
+Processed 895000 documents (1090.7534281408343 docs/s, 0.001040223529949984 MB/s).
+Processed 896000 documents (1091.3316423741012 docs/s, 0.001040774958013631 MB/s).
+Processed 897000 documents (1091.792190265683 docs/s, 0.0010412141707093077 MB/s).
+Processed 898000 documents (1092.2317736066711 docs/s, 0.0010416333900515281 MB/s).
+Processed 899000 documents (1092.7640719067886 docs/s, 0.0010421410292690168 MB/s).
+Processed 900000 documents (1093.1999639935657 docs/s, 0.0010425567283569009 MB/s).
+Processed 901000 documents (1093.7107986953265 docs/s, 0.0010430438982918992 MB/s).
+Processed 902000 documents (1094.114453342486 docs/s, 0.0010434288533615933 MB/s).
+Processed 903000 documents (1094.4176490619993 docs/s, 0.0010437180033321374 MB/s).
+Processed 904000 documents (1094.891154221708 docs/s, 0.0010441695730416373 MB/s).
+Processed 905000 documents (1095.6582263878922 docs/s, 0.0010449011100653574 MB/s).
+Processed 906000 documents (1096.1591498504451 docs/s, 0.0010453788279060794 MB/s).
+Processed 907000 documents (1096.7095011302374 docs/s, 0.0010459036837866186 MB/s).
+Processed 908000 documents (1097.165225313865 docs/s, 0.0010463382962359095 MB/s).
+Processed 909000 documents (1097.9655130119706 docs/s, 0.0010471015100593287 MB/s).
+Processed 910000 documents (1098.5361682551552 docs/s, 0.0010476457293082764 MB/s).
+Processed 911000 documents (1099.1131006224084 docs/s, 0.0010481959348892292 MB/s).
+Processed 912000 documents (1099.6423188861465 docs/s, 0.0010487006367551294 MB/s).
+Processed 913000 documents (1100.059422893563 docs/s, 0.0010490984181342725 MB/s).
+Processed 914000 documents (1100.3512578223763 docs/s, 0.001049376733610512 MB/s).
+Processed 915000 documents (1101.0167513112174 docs/s, 0.0010500113976585554 MB/s).
+Processed 916000 documents (1101.6593028726436 docs/s, 0.0010506241825796543 MB/s).
+Processed 917000 documents (1102.2412108912329 docs/s, 0.0010511791333114937 MB/s).
+Processed 918000 documents (1102.7688825786508 docs/s, 0.001051682360247279 MB/s).
+Processed 919000 documents (1103.2308722284276 docs/s, 0.0010521229479107167 MB/s).
+Processed 920000 documents (1103.9875886466123 docs/s, 0.0010528446089235423 MB/s).
+Processed 921000 documents (1104.5335738005813 docs/s, 0.0010533653009420216 MB/s).
+Processed 922000 documents (1105.2964818781973 docs/s, 0.0010540928667814229 MB/s).
+Processed 923000 documents (1105.8434143249933 docs/s, 0.0010546144622087415 MB/s).
+Processed 924000 documents (1106.2149416406344 docs/s, 0.0010549687782675117 MB/s).
+Processed 925000 documents (1106.6776251696397 docs/s, 0.0010554100276657483 MB/s).
+Processed 926000 documents (1107.286897402467 docs/s, 0.0010559910749458952 MB/s).
+Processed 927000 documents (1107.8256722219865 docs/s, 0.0010565048906535973 MB/s).
+Processed 928000 documents (1108.3332805313423 docs/s, 0.0010569889836610244 MB/s).
+Processed 929000 documents (1109.0253309422633 docs/s, 0.0010576489743635781 MB/s).
+Processed 930000 documents (1109.399795737931 docs/s, 0.0010580060918216048 MB/s).
+Processed 931000 documents (1110.1171059103488 docs/s, 0.0010586901721099365 MB/s).
+Processed 932000 documents (1110.7421914836116 docs/s, 0.0010592863001667133 MB/s).
+Processed 933000 documents (1111.4039089594444 docs/s, 0.0010599173631281322 MB/s).
+Processed 934000 documents (1112.0595664110485 docs/s, 0.0010605426468000875 MB/s).
+Processed 935000 documents (1112.3150739579369 docs/s, 0.0010607863177852029 MB/s).
+Processed 936000 documents (1113.0911482535582 docs/s, 0.00106152643990856 MB/s).
+Processed 937000 documents (1113.4983700583934 docs/s, 0.001061914796884912 MB/s).
+Processed 938000 documents (1114.1542414639687 docs/s, 0.0010625402845992743 MB/s).
+Processed 939000 documents (1114.4916429843422 docs/s, 0.001062862055763571 MB/s).
+Processed 940000 documents (1115.1890144595266 docs/s, 0.0010635271210284486 MB/s).
+Processed 941000 documents (1115.8530270094247 docs/s, 0.001064160372743058 MB/s).
+Processed 942000 documents (1116.2922417869897 docs/s, 0.0010645792405958078 MB/s).
+Processed 943000 documents (1116.6966304506466 docs/s, 0.0010649648956781832 MB/s).
+Processed 944000 documents (1117.164211876582 docs/s, 0.0010654108160749263 MB/s).
+Processed 945000 documents (1117.5604510359578 docs/s, 0.0010657886991843775 MB/s).
+Processed 946000 documents (1117.9262931832372 docs/s, 0.0010661375934440968 MB/s).
+Processed 947000 documents (1118.3460022761235 docs/s, 0.0010665378592263446 MB/s).
+Processed 948000 documents (1118.8582078034533 docs/s, 0.0010670263364824803 MB/s).
+Processed 949000 documents (1119.4740570633903 docs/s, 0.00106761365610446 MB/s).
+Processed 950000 documents (1120.1383636488088 docs/s, 0.0010682471882331932 MB/s).
+Processed 951000 documents (1120.664626660128 docs/s, 0.001068749071750763 MB/s).
+Processed 952000 documents (1121.2557308092858 docs/s, 0.0010693127925961359 MB/s).
+Processed 953000 documents (1121.4926020032622 docs/s, 0.0010695386905701276 MB/s).
+Processed 954000 documents (1122.242829021272 docs/s, 0.0010702541628086776 MB/s).
+Processed 955000 documents (1123.0058204135264 docs/s, 0.0010709818081031097 MB/s).
+Processed 956000 documents (1123.3059499163962 docs/s, 0.0010712680339015925 MB/s).
+Processed 957000 documents (1123.7014056205876 docs/s, 0.0010716451698499561 MB/s).
+Processed 958000 documents (1124.2471580653496 docs/s, 0.0010721656399396416 MB/s).
+Processed 959000 documents (1124.8613682405617 docs/s, 0.0010727513964086167 MB/s).
+Processed 960000 documents (1125.5529810787343 docs/s, 0.0010734109698092788 MB/s).
+Processed 961000 documents (1126.0230007793414 docs/s, 0.0010738592155259527 MB/s).
+Processed 962000 documents (1126.5559140471403 docs/s, 0.0010743674412223246 MB/s).
+Processed 963000 documents (1127.0807211262531 docs/s, 0.0010748679362547428 MB/s).
+Processed 964000 documents (1127.641395255047 docs/s, 0.0010754026367712469 MB/s).
+Processed 965000 documents (1128.2183953177077 docs/s, 0.0010759529069115713 MB/s).
+Processed 966000 documents (1128.7194950336118 docs/s, 0.0010764307928405874 MB/s).
+Processed 967000 documents (1129.2495882489304 docs/s, 0.001076936329125338 MB/s).
+Processed 968000 documents (1129.7634650720893 docs/s, 0.001077426400253381 MB/s).
+Processed 969000 documents (1130.5865168446671 docs/s, 0.0010782113235899612 MB/s).
+Processed 970000 documents (1131.135032449897 docs/s, 0.0010787344288348169 MB/s).
+Processed 971000 documents (1131.6681789460226 docs/s, 0.001079242876955054 MB/s).
+Processed 972000 documents (1131.9419014444725 docs/s, 0.001079503919071648 MB/s).
+Processed 973000 documents (1132.5697284479736 docs/s, 0.0010801026615600334 MB/s).
+Processed 974000 documents (1132.9037958168667 docs/s, 0.0010804212530296962 MB/s).
+Processed 975000 documents (1133.4206290312454 docs/s, 0.0010809141435921149 MB/s).
+Opening /fsx/loubna/data/stack_march_no_pii_json/sql
+Input is not a jsonl file, will try to load from HF datasets
+Vocab size: 49152
+Output prefix: /fsx/loubna/data/tokenized_stack_no_pii/code/sql/gpt2-preprocessed
+Time to startup: 0.8245580196380615
+END TIME: Wed Mar 29 01:20:58 UTC 2023
