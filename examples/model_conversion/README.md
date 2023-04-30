@@ -1,6 +1,7 @@
 # Converting BigCode 15B Megatron-LM checkpoint to transformers
 
-Clone `Megatron-LM` and `transformers` from `bigcode-project`, and run:
+Clone `Megatron-LM` and `transformers` from `bigcode-project`. You needd to checkout this [branch](https://github.com/bigcode-project/Megatron-LM/pull/40) in Megatron-LM to support MQA in conversion.
+And run:
 ```
 # merge TP and PP partitions
 bash merge_bigcode_partitions.sh
