@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --job-name=tiny_starcoder
-#SBATCH --nodes=2
+#SBATCH --nodes=4
 #SBATCH --ntasks-per-node=1          # crucial - only 1 task per dist per node!
 #SBATCH --mem-per-cpu=11G
 #SBATCH --cpus-per-task=48
@@ -21,21 +21,21 @@ pushd $SCRIPT_REPO
 LOG_PATH=$SCRIPT_REPO/main_log.txt
 
 # Experiment parameters
-CHECKPOINT_PATH=/fsx/loubna/experiments/test/run_mqa_fix
+CHECKPOINT_PATH=/fsx/bigcode/tinystarcoder/saves/
 TOKENIZER_FILE=/fsx/bigcode/bigcode-training/tokenizer-starcoder/tokenizer.json
 DATA_PATH=/fsx/bigcode/tinystarcoder/data/gpt2-preprocessed_content_document
 
 N_GPUS=8
-MICRO_BATCH_SIZE=32
-GLOBAL_BATCH_SIZE=512
+MICRO_BATCH_SIZE=8
+GLOBAL_BATCH_SIZE=256
 LEARNING_RATE=0.0003
 LR_WARMUP_ITERS=1000
 NLAYERS=20
 NHIDDEN=768
 NHEADS=12
-SEQ_LEN=2048
-SAVE_INTERVAL=10000
-TRAIN_ITERS=100000
+SEQ_LEN=8192
+SAVE_INTERVAL=5000
+TRAIN_ITERS=50000
 
 
 # Training Setup
@@ -71,6 +71,7 @@ GPT_ARGS="    --tensor-model-parallel-size 1 \
     --adam-beta2 .95 \
     --clip-grad 1.0 \
     --bf16 \
+    --use-flash-attn \
     --fim-rate 0.5 \
     --log-interval 10 \
     --save-interval $SAVE_INTERVAL \
