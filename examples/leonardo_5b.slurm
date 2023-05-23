@@ -6,6 +6,7 @@
 #SBATCH --gres=gpu:4
 #SBATCH --exclusive
 #SBATCH --partition=boost_usr_prod
+#SBATCH --account=X
 #SBATCH --output=/leonardo_scratch/large/userexternal/lbenalla/trainings/logs/run-%x-%j.out
 
 set -x -e
@@ -74,8 +75,6 @@ GPT_ARGS="\
        --valid-num-workers 0 \
 "
 
-# changes: swapped bf16 for fp16 and lowered seq length for RAM
-
 TENSORBOARD_ARGS="--tensorboard-dir ${CHECKPOINT_PATH}/tensorboard"
 
 CMD=" \
@@ -125,7 +124,6 @@ SRUN_ARGS=" \
     --kill-on-bad-exit=1 \
     "
 
-# py-spy top -s -i -n -- $LAUNCHER --node_rank $SLURM_PROCID --role $SLURMD_NODENAME: $CMD
 clear; srun $SRUN_ARGS --jobid $SLURM_JOB_ID bash -c "$LAUNCHER --node_rank \$SLURM_PROCID --role \$SLURMD_NODENAME: $CMD" 2>&1 | tee $LOG_PATH
 
 echo "END TIME: $(date)"
