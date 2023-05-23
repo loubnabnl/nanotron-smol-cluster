@@ -50,8 +50,8 @@ GPT_ARGS="\
        --num-attention-heads 48 \
        --attention-head-type multiquery \
        --init-method-std 0.01275 \
-       --seq-length 8192 \
-       --max-position-embeddings 8192 \
+       --seq-length 4096 \
+       --max-position-embeddings 4096 \
        --attention-dropout 0.1 \
        --hidden-dropout 0.1 \
        --micro-batch-size 1 \
@@ -65,7 +65,7 @@ GPT_ARGS="\
        --weight-decay .1 \
        --adam-beta2 .95 \
        --clip-grad 1.0 \
-       --bf16 \
+       --fp16 \
        --use-flash-attn \
        --fim-rate 0.5 \
        --log-interval 10 \
@@ -75,6 +75,8 @@ GPT_ARGS="\
        --use-distributed-optimizer \
        --valid-num-workers 0 \
 "
+
+# changes: swapped bf16 for fp16 and lowered seq length for RAM
 
 TENSORBOARD_ARGS="--tensorboard-dir ${CHECKPOINT_PATH}/tensorboard"
 
