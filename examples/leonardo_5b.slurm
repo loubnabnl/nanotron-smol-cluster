@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=train
 #SBATCH --nodes=32
-#SBATCH --ntasks-per-node=1          
+#SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=32
 #SBATCH --gres=gpu:4
 #SBATCH --exclusive
@@ -14,9 +14,9 @@ source /leonardo/home/userexternal/lbenalla/.bashrc
 
 conda activate megatron-2
 
-export CUDA_HOME=$CONDA_PREFIX
-export LIBRARY_PATH=$CONDA_PREFIX/lib:$LIBRARY_PATH
-export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
+CUDA_HOME=/leonardo/home/userexternal/lbenalla/miniconda3/envs/megatron-2
+export LIBRARY_PATH=$CUDA_HOME/lib:$LIBRARY_PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib:$LD_LIBRARY_PATH
 
 echo "START TIME: $(date)"
 
@@ -29,7 +29,7 @@ LOG_PATH=$SCRIPT_REPO/main_log.txt
 # Training setup
 GPUS_PER_NODE=4
 MASTER_ADDR=$(scontrol show hostnames $SLURM_JOB_NODELIST | head -n 1)
-MASTER_PORT=6000
+MASTER_PORT=6001
 NNODES=$SLURM_NNODES
 NODE_RANK=$SLURM_PROCID
 WORLD_SIZE=$(($GPUS_PER_NODE*$NNODES))
@@ -42,16 +42,17 @@ WEIGHTS_VALID=/leonardo/home/userexternal/lbenalla/code/bigcode-data-mix/data/va
 
 mkdir -p $CHECKPOINT_PATH/tensorboard
 
+
 GPT_ARGS="\
        --tensor-model-parallel-size 2 \
        --pipeline-model-parallel-size 1 \
        --num-layers 24 \
-       --hidden-size 2048 \
+       --hidden-size 4096 \
        --num-attention-heads 32 \
        --attention-head-type multiquery \
        --init-method-std 0.01 \
        --seq-length 2048 \
-       --max-position-embeddings 4096 \
+       --max-position-embeddings 2048 \
        --attention-dropout 0.1 \
        --hidden-dropout 0.1 \
        --micro-batch-size 2 \
@@ -65,8 +66,7 @@ GPT_ARGS="\
        --weight-decay .1 \
        --adam-beta2 .95 \
        --clip-grad 1.0 \
-       --fp16 \
-       --use-flash-attn \
+       --bf16 \
        --fim-rate 0.5 \
        --log-interval 10 \
        --save-interval 5000 \
@@ -89,31 +89,17 @@ CMD=" \
     --structured-logs \
     --structured-logs-dir $CHECKPOINT_PATH/logs \
     $TENSORBOARD_ARGS \
-    --wandb-entity-name loubnabnl \
-    --wandb-project-name leonardo-training \
     "
 
 export LAUNCHER="python -u -m torch.distributed.run \
     --nproc_per_node $GPUS_PER_NODE \
     --nnodes $NNODES \
     --rdzv_endpoint $MASTER_ADDR:$MASTER_PORT \
-    --rdzv_backend c10d \
     --max_restarts 0 \
     --tee 3 \
     "
 
 echo $CMD
-
-# hide duplicated errors using this hack - will be properly fixed in pt-1.12
-# export TORCHELASTIC_ERROR_FILE=/tmp/torch-elastic-error.json
-
-# force crashing on nccl issues like hanging broadcast
-# export NCCL_ASYNC_ERROR_HANDLING=1
-# export NCCL_DEBUG=INFO
-# export NCCL_DEBUG_SUBSYS=COLL
-# export NCCL_SOCKET_NTHREADS=1
-# export NCCL_NSOCKS_PERTHREAD=1
-# export CUDA_LAUNCH_BLOCKING=1
 
 
 # srun error handling:
