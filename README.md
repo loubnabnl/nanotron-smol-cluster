@@ -73,14 +73,14 @@ conda install -c conda-forge pybind11
 conda install -c conda-forge ninja
 ```
 
-- If you get:
+- If you get an error like:
 
 ```
 21 | #include <cuda_profiler_api.h>
 [ip-26-x]:      |          ^~~~~~~~~~~~~~~~~~~~~
 [ip-26-x]:compilation terminated.
 ```
-add to your `~/.bashrc`:
+Make sure the correct cuda is loaded by adding this to your `~/.bashrc`:
 ```
 export PATH="/usr/local/cuda-11.6/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-11.6/lib64:$LD_LIBRARY_PATH"
