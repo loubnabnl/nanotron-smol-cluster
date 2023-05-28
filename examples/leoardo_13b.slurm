@@ -49,8 +49,8 @@ GPT_ARGS="\
        --pipeline-model-parallel-size 4 \
        --sequence-parallel \
        --num-layers 40 \
-       --hidden-size 6144 \
-       --num-attention-heads 48 \
+       --hidden-size 5120 \
+       --num-attention-heads 40 \
        --attention-head-type multiquery \
        --init-method-std 0.01275 \
        --seq-length 2048 \
