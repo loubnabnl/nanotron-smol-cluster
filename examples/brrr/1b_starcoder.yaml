@@ -1,0 +1,286 @@
+general:
+  name: 1b_starcoderdata_lr3
+  ignore_sanity_checks: true
+  kill_switch_path: /fsx/loubna/br4-experiments/kill_loubna_starcoder
+
+profile: null
+# profile:
+#   profiler_export_path: null # Can be a path
+
+checkpoints:
+  checkpoints_path: /fsx/loubna/br4-experiments/checkpoints/debug/1b_star
+  load_from_specific_checkpoint: null
+  checkpoint_interval: 10000
+
+parallelism:
+  dp: 64
+  pp: 1
+  tp: 1
+  pp_engine: 1f1b
+  tp_mode: REDUCE_SCATTER
+  tp_column_linear_async_communication: true
+#  recompute_granularity: selective
+
+model:
+  hidden_size: 2048
+  num_attention_heads: 16
+  n_inner: 8192
+  n_layer: 24
+  max_position_embeddings: 8192
+  vocab_size: 49152
+  layer_norm_epsilon: 0.00001
+  scale_attn_weights: true
+  activation_function: gelu
+  attention_softmax_in_fp32: true
+  resid_pdrop: 0.1
+  attn_pdrop: 0.1
+  embd_pdrop: 0.1
+  pad_key_length: true
+  hf_gpt2_model_name: /fsx/loubna/starcoder-tokenizer/15b
+  make_vocab_size_divisible_by: 128
+  init_method:
+    std: 0.02209 # Basically 1/sqrt(N)
+  dtype: bfloat16
+  seed: 42
+
+
+logging:
+  # 'debug', 'info', 'warning', 'error', 'critical' and 'passive'
+  log_level: 'info'
+  log_level_replica: 'info'
+  iteration_step_info_interval: 1
+  tensorboard_logger:
+    tensorboard_dir:  /fsx/loubna/br4-experiments/tensorboard/debug
+
+tokens:
+  sequence_length: 8192
+  train_steps: 150000
+  micro_batch_size: 1 # TODO @thomasw21
+  batch_accumulation_per_replica: 1 # TODO @thomasw21
+  val_check_interval: 2500
+  limit_val_batches: 2
+
+optimizer:
+  zero_stage: 0
+  weight_decay: 0.1
+  clip_grad: 1.0
+
+  accumulate_grad_in_fp32: true
+
+  adam_eps: 1.0e-8
+  adam_beta1: 0.9
+  adam_beta2: 0.95 # Copied from LLaMa
+  learning_rate: 3.0e-4 # Copied from LLaMA
+
+learning_rate_scheduler:
+  lr_warmup_steps: 2000
+  lr_warmup_style: linear
+  lr_decay_steps: 150000
+  lr_decay_style: cosine
+  min_decay_lr: 3.0e-5 # Copied from LLaMa
+
+data:
+  seed: 1234 # mimick starcoder training
+  num_loading_workers: 2
+  dataset:
+    data_prefix:
+      - 3.0
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/css/gpt2-preprocessed_content_document
+      - 0.01
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/prolog/gpt2-preprocessed_content_document
+      - 53.89
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/c/gpt2-preprocessed_content_document
+      - 1.78
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/fortran/gpt2-preprocessed_content_document
+      - 0.85
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/solidity/gpt2-preprocessed_content_document
+      - 5.68
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/kotlin/gpt2-preprocessed_content_document
+      - 0.01
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/literate-agda/gpt2-preprocessed_content_document
+      - 1.31
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/julia/gpt2-preprocessed_content_document
+      - 0.98
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/java-server-pages/gpt2-preprocessed_content_document
+      - 0.08
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/isabelle/gpt2-preprocessed_content_document
+      - 0.03
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/idris/gpt2-preprocessed_content_document
+      - 0.09
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/lean/gpt2-preprocessed_content_document
+      - 1.12
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/powershell/gpt2-preprocessed_content_document
+      - 23.78
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/go/gpt2-preprocessed_content_document
+      - 0.7
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/erlang/gpt2-preprocessed_content_document
+      - 0.61
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/f-sharp/gpt2-preprocessed_content_document
+      - 0.26
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/ada/gpt2-preprocessed_content_document
+      - 1.68
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/pascal/gpt2-preprocessed_content_document
+      - 2.23
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/perl/gpt2-preprocessed_content_document
+      - 0.3
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/r/gpt2-preprocessed_content_document
+      - 0.31
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/protocol-buffer/gpt2-preprocessed_content_document
+      - 0.45
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/cmake/gpt2-preprocessed_content_document
+      - 0.12
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/sas/gpt2-preprocessed_content_document
+      - 6.81
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/ruby/gpt2-preprocessed_content_document
+      - 9.11
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/rust/gpt2-preprocessed_content_document
+      - 0.06
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/rmarkdown/gpt2-preprocessed_content_document
+      - 44.66
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/c-sharp/gpt2-preprocessed_content_document
+      - 0.58
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/smalltalk/gpt2-preprocessed_content_document
+      - 2.23
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/haskell/gpt2-preprocessed_content_document
+      - 0.01
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/maple/gpt2-preprocessed_content_document
+      - 1.25
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/mathematica/gpt2-preprocessed_content_document
+      - 1.03
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/ocaml/gpt2-preprocessed_content_document
+      - 1.31
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/makefile/gpt2-preprocessed_content_document
+      - 2.87
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/lua/gpt2-preprocessed_content_document
+      - 0.01
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/literate-coffeescript/gpt2-preprocessed_content_document
+      - 0.05
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/literate-haskell/gpt2-preprocessed_content_document
+      - 3.32
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/restructuredtext/gpt2-preprocessed_content_document
+      - 0.03
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/racket/gpt2-preprocessed_content_document
+      - 0.19
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/standard-ml/gpt2-preprocessed_content_document
+      - 0.39
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/systemverilog/gpt2-preprocessed_content_document
+      - 5.2
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/tex/gpt2-preprocessed_content_document
+      - 0.02
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/awk/gpt2-preprocessed_content_document
+      - 1.56
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/assembly/gpt2-preprocessed_content_document
+      - 0.01
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/alloy/gpt2-preprocessed_content_document
+      - 0.07
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/agda/gpt2-preprocessed_content_document
+      - 0.41
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/emacs-lisp/gpt2-preprocessed_content_document
+      - 3.66
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/dart/gpt2-preprocessed_content_document
+      - 0.56
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/cuda/gpt2-preprocessed_content_document
+      - 0.03
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/bluespec/gpt2-preprocessed_content_document
+      - 0.001
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/augeas/gpt2-preprocessed_content_document
+      - 0.23
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/batchfile/gpt2-preprocessed_content_document
+      - 0.02
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/tcsh/gpt2-preprocessed_content_document
+      - 0.01
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/stan/gpt2-preprocessed_content_document
+      - 4.69
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/scala/gpt2-preprocessed_content_document
+      - 0.35
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/tcl/gpt2-preprocessed_content_document
+      - 0.33
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/stata/gpt2-preprocessed_content_document
+      - 0.01
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/applescript/gpt2-preprocessed_content_document
+      - 3.09
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/shell/gpt2-preprocessed_content_document
+      - 0.46
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/clojure/gpt2-preprocessed_content_document
+      - 0.2
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/scheme/gpt2-preprocessed_content_document
+      - 0.05
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/antlr/gpt2-preprocessed_content_document
+      - 0.04
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/sparql/gpt2-preprocessed_content_document
+      - 11.09
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/sql/gpt2-preprocessed_content_document
+      - 0.4
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/glsl/gpt2-preprocessed_content_document
+      - 0.3
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/elm/gpt2-preprocessed_content_document
+      - 0.42
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/dockerfile/gpt2-preprocessed_content_document
+      - 48.92
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/cpp/gpt2-preprocessed_content_document
+      - 0.64
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/coffeescript/gpt2-preprocessed_content_document
+      - 1.4
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/common-lisp/gpt2-preprocessed_content_document
+      - 0.71
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/elixir/gpt2-preprocessed_content_document
+      - 0.91
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/groovy/gpt2-preprocessed_content_document
+      - 29.36
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/html/gpt2-preprocessed_content_document
+      - 86.94
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/java/gpt2-preprocessed_content_document
+      - 64.71
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/javascript/gpt2-preprocessed_content_document
+      - 74.93
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/markdown/gpt2-preprocessed_content_document
+      - 60.89
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/php/gpt2-preprocessed_content_document
+      - 60.4
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/python/gpt2-preprocessed_content_document
+      - 26.52
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/typescript/gpt2-preprocessed_content_document
+      - 0.001
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/verilog/gpt2-preprocessed_content_document
+      - 1.42
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/visual-basic/gpt2-preprocessed_content_document
+      - 0.94
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/vhdl/gpt2-preprocessed_content_document
+      - 0.01
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/thrift/gpt2-preprocessed_content_document
+      - 0.0002
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/matlab/gpt2-preprocessed_content_document
+      - 0.11
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/yacc/gpt2-preprocessed_content_document
+      - 0.18
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/zig/gpt2-preprocessed_content_document
+      - 0.05
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/xslt/gpt2-preprocessed_content_document
+      - 1.0
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/json/gpt2-preprocessed_content_document
+      - 1.0
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/code/yaml/gpt2-preprocessed_content_document
+      - 54.4
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/gh_issues/gpt2-preprocessed_content_document
+      - 32.0
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/gh_commits/gpt2-preprocessed_content_document
+      - 7.12
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/jupyter_scripts/gpt2-preprocessed_content_document
+      - 6.0
+      - /fsx/bigcode/bigcode-training/tokenized_stack_no_pii/jupyter_structured/gpt2-preprocessed_content_document
+    index_mapping_dir: null # path to save index mapping .npy files, by default will save in the same location as data_prefix
+    splits_string: 0.969,0.999,1 # TODO @thomasw21: We should probably define a split per dataset instead of setting them at a global scale
+    skip_warmup: true
+    dataloader_type: single # cyclic
+    validation_drop_last: true # Set to false if the last partial validation samples is to be consumed
+    eod_mask_loss: false # Mask loss for the end of document tokens
+    no_seqlen_plus_one_input_tokens: false # Set to true to disable fetching (sequence length + 1) input tokens, instead get (sequence length) input tokens and mask the last token
+    pad_samples_to_global_batch_size: false # Set to true if you want to pad the last partial batch with -1's to equal global batch size
+#  dataset:
+#    hf_dataset_name: stas/openwebtext-10k
+#    hf_dataset_config_name: null
+#    hf_dataset_split: train
+#    dataset_processing_num_proc_per_process: 12
+#    dataset_overwrite_cache: true
+#    text_column_name: text
+#
