@@ -54,6 +54,15 @@ Download tokenized slimpajama from S3. And you can find `config_slimpajama_1_3b.
 be used with [brrr](https://github.com/huggingface/brrr/tree/main/brrr) after updating data/ckpt/tensorboard paths..
 - 1.3b-redpajama: same
 
+**Model conversion**
+
+```bash
+python /fsx/loubna/code/brrr/examples/gpt2_mqa/convert_checkpoint.py
+    --checkpoint-path /fsx/loubna/br4-experiments/checkpoints/pile_2/300000 \
+    --model-name bigcode-data/pile-1.3b \
+    --save-path /fsx/loubna/br4-experiments/checkpoints/pile/converted
+```
+
 #### With Megatron-LM: 7B-StarCoder
 The slurm file for the job is at `/fsx/loubna/code/Megatron-LM/train_7b.slurm`, checkpoints are saved at `/fsx/bigcode/experiments/pretraining/7b-starcoder`.
 
