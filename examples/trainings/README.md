@@ -51,7 +51,7 @@ sbatch /fsx/loubna/code/dev/pr/brrr/examples/gpt2_mqa/slurm_scripts/train_loubna
 Jobs to run:
 - 1.3b-slimpajama: 1.3B model with MQA on 300B from SlimPajama.
 
-Download tokenized slimpajama from S3. And you can find `config_slimpajama_1_3b.yaml` and `train_slimpajama_1_3b.yaml` to 
+Download tokenized slimpajama from S3. And you can find `config_slimpajama_1_3b.yaml` and `train_slimpajama_1_3b.yaml` in `brr_training` folder to 
 be used with [brrr](https://github.com/huggingface/brrr/tree/main/brrr) after updating data/ckpt/tensorboard paths..
 - 1.3b-redpajama: same, after tokenizing redpajama (see section above)
 
