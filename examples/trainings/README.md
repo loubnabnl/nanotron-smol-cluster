@@ -41,7 +41,7 @@ done
 ````
 # Jobs
 
-### Training with `brrr`
+#### Training with `brrr`
 Running jobs:
 - 1.3b-pile: 1.3B model with MQA on 300B from The Pile (If the job crashes it can be restarted with 
 ````
@@ -54,12 +54,12 @@ Download tokenized slimpajama from S3. And you can find `config_slimpajama_1_3b.
 be used with [brrr](https://github.com/huggingface/brrr/tree/main/brrr) after updating data/ckpt/tensorboard paths..
 - 1.3b-redpajama: same
 
-### With Megatron-LM: 7B-StarCoder
+#### With Megatron-LM: 7B-StarCoder
 The slurm file for the job is at `/fsx/loubna/code/Megatron-LM/train_7b.slurm`, checkpoints are saved at `/fsx/bigcode/experiments/pretraining/7b-starcoder`.
 
 # Evaluation of 7B-StarCoder on MultiPL-E
 Once the checkpoint is converted and pushed to the `bigcode-data` org
-You can run MultiPL-E evaluation using (`/fsx/loubna/code/bigcode-evaluation-harness/multiple_evals.sh`) 
+You can run MultiPL-E evaluation using: (`/fsx/loubna/code/bigcode-evaluation-harness/multiple_evals.sh`) 
 ```bash
 
 langs=(java js cpp swift php d jl lua r rkt rb rs py)
@@ -69,6 +69,8 @@ for lang in "${langs[@]}"; do
     sbatch -J "eval-$model-$lang" /fsx/loubna/code/bigcode-evaluation-harness/multiple_evals.slurm "$model" "$lang"
 done
 ```
+(=`/fsx/loubna/code/bigcode-evaluation-harness/multiple_evals.sh`) 
+
 This will run `/fsx/loubna/code/bigcode-evaluation-harness` and save the generations under `$OUT_PATH//$model-$lang.json`  (see `multiple_evals.slurm`)
 The execution requires docker containers (only available on `dev-cluster`)
 ```bash
