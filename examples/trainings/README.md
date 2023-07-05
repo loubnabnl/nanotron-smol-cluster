@@ -7,7 +7,7 @@ The tokenizers are in `bigcode-data` org including a tokenizer for RedPajama dat
 
 ### RedPajama
 RedPajama is available on s3 under the bucket `hf-redpajama`, a better structured version ready for tokenization is at `/fsx/loubna/data/redpajama_lines`, where
-data is sharded to ~100 shards so tokenization doesn't OOM. One missing subset is the github data, the data on s3 seems corrupted, so one needs to download it and shard it separately.
+data is sharded to ~90 shards so tokenization doesn't OOM. One missing subset is the github data, the data on s3 seems corrupted, so one needs to download it and shard it separately.
 
 - "arxiv": 3 shards arxiv_0, arxiv_1 and arxiv_2
 - "c4-train": 20 shards
