@@ -47,6 +47,7 @@ Running jobs:
 ````
 sbatch /fsx/loubna/code/dev/pr/brrr/examples/gpt2_mqa/slurm_scripts/train_loubna_pile_1b.slurm
 `````
+There's a cron job that pushes tensorboard logs from `/fsx/loubna/br4-experiments/tb/pile-1.3b` to the [hub](https://huggingface.co/bigcode-data/pile-1.3b) every 30 min.
 
 Jobs to run:
 - 1.3b-slimpajama: 1.3B model with MQA on 300B from SlimPajama.
