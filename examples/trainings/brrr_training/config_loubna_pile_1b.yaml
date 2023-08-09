@@ -1,0 +1,148 @@
+general:
+  name: pile-1.3b
+  ignore_sanity_checks: true
+  kill_switch_path: /fsx/loubna/br4-experiments/kill_loubna_starcoder
+
+profile: null
+# profile:
+#   profiler_export_path: null # Can be a path
+
+checkpoints:
+  checkpoints_path: /fsx/loubna/br4-experiments/checkpoints/pile_2
+  load_from_specific_checkpoint: null
+  checkpoint_interval: 10000
+
+parallelism:
+  dp: 128
+  pp: 1
+  tp: 1
+  pp_engine: 1f1b
+  tp_mode: REDUCE_SCATTER
+  tp_column_linear_async_communication: false
+#  recompute_granularity: selective
+
+tokenizer:
+  hf_tokenizer_name : /fsx/loubna/starcoder-tokenizer/tokenizer-pile
+
+model:
+  hidden_size: 2304
+  num_attention_heads: 18
+  ffn_hidden_size: 9216
+  num_layers: 22
+  max_position_embeddings: 8192
+  vocab_size: 49152
+  layer_norm_epsilon: 0.00001
+  scale_attn_weights: true
+  activation_function: gelu
+  resid_pdrop: 0.1
+  attn_pdrop: 0.1
+  embd_pdrop: 0.1
+  assert_make_sharded_vocab_size_divisible_by: 128
+  init_method:
+    std: 0.02209 # Basically 1/sqrt(N)
+  dtype: bfloat16
+  seed: 42
+
+
+logging:
+  # 'debug', 'info', 'warning', 'error', 'critical' and 'passive'
+  log_level: 'info'
+  log_level_replica: 'info'
+  iteration_step_info_interval: 10
+  tensorboard_logger:
+    tensorboard_dir:  /fsx/loubna/br4-experiments/tb/pile-1.3b
+
+tokens:
+  sequence_length: 8192
+  train_steps: 300000
+  micro_batch_size: 1 # TODO @thomasw21
+  batch_accumulation_per_replica: 1 # TODO @thomasw21
+  val_check_interval: 20
+  limit_val_batches: 2
+
+optimizer:
+  zero_stage: 0
+  weight_decay: 0.1
+  clip_grad: 1.0
+
+  accumulate_grad_in_fp32: true
+
+  adam_eps: 1.0e-8
+  adam_beta1: 0.9
+  adam_beta2: 0.95
+  learning_rate: 4.0e-4
+
+learning_rate_scheduler:
+  lr_warmup_steps: 2000
+  lr_warmup_style: linear
+  lr_decay_steps: 300000
+  lr_decay_style: cosine
+  min_decay_lr: 4.0e-5
+
+data:
+  seed: 1234 # mimick starcoder training
+  num_loading_workers: 2
+  dataset:
+    # Path to data must be specified by the user as an alternate list of weight/source
+    # see example below:
+    #   - .5
+    #   - /raid/data/pile/my-gpt3_00_text_document
+    #   - .5
+    #   - /raid/data/pile/my-gpt3_01_text_document
+    data_prefix:
+      - 1
+      - /fsx/loubna/data/the_pile/pile_0/gpt2-preprocessed_text_document
+      - 1
+      - /fsx/loubna/data/the_pile/pile_1/gpt2-preprocessed_text_document
+      - 1
+      - /fsx/loubna/data/the_pile/pile_2/gpt2-preprocessed_text_document
+      - 1
+      - /fsx/loubna/data/the_pile/pile_3/gpt2-preprocessed_text_document
+      - 1
+      - /fsx/loubna/data/the_pile/pile_4/gpt2-preprocessed_text_document
+      - 1
+      - /fsx/loubna/data/the_pile/pile_5/gpt2-preprocessed_text_document
+      - 1
+      - /fsx/loubna/data/the_pile/pile_6/gpt2-preprocessed_text_document
+      - 1
+      - /fsx/loubna/data/the_pile/pile_7/gpt2-preprocessed_text_document
+      - 1
+      - /fsx/loubna/data/the_pile/pile_8/gpt2-preprocessed_text_document
+      - 1
+      - /fsx/loubna/data/the_pile/pile_9/gpt2-preprocessed_text_document
+      - 1
+      - /fsx/loubna/data/the_pile/pile_10/gpt2-preprocessed_text_document
+      - 1
+      - /fsx/loubna/data/the_pile/pile_11/gpt2-preprocessed_text_document
+      - 1
+      - /fsx/loubna/data/the_pile/pile_12/gpt2-preprocessed_text_document
+      - 1
+      - /fsx/loubna/data/the_pile/pile_13/gpt2-preprocessed_text_document
+      - 1
+      - /fsx/loubna/data/the_pile/pile_14/gpt2-preprocessed_text_document
+      - 1
+      - /fsx/loubna/data/the_pile/pile_15/gpt2-preprocessed_text_document
+      - 1
+      - /fsx/loubna/data/the_pile/pile_16/gpt2-preprocessed_text_document
+      - 1
+      - /fsx/loubna/data/the_pile/pile_17/gpt2-preprocessed_text_document
+      - 1
+      - /fsx/loubna/data/the_pile/pile_18/gpt2-preprocessed_text_document
+      - 1
+      - /fsx/loubna/data/the_pile/pile_19/gpt2-preprocessed_text_document
+    index_mapping_dir: null # path to save index mapping .npy files, by default will save in the same location as data_prefix
+    splits_string: 0.969,0.999,1 # TODO @thomasw21: We should probably define a split per dataset instead of setting them at a global scale
+    skip_warmup: true
+    dataloader_type: single # cyclic
+    validation_drop_last: true # Set to false if the last partial validation samples is to be consumed
+    eod_mask_loss: false # Mask loss for the end of document tokens
+    no_seqlen_plus_one_input_tokens: false # Set to true to disable fetching (sequence length + 1) input tokens, instead get (sequence length) input tokens and mask the last token
+    pad_samples_to_global_batch_size: false # Set to true if you want to pad the last partial batch with -1's to equal global batch size
+#  dataset:
+#    hf_dataset_name: stas/openwebtext-10k
+#    hf_dataset_config_name: null
+#    hf_dataset_split: train
+#    dataset_processing_num_proc_per_process: 12
+#    dataset_overwrite_cache: true
+#    text_column_name: text
+#
