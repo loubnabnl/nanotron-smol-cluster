@@ -67,7 +67,7 @@ fs = HfFileSystem()
 # the dataset has args.chunk_number shards we'll make 10*args.split_number shards out of it
 total_size_check = 0
 t = 20
-for i in range(6, 7):
+for i in range(1, t):
     list_dirs = fs.ls(f"datasets/{args.data_name}/train/chunk{i}", detail=False)
     real_dirs = [
         f"https://huggingface.co/datasets/{args.data_name}/resolve/main/train/{list_dirs[i].split('/train/')[-1]}"
