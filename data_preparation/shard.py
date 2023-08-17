@@ -79,12 +79,6 @@ for i in range(6, 7):
         f"Splitting chunk {i} to {args.split_number} shards with proportion {proportion} files each out of {count}"
     )
     start = 0
-    if i == 7:
-        start = 1
-    if i == 9:
-        start = 2
-        t += 2
-        logger.info(f"Chunk {i} parsing skipped shards 0 and 1 (aka 32 and 33), we'll start from shard {t}")
     for j in range(start, args.split_number):
         logger.info(f"Preparing shard {j} in chunk {i} saved to shard_{t}")
         if j == args.split_number - 1:
