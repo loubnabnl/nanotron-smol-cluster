@@ -16,6 +16,7 @@ DATA_PATH = "/fsx/bigcode/bigcode-training/stack_v2/"
 # "documentation": 1,
 # "wikipedia": 3,
 
+# uncoment target sources
 folders_dict = {
     # "issues": 3,
     # "jupyter_notebooks": 3,
@@ -45,7 +46,8 @@ def split_folder_into_subfolders(folder_base_name, num_of_subfolders, has_data_f
         for j in range(files_per_folder):
             if files:
                 current_file = files.pop(0)
-                # shutil.move(os.path.join(folder_name, current_file), os.path.join(new_folder, current_file))
+                # use shutil.copy to keep original data
+                shutil.move(os.path.join(folder_name, current_file), os.path.join(new_folder, current_file))
 
     if not os.listdir(folder_name):
         print(f"The move is complete, removing empty folder {folder_name}")
