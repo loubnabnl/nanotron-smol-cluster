@@ -33,3 +33,16 @@ Note:
 - be careful sometimes Megatron-LM tokenization might fail silently, so make sure the final `.bin` and `.idx` files both exist for each shard and have reasonable sizes e.g if idx is too small check the logs something must've gone wrong), some sanity checks in `sanity.sh`
 
 - To use tokenized data in training make sure to use appropriate custom weights (will probably be provided in a csv, fornmost teh wieght is the dataset size in  GB unless it's beging up/down-sampled), if you shard a data source make sure to divide weight of the shard by number of shards in that source (=> double check weights with Raymond and team).
+
+
+## Update:
+The code dataset will be saved here `/fsx/bigcode/data_v2`. To run tokenization:
+1- Update the bashrc path in `./slurm_files/tokenize_stackv2_anton.slurm`
+2- Go to `./tokenize_anton_data.sh` and update `folders_dict` with the right dataset name (instead of `jupyter_scripts`) and number of shards.
+3- Run :
+```bash
+cd  ./data_preparation/stack_v2
+# launch slurm tokenization jobs
+bash ./tokenize_anton_data.sh
+```
+4- You're done! 🎉 (make sure to check the logs for errors, and verify data sizes at the end)
