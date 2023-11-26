@@ -35,7 +35,7 @@ Note:
 - To use tokenized data in training make sure to use appropriate custom weights (will probably be provided in a csv, fornmost teh wieght is the dataset size in  GB unless it's beging up/down-sampled), if you shard a data source make sure to divide weight of the shard by number of shards in that source (=> double check weights with Raymond and team).
 
 
-## Update:
+## Update 26/11
 The raw code dataset will be saved here `/fsx/bigcode/data_v2` (and tokenized one here `/fsx/bigcode/bigcode-training/tokenized_stack_v2_final`). To run tokenization:
 
 1- Update the bashrc path in `./slurm_files/tokenize_stackv2_anton.slurm`
