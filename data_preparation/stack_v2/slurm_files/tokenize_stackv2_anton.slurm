@@ -24,9 +24,6 @@ MASTER_PORT=6000
 NNODES=$SLURM_NNODES
 NODE_RANK=$SLURM_PROCID
 
-LOAD_PATH=/fsx/bigcode/bigcode-training/stack_v2_jsonl
-OUT_PATH=/fsx/bigcode/bigcode-training/tokenized_stack_v2_final
-
 json_file=$1
 FULL_OUT_PATH=$2
 
