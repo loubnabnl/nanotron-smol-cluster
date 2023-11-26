@@ -37,12 +37,16 @@ Note:
 
 ## Update:
 The raw code dataset will be saved here `/fsx/bigcode/data_v2` (and tokenized one here `/fsx/bigcode/bigcode-training/tokenized_stack_v2_final`). To run tokenization:
+
 1- Update the bashrc path in `./slurm_files/tokenize_stackv2_anton.slurm`
+
 2- Go to `./tokenize_anton_data.sh` and update `folders_dict` with the right dataset name (instead of `jupyter_scripts`) and number of shards.
+
 3- Run :
 ```bash
 cd  ./data_preparation/stack_v2
 # launch slurm tokenization jobs
 bash ./tokenize_anton_data.sh
 ```
-4- You're done! 🎉 (make sure to check the logs for errors, and verify data sizes at the end)
+
+You're done! 🎉 (make sure to check the logs for errors, and verify data sizes at the end)
