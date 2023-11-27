@@ -43,13 +43,14 @@ for i in range(len(df)):
             ]
         )
         size_0 = EXCEPTIONS[source]
+    else:
+        for shard in range(n_shards):
+            target_path = f"{DATA_PATH}/{source}/{source}_{shard}"
+            # shard size in GB divided by 2 Bytes per token
+            shard_weight = float(np.round(get_bin_size(target_path) / (2 * 10**9), 2))
+            shard_path = f"{target_path}/gpt2-preprocessed_content_document"
+            data_prefix.extend([shard_weight, shard_path])
     print(f"source: {source}, shard_weight_0: {size_0}, n_shards: {n_shards}")
-    for shard in range(n_shards):
-        target_path = f"{DATA_PATH}/{source}/{source}_{shard}"
-        # shard size in GB divided by 2 Bytes per token
-        shard_weight = float(np.round(get_bin_size(target_path) / (2 * 10**9), 2))
-        shard_path = f"{target_path}/gpt2-preprocessed_content_document"
-        data_prefix.extend([shard_weight, shard_path])
 
 # Read the YAML file
 with open(YAML_FILE, "r") as file:
