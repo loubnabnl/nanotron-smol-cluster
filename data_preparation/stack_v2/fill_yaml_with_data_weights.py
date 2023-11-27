@@ -14,8 +14,6 @@ EXCEPTIONS = {"ir_python": 1, "ir_cpp": 1, "ir_rust": 1, "ir_low_resource": 3}
 
 df = read_csv(CSV_FILE)
 
-yaml.add_representer(float, float_representer)
-
 
 def float_representer(dumper, value):
     text = "{0:.2f}".format(value)
@@ -28,6 +26,7 @@ def get_bin_size(dir_path):
             return os.path.getsize(os.path.join(dir_path, file))
     return 0
 
+yaml.add_representer(float, float_representer)
 
 # Generate data prefix list
 data_prefix = []
@@ -39,7 +38,7 @@ for i in range(len(df)):
         # these sources have custom weights
         data_prefix.extend(
             [
-                EXCEPTIONS[source],
+                float(EXCEPTIONS[source]),
                 f"{DATA_PATH}/{source}/{source}_0/gpt2-preprocessed_content_document",
             ]
         )
@@ -48,7 +47,7 @@ for i in range(len(df)):
     for shard in range(n_shards):
         target_path = f"{DATA_PATH}/{source}/{source}_{shard}"
         # shard size in GB divided by 2 Bytes per token
-        shard_weight = np.round(get_bin_size(target_path) / (2 * 10**9), 2)
+        shard_weight = float(np.round(get_bin_size(target_path) / (2 * 10**9), 2))
         shard_path = f"{target_path}/gpt2-preprocessed_content_document"
         data_prefix.extend([shard_weight, shard_path])
 
