@@ -10,7 +10,7 @@ profile:
 
 checkpoints:
   checkpoints_path: /fsx/bigcode/checkpoints/starcder2_7b
-  checkpoint_interval: 1800
+  checkpoint_interval: 1500
   # checkpoint_interval: 6000 # every 4hours assuming 2s/step
   resume_checkpoint_path: s3://huggingface-brrr/starcder2_7b
   checkpoints_path_is_shared_file_system: False
@@ -61,9 +61,9 @@ model:
 
 tokens:
   sequence_length: 16384
-  train_steps: 1450000 # 4T tokens / 3.45M tokens per batch = 1.45M batches
+  train_steps: 1400000 # 4.95T tokens / 3.45M tokens per batch = 1.4M batches
   micro_batch_size: 1
-  batch_accumulation_per_replica: 2 # 2*1*108=216 samples * 16k tokens = 3.45M tokens
+  batch_accumulation_per_replica: 2 # 2*1*108=216 samples * 16k tokens = 3.53M tokens
   val_check_interval: 1
   limit_val_batches: 1
 
@@ -84,7 +84,7 @@ optimizer:
 learning_rate_scheduler:
   lr_warmup_steps: 1000
   lr_warmup_style: linear
-  lr_decay_steps: 1450000
+  lr_decay_steps: 1400000
   lr_decay_style: cosine
   min_decay_lr: 3.0e-5
 
