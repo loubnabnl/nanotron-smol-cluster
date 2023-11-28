@@ -21,6 +21,7 @@ STACK_3B_PATH = "/app/dataset/stack_v2_final_tokenized/tokenized_stack_v2_3b"
 # 3B exceptions
 EXCEPTIONS = {"wikipedia": 0, "lhq_data": 1, "arxiv": 0,
               "ir_python": 1, "ir_cpp": 1, "ir_rust": 1, "ir_low_resource": 3}
+# TODO: get the weights from the csv file
 
 df = read_csv(CSV_FILE)
 
