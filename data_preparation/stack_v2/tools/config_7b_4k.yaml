@@ -42,7 +42,7 @@ model:
     num_attention_heads: 36
     num_hidden_layers: 32
     vocab_size: 49152
-    rope_theta: 1000000
+    rope_theta: 100000
     layer_norm_epsilon: 0.00001
     scale_attn_weights: true
     activation_function: gelu
@@ -62,8 +62,8 @@ model:
 tokens:
   sequence_length: 4096
   train_steps: 1400000 # 4.95T tokens / 3.45M tokens per batch = 1.4M batches
-  micro_batch_size: 2
-  batch_accumulation_per_replica: 4 # 2*4*108=864 samples * 4k tokens = 3.53M tokens
+  micro_batch_size: 4
+  batch_accumulation_per_replica: 2 # 2*4*108=864 samples * 4k tokens = 3.53M tokens
   val_check_interval: 1
   limit_val_batches: 1
 
