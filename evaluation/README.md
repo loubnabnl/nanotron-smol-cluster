@@ -11,14 +11,14 @@ git clone https://github.com/bigcode-project/bigcode-evaluation-harness
 ### Solutions post-processing
 ```bash
 # to clean the generations and save them in bigcode-eval-harness format
-# update paths in the python script
-python clean_solutions.py --load_path ./data_nemo.json --save_path bigcode-evaluation-harness/clean_data.json
+# 7b_513b_tokens.json is generations from nvidia
+python clean_solutions.py --load_path ./7b_513b_tokens.json --save_path bigcode-evaluation-harness/7b_513b_tokens_clean.json
 ```
 
 ### Solutions Execution
 You can run execution with slurm using (provide name of json, change paths in slurm accordingly):
 ```
-sbatch slurm_eval_nvidia.slurm  7b_513b_tokens
+sbatch slurm_eval_nvidia.slurm  7b_513b_tokens_clean
 ```
 
 Or just run this command instead on a cpu machine (given you have 20 geerations per problem):
@@ -30,6 +30,6 @@ python bigcode-evaluation-harness/main.py \
     --n_samples 20 \
     --allow_code_execution \
     --use_auth_token \
-    --load_generations_path bigcode-evaluation-harness/clean_data.json \
-    --metric_output_path bigcode-evaluation-harness/metrics.json \
+    --load_generations_path bigcode-evaluation-harness/7b_513b_tokens_clean.json \
+    --metric_output_path bigcode-evaluation-harness/metrics_7b_513b_tokens.json \
 ```
