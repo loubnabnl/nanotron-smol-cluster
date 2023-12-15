@@ -3,14 +3,11 @@ import argparse
 from datasets import load_dataset
 
 
-LOAD_DATA_PATH = "/fsx/loubna/ckpts"
-SAVE_DATA_PATH = "/fsx/loubna/bigcode_2/code/bigcode-evaluation-harness/nvidia"
 STOP_TOKENS = ["\nclass", "\ndef", "\n#", "\n@", "\nprint", "\nif", "\n```", "<filename>", "<file_sep>", "<|endoftext|>"]
-
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--load_path", type=str, default="3b_20samples.json")
+    parser.add_argument("--load_path", type=str, default="generation_nemo.json")
     parser.add_argument("--save_path", type=str, default="generations_3b.json")
     return parser.parse_args()
 
@@ -51,7 +48,8 @@ if __name__ == "__main__":
 
     # load generations data
     data = []
-    with open(f"{LOAD_DATA_PATH}/{args.load_path}", "r") as file:
+    print(f"Loading data from {args.load_path}")
+    with open(f"{args.load_path}", "r") as file:
         i = 0
         for line in file:
             i += 1
@@ -70,10 +68,10 @@ if __name__ == "__main__":
         final_generations.append(solutions)
 
     # save new generations
-    with open(f"{SAVE_DATA_PATH}/{args.save_path}", "w") as fp:
+    with open(f"{args.save_path}", "w") as fp:
         json.dump(final_generations, fp)
 
-    print(f"Data saved at {SAVE_DATA_PATH}/{args.save_path} 🎉")
+    print(f"Data saved at {args.save_path} 🎉")
     # sanity checks
     print(f"example 0 solution 5:\n{final_generations[0][5]}")
     print("-" * 60)
