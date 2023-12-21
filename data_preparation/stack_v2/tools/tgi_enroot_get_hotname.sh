@@ -1,21 +1,8 @@
 #!/bin/bash
-
-
 # We assume logs are saved under slurm/logs, this retrieves the last created logs
 LOG_FILE_PATH=$(find /fsx/loubna/projects/tgi-swarm/slurm/logs -type f -name "*.out" -printf '%T+ %p\n' | sort -r | head -n 1 | cut -d' ' -f2)
 
 echo "Latest created log file is $LOG_FILE_PATH"
-# Check if log file path is provided
-if [ -z "$LOG_FILE_PATH" ]; then
-    echo "Please provide the path to the log file."
-    exit 1
-fi
-
-# Check if log file exists
-if [ ! -f "$LOG_FILE_PATH" ]; then
-    echo "Log file does not exist."
-    exit 1
-fi
 
 # Extracting the port number
 PORT=$(grep -oP ' port: \K\d+' "$LOG_FILE_PATH")
