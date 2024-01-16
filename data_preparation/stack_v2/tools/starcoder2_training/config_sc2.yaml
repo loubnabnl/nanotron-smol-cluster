@@ -1,0 +1,129 @@
+general:
+  project: starcoder2_7b_4k_smol_data
+  ignore_sanity_checks: true
+  kill_switch_path: ./kill_starcoder2_7b_4k_smol_data
+  run: starcoder2_7b_4k_smol_data--%j
+
+profile:
+
+checkpoints:
+  checkpoints_path: /fsx/bigcode/checkpoints/starcoder2_7b_4k_smol_data
+  checkpoint_interval: 5000
+  # checkpoint_interval: 6000 # every 4hours assuming 2s/step
+  resume_checkpoint_path: s3://huggingface-brrr/starcoder2_7b_4k_smol_data
+  checkpoints_path_is_shared_file_system: False
+  s3:
+    upload_s3_path: s3://huggingface-brrr/starcoder2_7b_4k_smol_data
+    remove_after_upload: true
+    s5cmd_numworkers: 15
+    s5cmd_concurrency: 6
+    s5cmd_path: /fsx/nouamane/miniconda/envs/2-1-cu121/bin/s5cmd
+
+parallelism:
+  dp: 108
+  pp: 1
+  tp: 4
+  pp_engine: 1f1b
+  tp_mode: REDUCE_SCATTER
+  tp_linear_async_communication: true
+  # recompute_granularity: selective
+
+model:
+  model_config:
+    is_starcoder2_config: true
+    max_position_embeddings: 4096
+    # sliding_window_size: 8192
+    # GQA vs MQA
+    grouped_query: true
+    num_kv_heads: 4
+    hidden_size: 4608
+    num_attention_heads: 36
+    num_hidden_layers: 32
+    vocab_size: 49152
+    rope_theta: 100000
+    layer_norm_epsilon: 0.00001
+    scale_attn_weights: true
+    activation_function: gelu
+    resid_pdrop: 0
+    attn_pdrop: 0
+    embd_pdrop: 0
+  
+  tokenizer_name_or_path: /fsx/bigcode/tokenizer/starcoder2-tokenizer
+  make_vocab_size_divisible_by: 128
+  init_method:
+    std: 0.0147 # Basically 1/sqrt(hidden_size)
+  dtype: bfloat16
+  seed: 1234
+  # DDP
+  ddp_bucket_cap_mb: 128
+
+tokens:
+  sequence_length: 4096
+  train_steps: 1000000 # 3.53T tokens / 3.53M tokens per batch = 1M batches
+  micro_batch_size: 4
+  batch_accumulation_per_replica: 2 # 2*4*108=864 samples * 4k tokens = 3.53M tokens
+  val_check_interval: 1
+  limit_val_batches: 1
+
+optimizer:
+  zero_stage: 0
+  weight_decay: 0.1
+  clip_grad: 1.0
+
+  accumulate_grad_in_fp32: true
+
+  adam_eps: 1.0e-8
+  adam_beta1: 0.9
+  adam_beta2: 0.95
+  torch_adam_is_fused: true
+
+  learning_rate: 3.0e-4
+
+learning_rate_scheduler:
+  lr_warmup_steps: 1000
+  lr_warmup_style: linear
+  lr_decay_steps: 1000000
+  lr_decay_style: cosine
+  min_decay_lr: 3.0e-5
+
+logging:
+  # 'debug', 'info', 'warning', 'error', 'critical' and 'passive'
+  log_level: 'info'
+  log_level_replica: 'info'
+  iteration_step_info_interval: 10
+  tensorboard_logger:
+    tensorboard_dir: /fsx/bigcode/tb_logs/starcoder2_7b_4k_smol_data
+    # repo_id: HuggingFaceBR4/nouamane-sc2-h100
+    # push_to_hub_interval: 20
+    # repo_public: False
+
+    # Wandb
+    wandb_project: starcoder2_7b_h100
+    wandb_entity: loubnabnl
+
+data:
+  seed: 1234
+  num_loading_workers: 1
+  dataset:
+    index_mapping_dir: null # path to save index mapping .npy files, by default will save in the same location as data_prefix
+    splits_string: 9998,1,1 # train, val, test (we normalize by sum)
+    skip_warmup: true
+    dataloader_type: single # cyclic
+    validation_drop_last: true # Set to false if the last partial validation samples is to be consumed
+    eod_mask_loss: false # Mask loss for the end of document tokens
+    no_seqlen_plus_one_input_tokens: false # Set to true to disable fetching (sequence length + 1) input tokens, instead get (sequence length) input tokens and mask the last token
+    pad_samples_to_global_batch_size: false # Set to true if you want to pad the last partial batch with -1's to equal global batch size
+
+    # FIM (Fill in the Middle)
+    fim_rate: 0.5
+    fim_spm_rate: 0.5
+    fim_split_sample: <file_sep>
+    fragment_fim_rate: 0.5
+    no_fim_prefix: <repo_name>
+    data_prefix:
+      - 1.96
+      - /fsx/bigcode/training_data/stack_v2_3b_tokenized/pull_requests/pull_requests_0/gpt2-preprocessed_content_document
+      - 1.96
+      - /fsx/bigcode/training_data/stack_v2_3b_tokenized/pull_requests/pull_requests_1/gpt2-preprocessed_content_document
+      - 1.95
+      - /fsx/bigcode/training_data/stack_v2_3b_tokenized/pull_requests/pull_requests_2/gpt2-preprocessed_content_document
