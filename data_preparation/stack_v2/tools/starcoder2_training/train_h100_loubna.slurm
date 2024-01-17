@@ -1,14 +1,16 @@
 #!/bin/bash
-#SBATCH --job-name=7b_4k
+#SBATCH --job-name=7b_32k
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1          # crucial - only 1 task per dist per node!
 #SBATCH --cpus-per-task=48
 #SBATCH --gres=gpu:h100:8
 #SBATCH --mem-per-cpu=11G # This is essentially 1.1T / 96
 #SBATCH --partition=hopper-prod
-#SBATCH -o /fsx/loubna/logs/test-pp/%x-%j-train.out
+#SBATCH -o /fsx/loubna/logs/finetune-32k_f/%x-%j-train.out
 #SBATCH --qos=high
 
+#sb --array 1-3%1
+#sb --dependency=afterany:521974
 
 set -x -e
 
@@ -78,10 +80,16 @@ export USE_FAST=1
 # in the order they are called.
 export CUDA_DEVICE_MAX_CONNECTIONS=1
 
-# --rdzv_endpoint $MASTER_ADDR:$MASTER_PORT \
-# --rdzv_backend c10d \
+export FI_PROVIDER=efa
+export FI_EFA_FORK_SAFE=1
+unset FI_EFA_ENABLE_SHM_TRANSFER
+unset NCCL_PROTO
+
+#    --rdzv_endpoint $MASTER_ADDR:$MASTER_PORT \
+#    --rdzv_backend c10d \
 #    --rdzv-backend etcd-v2 \
 #    --rdzv-endpoint etcd.hpc-cluster-hopper.hpc.internal.huggingface.tech:2379 \
+
 CMD=" \
     examples/use_trainer.py \
     --config-file $CONFIG_FILE
@@ -90,8 +98,9 @@ CMD=" \
 export LAUNCHER="python -u -m torch.distributed.run \
     --nproc_per_node $GPUS_PER_NODE \
     --nnodes $NNODES \
-    --rdzv_endpoint $MASTER_ADDR:$MASTER_PORT \
-    --rdzv_backend c10d \
+    --rdzv-id ${SLURM_JOB_ID} \
+    --rdzv-backend etcd-v2 \
+    --rdzv-endpoint etcd.hpc-cluster-hopper.hpc.internal.huggingface.tech:2379 \
     --tee 3 \
     "
 
@@ -110,6 +119,7 @@ export NCCL_DEBUG_SUBSYS=COLL
 # export NCCL_ALGO=Ring
 
 
+
 # TODO: tune this
 # export OMP_NUM_THREADS=1
 
@@ -121,7 +131,6 @@ export NCCL_DEBUG_SUBSYS=COLL
 #     --kill-on-bad-exit=1 \
 #     "
 
-# # py-spy top -s -i -n -- $LAUNCHER --node_rank $SLURM_PROCID --role $SLURMD_NODENAME: $CMD
 srun $SRUN_ARGS -u bash -c "$LAUNCHER --node_rank \$SLURM_PROCID --role \$SLURMD_NODENAME: $CMD"
 
 # srun doesn't work if this script was called with `srun` itself
