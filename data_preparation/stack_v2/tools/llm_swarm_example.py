@@ -33,7 +33,7 @@ class Args:
 parser = HfArgumentParser((Args, LLMSwarmConfig))
 args, isc = parser.parse_args_into_dataclasses()
 isc.model = "mistralai/Mixtral-8x7B-Instruct-v0.1"
-isc.instances = 5
+isc.instances = 1
 tokenizer = AutoTokenizer.from_pretrained("mistralai/Mixtral-8x7B-Instruct-v0.1")
 
 ds = load_dataset(
