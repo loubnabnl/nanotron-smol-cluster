@@ -4,9 +4,6 @@ from datatrove.pipeline.tokens.merger import DocumentTokenizerMerger
 from datatrove.pipeline.tokens.tokenizer import DocumentTokenizer
 
 
-DATASET_NAME = "stack_v2_train_json"
-
-
 print(f"tokenizing code")
 dist_executor = SlurmPipelineExecutor(
     job_name=f"tokenize",
