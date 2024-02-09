@@ -50,27 +50,5 @@ dist_executor = SlurmPipelineExecutor(
 dist_executor.run()
 
 
-# # this works
-# from datatrove.pipeline.readers import JsonlReader
-# from datatrove.pipeline.tokens.tokenizer import DocumentTokenizer
-
-# reader = JsonlReader(
-#                 f"s3://bigcode-datasets-us-east-1/stack_v2_train_json/stack_3b/",
-#                 text_key="content",
-#             )
-
-# tokenizer_pipeline_1 = DocumentTokenizer(
-#              output_folder=f"/fsx/bigcode/data/tests/gpt2",
-#              tokenizer_name="gpt2",
-#              save_filename=f"code_tokenized",
-#          )
-# tokenizer_pipeline_2 = DocumentTokenizer(
-#              output_folder=f"/fsx/bigcode/data/tests/mistral",
-#              tokenizer_name="mistralai/Mistral-7B-v0.1",
-#              save_filename=f"code_tokenized",
-#              eos_token="</s>",
-#          )
-
-# tokenizer_pipeline_2.write_unshuffled(reader(), "test_2")
 
 
