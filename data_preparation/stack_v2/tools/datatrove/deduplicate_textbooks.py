@@ -1,3 +1,5 @@
+import os
+
 from datatrove.executor.slurm import SlurmPipelineExecutor
 from datatrove.pipeline.dedup import MinhashDedupSignature
 from datatrove.pipeline.dedup.minhash import (
@@ -6,24 +8,28 @@ from datatrove.pipeline.dedup.minhash import (
     MinhashDedupCluster,
     MinhashDedupFilter,
 )
-from datatrove.pipeline.readers import JsonlReader, HuggingFaceDatasetReader
+from datatrove.pipeline.readers import HuggingFaceDatasetReader
 from datatrove.pipeline.tokens import TokensCounter
 from datatrove.pipeline.writers.jsonl import JsonlWriter
 
 
 # you can also change ngrams or the number of buckets and their size here
 minhash_config = MinhashConfig(use_64bit_hashes=True)  # better precision -> fewer false positives (collisions)
+HF_DATA = "training_data_20B_fw_st_wiki_opens"
 
-S3_MINHASH_BASE_PATH = "s3://synthetic-datasets-phi/minhash/"
+S3_MINHASH_BASE_PATH = f"s3://synthetic-datasets-phi/{HF_DATA}/minhash"
 
-S3_LOGS_FOLDER = "s3://synthetic-datasets-phi/minhash_logs/"
-LOCAL_LOGS_FOLDER = "/fsx/loubna/logs/dedup"
+S3_LOGS_FOLDER = f"s3://synthetic-datasets-phi/{HF_DATA}/minhash_logs/"
+LOCAL_LOGS_FOLDER = f"/fsx/loubna/logs/dedup_extras/{HF_DATA}"
+os.makedirs(LOCAL_LOGS_FOLDER, exist_ok = True) 
 
-TOTAL_TASKS = 500
+TOTAL_TASKS = 1200
 
 # this is the original data that we want to deduplicate
+loca_data = "/fsx/loubna/projects/llm-swarm/local_dataset_parquet/training_data_20B_fw_st_wiki_opens"
+# f"HuggingFaceTB/{HF_DATA}"
 INPUT_READER  = HuggingFaceDatasetReader(
-    dataset="HuggingFaceTB/fw_generations_textbook_textbook_academic_3M",  # dataset name
+    dataset=loca_data,  # dataset name
     dataset_options={
         "split": "train"
     },
@@ -94,7 +100,7 @@ stage4 = SlurmPipelineExecutor(
             input_folder=f"{S3_MINHASH_BASE_PATH}/remove_ids",
             exclusion_writer=JsonlWriter(f"{S3_MINHASH_BASE_PATH}/removed"),
         ),
-        JsonlWriter(output_folder=f"{S3_MINHASH_BASE_PATH}/deduplicated_output"),
+        JsonlWriter(output_folder=f"{S3_MINHASH_BASE_PATH}/deduplicated_output"), # output_folder="hf_stack"
     ],
     tasks=TOTAL_TASKS,
     time="50:00:00",
