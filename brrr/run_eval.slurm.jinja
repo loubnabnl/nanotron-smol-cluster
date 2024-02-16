@@ -1,0 +1,70 @@
+#!/bin/bash
+#SBATCH --job-name={{ slurm_name }}
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --partition=hopper-prod
+#SBATCH --gres=gpu:8
+#SBATCH --cpus-per-task=32
+#SBATCH --output=/fsx/loubna/logs/trainings/logs_evals/logs-%x-%n-%j
+#SBATCH --error=/fsx/loubna/logs/trainings/logs_evals/logs-%x-%n-%j
+
+
+###########################################
+# [BEGINING] ADAPT TO YOUR ENVIRONMENT
+
+BRRR_FOLDER=/fsx/loubna/projects/training/brrr
+LOCAL_DOWNLOAD_CHECKPOINT_FOLDER=/scratch/loubna/checkpoint/
+
+# [END] ADAPT TO YOUR ENVIRONMENT
+###########################################
+
+
+set -x -e
+echo "START TIME: $(date)"
+source /admin/home/loubna/miniconda3/etc/profile.d/conda.sh
+conda activate nanotron 
+echo python3 version = `python3 --version`
+
+# SLURM stuff
+export HOSTNAMES=`scontrol show hostnames "$SLURM_JOB_NODELIST"`
+export MASTER_ADDR=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)
+export MASTER_PORT=6000
+export COUNT_NODE=`scontrol show hostnames "$SLURM_JOB_NODELIST" | wc -l`
+
+export TMPDIR=/scratch
+export HF_DATASETS_CACHE="/fsx/loubna/.cache"
+export CUBLAS_WORKSPACE_CONFIG=":4096:8"
+export CUDA_DEVICE_MAX_CONNECTIONS="1"
+
+module load cuda/12.1
+
+# Hugging Face token
+if [ -z "$HUGGING_FACE_HUB_TOKEN" ]; then
+  # Attempt to read the token from the cache
+  if TOKEN=$(cat ~/.cache/huggingface/token 2>/dev/null); then
+    export HUGGING_FACE_HUB_TOKEN=$TOKEN
+  else
+    echo "Error: The environment variable HUGGING_FACE_HUB_TOKEN is not set and the token cache could not be read."
+    exit 1
+  fi
+fi
+
+echo go $COUNT_NODE
+echo $HOSTNAMES
+
+# Copying checkpoint from s3 to the node on node
+mkdir -p $LOCAL_DOWNLOAD_CHECKPOINT_FOLDER
+s5cmd cp {{ model_checkpoint_path }}* $LOCAL_DOWNLOAD_CHECKPOINT_FOLDER
+
+torch_dist_args="--nproc_per_node 8 \
+    --nnodes $COUNT_NODE \
+    --max_restarts 0 \
+    --tee 3 \
+    --node_rank $SLURM_PROCID \
+    --role $SLURMD_NODENAME: "
+
+launch_args="$torch_dist_args $BRRR_FOLDER/run_evals_nanotron.py \
+    --checkpoint-config-path '${LOCAL_DOWNLOAD_CHECKPOINT_FOLDER}/config.yaml' \
+        "
+
+srun  -u bash -c "python -u -m torch.distributed.run ${launch_args}"
