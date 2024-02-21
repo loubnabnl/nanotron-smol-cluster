@@ -1,0 +1,169 @@
+# CUDA_DEVICE_MAX_CONNECTIONS=1 torchrun --nproc_per_node=8 use_trainer.py --config-file ./examples/loubna/config_llama_1b.yaml
+general:
+  project: train_synthetic
+  ignore_sanity_checks: true
+  run: 1b_final_150b_3
+  seed: 1234
+
+checkpoints:
+  checkpoints_path: /fsx/loubna/checkpoints/1b_final_150b_v2_3
+  checkpoint_interval: 5000
+  resume_checkpoint_path: s3://synthetic-project-models/1b_final_150b_v2_3
+  checkpoints_path_is_shared_file_system: False
+
+kill_switch_path: ./kill_1b_final_150b_v2_3
+lighteval: null
+profiler: null
+logging:
+  iteration_step_info_interval: 1
+  log_level: info
+  log_level_replica: info
+s3_upload:
+  upload_s3_path: s3://synthetic-project-models/1b_final_150b_v2_3
+  remove_after_upload: true
+  s5cmd_numworkers: 15
+  s5cmd_concurrency: 6
+  s5cmd_path: /fsx/nouamane/miniconda/envs/2-1-cu121/bin/s5cmd
+
+
+parallelism:
+  # 20 nodes
+  dp: 160
+  pp: 1
+  tp: 1
+  pp_engine: 1f1b
+  tp_mode: REDUCE_SCATTER
+  tp_linear_async_communication: true
+  # recompute_granularity: SELECTIVE
+
+model:
+  ddp_bucket_cap_mb: 25
+  dtype: bfloat16
+  init_method:
+    std: 0.022
+  make_vocab_size_divisible_by: 1
+  model_config:
+    bos_token_id: 1
+    eos_token_id: 2
+    hidden_act: silu
+    hidden_size: 2048
+    initializer_range: 0.02
+    intermediate_size: 8192
+    is_llama_config: true
+    max_position_embeddings: 2048
+    num_attention_heads: 16
+    num_hidden_layers: 24
+    num_key_value_heads: 16
+    pad_token_id: null
+    pretraining_tp: 1
+    rms_norm_eps: 1.0e-05
+    rope_scaling: null
+    tie_word_embeddings: false
+    use_cache: true
+    vocab_size: 32000
+
+
+tokenizer:
+  tokenizer_name_or_path: "mistralai/Mistral-7B-v0.1"
+  tokenizer_max_length: null
+  tokenizer_revision: null
+
+tokens:
+  batch_accumulation_per_replica: 1
+  val_check_interval: 1
+  limit_val_batches: 1
+  micro_batch_size: 4  # GBS=1.3M tokens
+  sequence_length: 2048
+  train_steps: 140000 # 180B tokens 115000*160*4*2048
+
+optimizer:
+  accumulate_grad_in_fp32: true
+  adam_beta1: 0.9
+  adam_beta2: 0.95
+  adam_eps: 1.0e-08
+  clip_grad: 1.0
+  learning_rate_scheduler:
+    learning_rate: 3.0e-4
+    lr_decay_steps: 140000
+    lr_decay_style: cosine
+    lr_warmup_steps: 2000
+    lr_warmup_style: linear
+    min_decay_lr: 3.0e-5
+  torch_adam_is_fused: true
+  weight_decay: 0.01
+  zero_stage: 0
+
+experiment_logger:
+  tensorboard_logger:
+    flush_secs: 30
+    tensorboard_dir: /fsx/loubna/checkpoints/logs/tensorboard/1b_final_150b_v2_3
+  wandb_logger:
+    wandb_project: synthetic_data_models_4
+    wandb_entity: loubnabnl
+
+brrr_data:
+  seed: 1234
+  num_loading_workers: 1
+  dataset:
+    index_mapping_dir: null # path to save index mapping .npy files, by default will save in the same location as data_prefix
+    splits_string:  9999,1,0 # train, val, test (we normalize by sum)
+    skip_warmup: true
+    dataloader_type: single # cyclic
+    validation_drop_last: true # Set to false if the last partial validation samples is to be consumed
+    eod_mask_loss: false # Mask loss for the end of document tokens
+    no_seqlen_plus_one_input_tokens: false # Set to true to disable fetching (sequence length + 1) input tokens, instead get (sequence length) input tokens and mask the last token
+    pad_samples_to_global_batch_size: false # Set to true if you want to pad the last partial batch with -1's to equal global batch size
+    # ultrachat upsampled 3 times
+    data_prefix:
+      - 20
+      - /fsx/synthetic_data/tokenized_textbooks_20B_dedup_bigcode_decontaminated/tokenized_completion_document
+      - 1.3
+      - /fsx/synthetic_data/code_tokenized/amt_web/tokenized_text_document
+      - 2.4
+      - /fsx/synthetic_data/code_tokenized/amt_python/tokenized_text_document
+      - 3
+      - /fsx/synthetic_data/code_tokenized/notebooks/tokenized_script_document
+      - 5.1
+      - /fsx/synthetic_data/tokenized_extras/stories_ultrachat/tokenized_completion_document
+      - 3.6
+      - /fsx/synthetic_data/tokenized_extras/stories_openhermes/tokenized_completion_document
+      - 2.4
+      - /fsx/synthetic_data/tokenized_extras/amt_khanacademy/tokenized_completion_document
+      - 0.54
+      - /fsx/synthetic_data/tokenized_instruct/ultrachat/tokenized_train_prompt_document
+
+lighteval:
+  batch_size: 16
+  checkpoints_path: null
+  generation: null
+  logging:
+    hub_repo_details: null
+    hub_repo_results: null
+    hub_repo_tensorboard: loubnabnl/tensorboard_1b_final_150b_v2-3
+    local_output_path: /scratch/loubna/lighteval/synthetic_model-1b_final_150b_v2-3
+    push_details_to_hub: null
+    push_results_to_hub: null
+    push_results_to_tensorboard: true
+    tensorboard_metric_prefix: e
+  parallelism:
+    dp: 8
+    pp: 1
+    pp_engine: 1f1b
+    recompute_granularity: null
+    tp: 1
+    tp_linear_async_communication: false
+    tp_mode: ALL_REDUCE
+  slurm_script_dir: /fsx/loubna/logs/synthetic_training/logs_evals/1b_final_150b
+  slurm_template: /fsx/loubna/projects/training/brrr/examples/loubna/run_eval.slurm.jinja
+  tasks:
+    custom_tasks: brrr.lighteval.custom_tasks
+    dataset_loading_processes: 8
+    max_samples: 1000
+    multichoice_continuations_start_space: null
+    no_multichoice_continuations_start_space: null
+    num_fewshot_seeds: null
+    tasks: early-signal
+  wandb: 
+    wandb_entity: loubnabnl
+    wandb_project: synthetic_data_evaluations
+    wandb_run_name: 1b_150b_3
