@@ -1,0 +1,47 @@
+ **Unit: Calculating Keynesian Policy Interventions**
+
+### Introduction
+
+This unit will focus on how to calculate policy interventions using the Keynesian perspective. Specifically, we will examine how changes in government spending or taxes can impact equilibrium output and close recessionary or inflationary gaps. Understanding these calculations is crucial for policymakers aiming to stabilize economic fluctuations through fiscal policies.
+
+#### Prerequisites
+
+Before diving into this unit, it is essential to thoroughly understand the following topics:
+
+* The Axes of the Expenditure-Output Diagram
+* The Potential GDP Line and the 45-degree Line
+* Building the Aggregate Expenditure Schedule
+* Consumption as a Function of National Income
+* Investment as a Function of National Income
+* Government Spending and Taxes as a Function of National Income
+* Where Equilibrium Occurs
+* Recessionary and Inflationary Gaps
+* The Multiplier Effect
+
+### Fiscal Policies and Their Impact on Output
+
+Fiscal policies involve adjustments in government expenditures and taxes aimed at influencing economic activity. These tools help address two primary goals: reducing unemployment during recessions (closing recessionary gaps) and controlling inflation due to excessive growth (reducing inflationary gaps). Let us first discuss how each type of intervention affects equilibrium output.
+
+#### Increasing Government Spending
+
+An increase in government spending shifts the aggregate expenditure schedule upward, leading to higher equilibrium national income. This change results from the additional public sector purchases adding directly to total spending, which subsequently increases consumption via the multiplier effect. To determine the required increase in government spending necessary to reach a desired level of real GDP, one must divide the target gap between actual and potential GDP by the appropriate multiplier.
+
+For instance, suppose that the current real GDP is $600 billion while potential GDP equals $800 billion, creating a recessionary gap of -$200 billion ($800B-$600B). Furthermore, let the marginal propensity to consume (MPC) be 0.7 and the marginal propensity to save (MPS) be 0.3. Given no imports, the multiplier (k) is equal to 1/(1-MPC)=1/0.3=3.33. Therefore, to fill the $200 billion recessionary gap, the government needs to boost its spending by approximately $200B / 3.33 = $60 billion.
+
+#### Decreasing Government Spending
+
+Reducing government spending has the opposite effect; it lowers equilibrium national income. By decreasing the aggregate expenditure schedule, fewer resources are allocated towards production, resulting in lower employment levels and reduced output. Consequently, the decrease in government spending needed to combat inflation depends on the size of the inflationary gap and the value of the multiplier.
+
+Suppose that the current real GDP exceeds potential GDP by $100 billion due to overheated economic conditions. Using our previous MPC and MPS values, the multiplier remains unchanged at 3.33. Thus, a reduction in government spending of around $100B / 3.33 = $30 billion should bring real GDP back to its long-run sustainable level.
+
+#### Cutting Taxes
+
+Cutting taxes also impacts equilibrium output but operates indirectly through households' disposable income and subsequent consumer spending decisions. Lower taxes imply higher after-tax income, increasing consumers' willingness to spend. Ultimately, this rise in consumption contributes to elevated output levels given the same logic applied to government spending. However, determining the precise amount of tax cuts necessary requires knowledge of the marginal propensity to consume out of disposable income.
+
+Assume a recessionary gap exists once again, equaling $200 billion. Suppose further that the marginal propensity to consume out of disposable income (MPCD) amounts to 0.9, implying an MPSD of 0.1. Following the formula k = 1/(1-MPCD+MPS\*(1-Tax\_rate)), where Tax\_rate represents the proportion of income paid as taxes before redistribution, assume that Tax\_rate initially stands at 0.2. With these values, the multiplier becomes 1/(1-0.9+0.1\*(1-0.2))=4.
+
+To eliminate the recessionary gap, the government could either raise taxes or cut them. Assuming a tax cut strategy instead, we need to find the amount sufficient to generate an extra $200 billion in real GDP. Dividing the gap by the multiplier gives us the answer: $200B / 4 = $50 billion. Hence, cutting taxes by roughly $50 billion should stimulate enough consumption to restore potential GDP.
+
+### Summary
+
+Understanding how to calculate policy interventions underpins effective macroeconomic management within the context of the Keynesian cross model. Adjustments in government spending and taxes can significantly influence equilibrium output, allowing governments to mitigate cyclical downturns or contain inflationary pressures. Appropriately calibrating these tools necessitates careful consideration of relevant behavioral parameters like marginal propensities to consume and save, alongside accurate assessment of existing economic imbalances – namely recessionary and inflationary gaps.

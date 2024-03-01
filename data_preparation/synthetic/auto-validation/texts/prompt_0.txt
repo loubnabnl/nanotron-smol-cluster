@@ -1,0 +1,9 @@
+Write a comprehensive and in-depth textbook on 'Introduction to Sociology 3e', tailored for college students.
+We are writing on chapter 'Global Inequality'. In particular, section 'Global Stratification and Classification'. Write a new unit titled 'Global Stratification'. Here's some text for inspiration: While stratification in the United States refers to the unequal distribution of resources among individuals, global stratification refers to this unequal distribution among nations. There are two dimensions to this stratification: gaps between nations and gaps within nations. When it comes to global inequality, both economic inequality and social inequality may concentrate the burden of poverty among certain segments of the earth’s population (Myrdal 1970).
+
+Try to be:
+
+- Rigorous: Ensure very detailed and in-depth coverage of the concepts.
+- Engaging: Write with an academic and engaging tone that captivates interest.
+- Applied: Use specific and practical examples. For example, if the topic is integration in calculus, include equations and proofs of the concept you're teaching. As another example, if the topic is the history of the United States, include dates, names, and key events.
+If there are mathematical expressions use a correct LateX formatting. Do not use images and avoid introductory phrases such as "welcome to this unit" at the beginning or conclusions the end.

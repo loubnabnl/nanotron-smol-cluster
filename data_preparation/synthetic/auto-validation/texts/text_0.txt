@@ -1,0 +1,35 @@
+ **Global Stratification**
+
+*Global stratification*, like its domestic counterpart, refers to the unequal distribution of resources among nations. However, unlike domestic stratification which focuses solely on the disparities among individuals within a single nation, global stratification examines these differences on a global scale. This perspective allows us to consider how entire countries fit into a larger hierarchy of wealth, power, and prestige, shedding light on complex relationships between developed and developing nations.
+
+There are two primary dimensions of global stratification: *gaps between nations* and *gaps within nations*. The former concerns discrepancies in development and wellbeing between different countries, while the latter addresses the internal divisions within individual states. Both aspects contribute significantly to worldwide inequality, creating a nuanced picture of privilege and disadvantage across the globe. To better understand this phenomenon, we will explore various theoretical perspectives, indicators used to measure global stratification, and real-world consequences for affected populations.
+
+**Theoretical Perspectives**
+
+Several prominent theories have been proposed to explain global stratification, including modernization theory, dependency theory, and world systems theory. Each offers unique insights into the causes and effects of global inequality but also contains limitations when considered independently.
+
+*Modernization Theory*: Associated primarily with sociologist Talcott Parsons, modernization theory posits that industrialization leads to societal progression through predictable stages of growth. Accordingly, poorer countries remain economically backward due to traditional values, institutions, and technologies that hinder their advancement toward more prosperous, urbanized societies resembling those found in Western Europe and North America. Critics argue that modernization theory oversimplifies the challenges faced by less developed nations and places undue blame on cultural factors rather than structural issues perpetuated by colonialism and imperialism.
+
+*Dependency Theory*: Contrasting modernization theory, dependency theory emphasizes historical legacies of exploitation and underdevelopment resulting from colonization and neo-colonial practices. Proponents contend that wealthy countries maintain control over essential resources and markets necessary for development in impoverished regions, thereby exacerbating existing inequalities and hindering potential growth opportunities. Dependency theorists point out that many resource-rich countries fail to benefit economically from their natural riches because they must export raw materials instead of processing them locally.
+
+*World Systems Theory*: World systems theory combines elements of both modernization and dependency theories, focusing on interdependent relations between core (wealthy) and periphery (poorer) nations within a single international system. Core nations dominate global trade networks, monopolizing valuable resources and extracting cheap labor from peripheral areas. Over time, this dynamic creates persistent patterns of inequality between rich and poor countries, reinforcing cycles of dependence and underdevelopment.
+
+These three approaches offer varying explanations for global stratification; however, none can fully account for all aspects of the issue without considering other contributing factors. Therefore, understanding global stratification necessitates incorporating multiple perspectives and recognizing the complexity inherent in cross-national comparisons.
+
+**Measuring Global Stratification**
+
+To assess global stratification accurately, researchers rely on several quantitative measures that capture different facets of economic and social inequality. These indices enable analysts to track trends over time, compare countries directly, and evaluate policy interventions aimed at reducing disparities. Some commonly employed metrics include:
+
+*Gross Domestic Product (GDP):* A widely recognized indicator of national income, GDP represents the total value of goods and services produced within a country during a specified period. Although useful for comparing overall economic performance, GDP fails to account for distributional inequities, environmental degradation, or nonmarket activities such as unpaid household work.
+
+*Human Development Index (HDI):* Developed by the United Nations Development Programme, HDI integrates life expectancy, education level, and per capita income data to provide a multidimensional assessment of human wellbeing. By accounting for multiple domains beyond mere financial affluence, HDI presents a more holistic view of living standards and quality of life around the world.
+
+*Gini Coefficient:* Often utilized to gauge income distribution, the Gini coefficient ranges from zero (perfect equality) to one (maximum inequality), reflecting the extent to which a given society deviates from perfect egalitarianism regarding access to resources. Higher Gini coefficients indicate greater concentration of wealth among a smaller proportion of households, signaling increased socioeconomic polarization.
+
+While each index has merits and drawbacks, using multiple measures helps paint a clearer picture of global stratification dynamics, enabling scholars and policymakers alike to identify pressing needs and develop targeted solutions.
+
+**Consequences of Global Stratification**
+
+Inequalities between and within nations yield significant ramifications for millions of people worldwide, affecting health outcomes, educational attainment, political stability, and environmental sustainability. Addressing these challenges requires concerted efforts from diverse stakeholders committed to fostering equitable development trajectories that promote shared prosperity and dignity for all members of the global community.
+
+In summary, global stratification constitutes a critical area of study within sociological inquiry, illuminating intricate connections between wealthier and poorer countries and highlighting the urgent need for collaborative action to alleviate widespread suffering caused by preventable disparities. Through rigorous examination of underlying mechanisms driving global stratification, engaged analysis of empirical evidence, and applied investigation of effective strategies for redressing imbalances, future generations stand poised to inherit a fairer, more just world order.
