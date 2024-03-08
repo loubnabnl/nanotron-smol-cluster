@@ -35,15 +35,6 @@ def human_eval_docstrings():
     return docstrings
 
 
-def apps_solutions():
-    """
-    Solutions column contains a list of strings
-    """
-    ds = load_dataset("codeparrot/apps", split="test")
-    solutions = [sample["solutions"] for sample in ds if len(sample["solutions"]) > 0]
-    res = itertools.chain.from_iterable(json.loads(sample) for sample in solutions)
-    return list(res)
-
 
 def load_dataset_column(dataset: str, column: str, split: str, name=None):
     ds = load_dataset(dataset, split=split, name=name)
