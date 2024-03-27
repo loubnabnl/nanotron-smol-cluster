@@ -28,15 +28,6 @@ def is_job_running(job_id: str):
     return job_id in my_running_jobs
 
 
-def make_sure_jobs_are_still_running(job_ids: List[str]):
-    if job_ids:
-        for job_id in job_ids:
-            if not is_job_running(job_id):
-                slumr_log_path = os.path.join(SLURM_LOGS_FOLDER, f"llm-swarm_{job_id}.out")
-                print(f"\n❌ Failed! Job {job_id} is not running; checkout {slumr_log_path} ")
-                raise
-
-
 class Loader:
     def __init__(self, desc="Loading...", end="✅ Done!", failed="❌ Aborted!", timeout=0.1):
         """
