@@ -7,7 +7,8 @@ from threading import Thread
 from time import sleep
 
 SLURM_LOGS_FOLDER = "/fsx/loubna/projects/llm-swarm/slurm/logs"
-
+slurm_path = "/fsx/loubna/projects/llm-swarm/slurm/tgi_1711535789_tgi.slurm"
+number_tgi_instances = 10
 
 def run_command(command: str):
     print(f"running {command}")
@@ -88,8 +89,6 @@ class Loader:
             print("\r" + " " * cols, end="", flush=True)
             print(f"\r{self.failed}", flush=True)
 
-slurm_path = "/fsx/loubna/projects/llm-swarm/slurm/tgi_1711535789_tgi.slurm"
-number_tgi_instances = 2
 job_ids = [run_command(f"sbatch --parsable {slurm_path}") for _ in range(number_tgi_instances)]
 try:
     # ensure job is running
