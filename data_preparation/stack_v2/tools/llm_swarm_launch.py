@@ -7,7 +7,7 @@ from threading import Thread
 from time import sleep
 
 
-# chnge these paths and run llm_qwarm_launch.py
+# change these paths and run llm_swarm_launch.py
 SLURM_LOGS_FOLDER = "/fsx/loubna/projects/llm-swarm/slurm/logs"
 slurm_path = "/fsx/loubna/projects/llm-swarm/slurm/tgi_1711535789_tgi.slurm"
 number_tgi_instances = 10
