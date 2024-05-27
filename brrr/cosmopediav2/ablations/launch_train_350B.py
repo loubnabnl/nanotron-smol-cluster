@@ -50,7 +50,7 @@ S3_CHECKPOINTS_PREFIX = "s3://synthetic-project-models/ablations/"
 NODES = 16
 
 # General name to gather the runs on the hub
-PROJECT = "cosmo2_ablations"
+PROJECT = "edu_fw_ablations"
 
 REPO_ID = f"HuggingFaceTB/loubna-{PROJECT}"
 # END CHANGE THIS SECTION
@@ -128,15 +128,12 @@ num_params = human_format(
 
 print(f"Model has {num_params} parameters")
 
-# Do we  have a SLURM task ID?
-# You can SLURM_ARRAY_TASK_ID to run multiple runs with predefined HP
 task_id = int(os.environ.get("SLURM_ARRAY_TASK_ID", -1))
 job_id = os.environ.get("SLURM_JOB_ID", "")
 
 # Seed for model and data
 SEED = [5, 6][task_id % 2]
-SEED = 0
-TRAIN_STEPS = 13500
+TRAIN_STEPS = 167000
 
 def launch_slurm_job(launch_file_contents, *args):
     """
@@ -162,8 +159,9 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--data", help="dataset folder", type=str)
-    parser.add_argument("--second_data", help="second dataset folder", type=str)
     parser.add_argument("--run_name", help="run name", type=str)
+    parser.add_argument("--train_steps", help="training steps", type=str, default=TRAIN_STEPS)
+    parser.add_argument("--seed", help="train and data seed", type=str, default=SEED)
     args = parser.parse_args()
 
     def print_differences(target, updates):
@@ -186,35 +184,19 @@ if __name__ == "__main__":
     dataset_name = run_name = args.run_name.replace(" ", "_")
 
     # Specific name for this run (checkpoints/logs/tensorboard)
-    RUN = f"{PROJECT}-{num_params}-{dataset_name}-seed-{SEED}-{job_id}"
-    if args.second_data:
-        print(f"Using two datasets {args.data} & {args.second_data}")
-        datasets = [
-            TokenizedBytesDatasetFolderArgs(
-                folder=args.data,
-                filename_pattern=r".*\.ds$",
-                shuffle=True,
-                seed=SEED,
-            ),
-            TokenizedBytesDatasetFolderArgs(
-                folder=args.second_data,
-                filename_pattern=r".*\.ds$",
-                shuffle=True,
-                seed=SEED,
-            )
-        ]
-    else:
-        datasets = [
-            TokenizedBytesDatasetFolderArgs(
-                folder=args.data,
-                filename_pattern=r".*\.ds$",
-                shuffle=True,
-                seed=SEED,
-            )
-        ]
+    RUN = f"{PROJECT}-{num_params}-{dataset_name}-seed-{args.seed}-{job_id}"
+
+    datasets = [
+        TokenizedBytesDatasetFolderArgs(
+            folder=args.data,
+            filename_pattern=r".*\.ds$",
+            shuffle=True,
+            seed=args.seed,
+        )
+    ]
 
     data = BrrrDataArgs(
-        seed=SEED,
+        seed=args.seed,
         num_loading_workers=0,
         dataset=TokenizedBytesDatasetArgs(
             datasets=datasets,
@@ -284,12 +266,14 @@ if __name__ == "__main__":
         tp_mode="REDUCE_SCATTER",
         tp_linear_async_communication=True,
     )
+    # num_nodes = int(os.environ.get("SLURM_JOB_NUM_NODES", 1))é
+    # parallelism.dp=int(num_nodes*8//parallelism.pp//parallelism.tp),  # How many remaining GPU when taking into account PP, TP and 8 GPUs per node
 
     tokens = TokensArgs(
-        batch_accumulation_per_replica=2, # 1M GBS
+        batch_accumulation_per_replica=2, # 2M GBS
         micro_batch_size=4,
         sequence_length=2048,
-        train_steps=TRAIN_STEPS,
+        train_steps=args.train_steps,
         val_check_interval=100,
     )
 
@@ -326,7 +310,7 @@ if __name__ == "__main__":
             lr_warmup_steps=500,
             lr_warmup_style="linear",
             lr_decay_style="cosine",
-            lr_decay_steps=TRAIN_STEPS, 
+            lr_decay_steps=args.train_steps, 
             min_decay_lr=3.0e-5,
         ),
     )
