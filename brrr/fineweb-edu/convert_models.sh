@@ -5,7 +5,7 @@ conda activate nanotron
 start=10000
 end=130000
 step=10000
-ckpt_base_path=/fsx/loubna/checkpoints/fineweb_edu_350B
+ckpt_base_path=/scratch/loubna/fineweb_edu_350B
 save_base_path=/fsx/loubna/checkpoints/fineweb_edu_350B_converted
 
 for ((iter=start; iter<=end; iter+=step)); do
